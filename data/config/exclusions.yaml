@@ -1,0 +1,29 @@
+# Industry Exclusions Configuration
+# Created: 2026-02-11
+# Purpose: Filter out specific industries from UI display without rerunning pipelines
+#
+# This file defines NAICS codes to exclude from the application UI.
+# Exclusions are applied at data load time in app/data_loader.py
+
+# Public Education Exclusions
+# Excludes government-operated public school systems only
+# Private, charter, and specialized schools are retained
+public_education:
+  enabled: true
+  description: "Public school districts and state education boards"
+  naics_codes:
+    - "61111018"  # School Districts (e.g., "Boston Public School District", "San Diego Unified")
+    - "61111005"  # State Education Boards (e.g., "Idaho State Board of Education")
+
+  # For reference - NOT excluded (charter, private, specialized schools)
+  # - "61111007"  # Charter/Private Schools (e.g., "Westminster Schools", "High Tech High")
+  # - "61111004"  # Religious/Seminary Schools (e.g., "Nazarene Bible College")
+  # - "61111010"  # Special Education Schools (e.g., "Blue Ridge Autism Center")
+
+# Future exclusions can be added here
+# Example structure:
+# government_facilities:
+#   enabled: false
+#   description: "Government agencies and facilities"
+#   naics_codes:
+#     - "92XXXX"  # Public Administration codes

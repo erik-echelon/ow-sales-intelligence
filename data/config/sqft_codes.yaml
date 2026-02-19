@@ -1,0 +1,185 @@
+# Square Footage Code Configuration for DataAxle Discovery (Epic 1)
+# Generated: 2025-12-28
+# Owner: Erik Allen
+# Status: Production
+
+version: "1.0"
+description: "DataAxle square footage categorical codes and hard exclusion thresholds"
+updated_at: "2025-12-28"
+
+# CRITICAL DISCOVERY FROM POC:
+# DataAxle does NOT return actual square footage values.
+# Instead, the `square_footage` field contains categorical codes 1-8.
+
+# Hard exclusion threshold (from ICP Definition Phase 1)
+exclusion_threshold_sqft: 5000  # Exclude buildings < 5,000 sq ft (codes 1-3)
+
+# Minimum codes for inclusion (codes 4-8 = ≥5,000 sq ft)
+min_codes_for_inclusion:
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
+
+# Detailed code mappings
+# Source: POC exploration + DataAxle API documentation
+code_mappings:
+  "1":
+    range: "0-999"
+    range_sqft_min: 0
+    range_sqft_max: 999
+    description: "Less than 1,000 sq ft"
+    include: false
+    exclusion_reason: "Micro-location (< 5,000 sq ft)"
+    typical_examples:
+      - "Small medical offices"
+      - "Individual physician practices"
+      - "Kiosks"
+
+  "2":
+    range: "1,000-2,499"
+    range_sqft_min: 1000
+    range_sqft_max: 2499
+    description: "1,000 to 2,499 sq ft"
+    include: false
+    exclusion_reason: "Micro-location (< 5,000 sq ft)"
+    typical_examples:
+      - "Small retail clinics"
+      - "Satellite offices"
+      - "Small labs"
+
+  "3":
+    range: "2,500-4,999"
+    range_sqft_min: 2500
+    range_sqft_max: 4999
+    description: "2,500 to 4,999 sq ft"
+    include: false
+    exclusion_reason: "Micro-location (< 5,000 sq ft)"
+    typical_examples:
+      - "Small medical facilities"
+      - "Branch offices"
+      - "Neighborhood clinics"
+
+  "4":
+    range: "5,000-9,999"
+    range_sqft_min: 5000
+    range_sqft_max: 9999
+    description: "5,000 to 9,999 sq ft"
+    include: true
+    exclusion_reason: null
+    typical_examples:
+      - "Dialysis centers"
+      - "Medium medical offices"
+      - "Small laboratories"
+
+  "5":
+    range: "10,000-24,999"
+    range_sqft_min: 10000
+    range_sqft_max: 24999
+    description: "10,000 to 24,999 sq ft"
+    include: true
+    exclusion_reason: null
+    typical_examples:
+      - "Large dialysis centers"
+      - "Medical clinics"
+      - "Mid-size laboratories"
+
+  "6":
+    range: "25,000-49,999"
+    range_sqft_min: 25000
+    range_sqft_max: 49999
+    description: "25,000 to 49,999 sq ft"
+    include: true
+    exclusion_reason: null
+    typical_examples:
+      - "Large medical facilities"
+      - "Hospital annexes"
+      - "Large laboratories"
+
+  "7":
+    range: "50,000-99,999"
+    range_sqft_min: 50000
+    range_sqft_max: 99999
+    description: "50,000 to 99,999 sq ft"
+    include: true
+    exclusion_reason: null
+    typical_examples:
+      - "Hospitals"
+      - "Large manufacturing facilities"
+      - "Major research centers"
+
+  "8":
+    range: "100,000+"
+    range_sqft_min: 100000
+    range_sqft_max: null  # No upper limit
+    description: "100,000 sq ft and above"
+    include: true
+    exclusion_reason: null
+    typical_examples:
+      - "Large hospitals"
+      - "Major manufacturing plants"
+      - "Corporate headquarters"
+
+# Hard exclusion rules
+exclusion_rules:
+  micro_location:
+    applies_to: "All buildings except headquarters"
+    rule: "square_footage code < 4"
+    codes_excluded: ["1", "2", "3"]
+    threshold: "< 5,000 sq ft"
+    rationale: "Too small to have significant equipment needs or purchasing authority"
+    exception: "Headquarters are NEVER excluded based on size (preserve company record)"
+
+  headquarters_exception:
+    rule: "Headquarters buildings are included regardless of square footage code"
+    rationale: "HQ represents the company even if physical location is small (e.g., administrative office)"
+    implementation: "Skip sqft check if place_type == 'headquarters'"
+
+# Query usage in DataAxle API
+api_usage:
+  filter_syntax: |
+    {
+      "filter": {
+        "connective": "and",
+        "propositions": [
+          {"relation": "in", "attribute": "square_footage", "value": ["4", "5", "6", "7", "8"]}
+        ]
+      }
+    }
+
+  note: "Use min_codes_for_inclusion in API queries to pre-filter at source"
+
+# POC findings
+poc_findings:
+  total_records_621492: 6762
+  code_distribution_621492:
+    "1": "~5%"
+    "2": "~10%"
+    "3": "~15%"
+    "4": "~35%"  # Most dialysis centers
+    "5": "~25%"
+    "6": "~8%"
+    "7": "~2%"
+    "8": "<1%"
+  notes:
+    - "Code 4 (5,000-9,999 sq ft) is most common for dialysis centers"
+    - "Codes 1-3 were correctly excluded in POC"
+    - "No false negatives observed (no large facilities miscoded as 1-3)"
+    - "DaVita HQ had code 6 (25,000-49,999 sq ft)"
+
+# Validation metadata
+validation:
+  total_codes: 8
+  codes_covering_full_range: true
+  exclusion_threshold_validated: true
+  source: "POC exploration + DataAxle field documentation"
+  validated_by: "Erik Allen"
+  validated_at: "2025-12-28"
+
+# Important warnings
+warnings:
+  - "NEVER use square_footage as numeric value - it is a categorical code string '1'-'8'"
+  - "Codes must be compared as strings, not integers (use '4', not 4)"
+  - "Some buildings may have null square_footage - handle gracefully"
+  - "Headquarters MUST bypass sqft exclusion to preserve company records"

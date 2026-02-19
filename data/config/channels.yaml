@@ -1,0 +1,80 @@
+version: "1.0"
+default_channel: "general"
+
+channels:
+  healthcare_dialysis:
+    name: "Healthcare - Kidney Dialysis"
+    naics_codes:
+      - "6214"   # Outpatient care centers (prefix for 621492)
+    priority: "HIGH"
+    score_weights_override:
+      hygiene_relevance: 0.15  # Increased from 0.10 to 0.15
+      geographic_fit: 0.05      # Decreased from 0.10 to 0.05 to compensate
+    features:
+      - name: "regional_health_system"
+        description: "Regional health system affiliation (independent, regional, national, unknown)"
+        sparse_by_design: false
+      - name: "cms_deficiency_recency"
+        description: "When the most recent CMS deficiency occurred"
+        sparse_by_design: true  # Exempt from 70% threshold - only some facilities have CMS deficiencies
+      - name: "expansion_velocity"
+        description: "Rate of facility expansion (rapid, moderate, stable, contracting)"
+        sparse_by_design: false
+      - name: "patient_volume_trend"
+        description: "Trend in patient census or volume (increasing, stable, decreasing)"
+        sparse_by_design: false
+    prompt_addendum: |
+      For dialysis facilities, pay special attention to:
+      - CMS survey results and deficiencies
+      - OSHA violations related to infection control
+      - Regional health system affiliations
+      - Expansion announcements or new facility openings
+      - Patient volume trends and capacity utilization
+      - Medicare Star Ratings and quality metrics
+
+  education_k12:
+    name: "Education - K-12"
+    naics_codes:
+      - "6111"   # Elementary and secondary schools
+    priority: "MEDIUM"
+    score_weights_override:
+      decision_maker_clarity: 0.15  # Increased from 0.10 (procurement is critical)
+      geographic_fit: 0.05          # Decreased from 0.10 to compensate
+    features:
+      - name: "school_type"
+        description: "Type of educational institution (public_district, charter, private)"
+        sparse_by_design: false
+      - name: "district_size"
+        description: "Size category of the school district (large_urban, suburban, small_rural, single_school)"
+        sparse_by_design: false
+      - name: "budget_health"
+        description: "Financial health of the district (strong, adequate, constrained, crisis)"
+        sparse_by_design: false
+      - name: "contract_timing"
+        description: "Timing of procurement or contract renewals (rfp_active, renewal_upcoming, recently_awarded, mid_contract)"
+        sparse_by_design: false
+      - name: "summer_deep_clean"
+        description: "Evidence of summer deep cleaning programs (yes, no)"
+        sparse_by_design: true  # Only applicable to some districts
+    prompt_addendum: |
+      For K-12 schools, pay special attention to:
+      - School board meeting minutes and decisions
+      - District budget approvals and procurement processes
+      - RFP announcements for facility services
+      - New construction or renovation projects
+      - Summer deep cleaning schedules
+      - Superintendent or facilities director changes
+
+  general:
+    name: "General / Unclassified"
+    naics_codes: []
+    priority: "LOW"
+    score_weights_override: {}
+    features: []
+    prompt_addendum: |
+      For general companies, focus on:
+      - Recent corporate announcements
+      - Leadership changes
+      - Facility expansion or consolidation
+      - Regulatory compliance issues
+      - Industry-specific events that might create service needs

@@ -1,0 +1,12 @@
+requests
+pandas
+python-dotenv
+jupyter
+notebook
+numpy
+rapidfuzz
+usaddress
+
+google-generativeai
+requests
+google-genai

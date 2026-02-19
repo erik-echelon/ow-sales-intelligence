@@ -1,0 +1,289 @@
+# NAICS Target Configuration for Epic 1 v4.0 HQ-Only Discovery
+# Updated: 2026-02-04
+# Target: ~10,900 total companies across 39 NAICS codes
+#
+# Format: List of NAICS codes with max_companies per code
+# This format is used by discover_all_naics() in discovery_hq_only.py
+
+version: "2.1"
+generated_at: "2026-02-04T00:00:00Z"
+source: "custom_naics_proven_success_aligned"
+description: "NAICS codes aligned with colleague feedback and proven OpenWorks success - 10,900 company limit"
+
+# Target NAICS codes - Tiered by ICP priority + proven success
+# Total expected: ~10,900 companies (actual may vary based on DataAxle availability)
+target_naics:
+  # ========================================================================
+  # TIER 1: HIGH PRIORITY ICP (600 max each) - 9 industries = 5,400 companies
+  # Proven sweet spots with strong multi-location presence and cleaning needs
+  # ========================================================================
+
+  - naics_code: "6111"
+    description: "Elementary and Secondary Schools"
+    max_companies: 600
+    icp_rationale: "Multi-location school districts with large facility footprints and daily cleaning requirements - PROVEN SWEET SPOT"
+
+  - naics_code: "6221"
+    description: "General Medical and Surgical Hospitals"
+    max_companies: 600
+    icp_rationale: "Large hospital systems with multiple facilities requiring specialized medical-grade cleaning services"
+
+  - naics_code: "4931"
+    description: "Warehousing and Storage"
+    max_companies: 600
+    icp_rationale: "Large-footprint warehouse facilities requiring regular floor care and office cleaning"
+
+  - naics_code: "6214"
+    description: "Outpatient Care Centers"
+    max_companies: 600
+    icp_rationale: "Multi-location outpatient facilities with strict hygiene standards and regulatory compliance requirements"
+
+  - naics_code: "6213"
+    description: "Offices of Other Health Practitioners"
+    max_companies: 600
+    icp_rationale: "Dental, chiropractic, and therapy practices with multi-location operations requiring professional cleaning"
+
+  - naics_code: "6112"
+    description: "Junior Colleges"
+    max_companies: 600
+    icp_rationale: "Community college systems with multiple campuses requiring comprehensive facility management"
+
+  - naics_code: "6113"
+    description: "Colleges, Universities, and Professional Schools"
+    max_companies: 600
+    icp_rationale: "Higher education institutions with extensive campus facilities and high foot traffic"
+
+  - naics_code: "4841"
+    description: "General Freight Trucking"
+    max_companies: 600
+    icp_rationale: "Trucking companies with terminals, warehouses, and office facilities across multiple locations - PROVEN $66K revenue"
+
+  - naics_code: "4821"
+    description: "Rail Transportation"
+    max_companies: 600
+    icp_rationale: "Rail operators with stations, maintenance facilities, and administrative offices - PROVEN SUCCESS, colleague priority"
+
+  # ========================================================================
+  # TIER 2: MEDIUM PRIORITY (300 max each) - 13 industries = 3,900 companies
+  # Good ICP fit with proven track record or colleague endorsement
+  # ========================================================================
+
+  - naics_code: "7225"
+    description: "Restaurants and Other Eating Places"
+    max_companies: 300
+    icp_rationale: "Multi-location restaurant chains requiring daily deep cleaning and sanitation services"
+
+  - naics_code: "6211"
+    description: "Offices of Physicians"
+    max_companies: 300
+    icp_rationale: "Large physician networks and medical groups with multiple office locations"
+
+  - naics_code: "6212"
+    description: "Offices of Dentists"
+    max_companies: 300
+    icp_rationale: "Multi-location dental practices requiring specialized medical cleaning and sterilization support"
+
+  - naics_code: "5221"
+    description: "Depository Credit Intermediation"
+    max_companies: 300
+    icp_rationale: "Banks and credit unions with branch networks requiring professional office cleaning - colleague priority"
+
+  - naics_code: "6244"
+    description: "Child Day Care Services"
+    max_companies: 300
+    icp_rationale: "Multi-location daycare centers with high cleaning frequency needs - PROVEN $178K revenue, colleague priority"
+
+  - naics_code: "6241"
+    description: "Individual and Family Services"
+    max_companies: 300
+    icp_rationale: "Social service facilities, counseling centers - PROVEN SUCCESS, colleague priority"
+
+  - naics_code: "6114"
+    description: "Business Schools and Computer and Management Training"
+    max_companies: 300
+    icp_rationale: "Professional training facilities with classroom and office spaces requiring regular cleaning"
+
+  - naics_code: "6115"
+    description: "Technical and Trade Schools"
+    max_companies: 300
+    icp_rationale: "Vocational schools with workshops and training facilities needing specialized cleaning"
+
+  - naics_code: "6215"
+    description: "Medical and Diagnostic Laboratories"
+    max_companies: 300
+    icp_rationale: "Lab facilities requiring stringent cleanliness standards and contamination control - colleague priority"
+
+  - naics_code: "5121"
+    description: "Motion Picture and Video Industries"
+    max_companies: 300
+    icp_rationale: "Production studios, post-production facilities - PROVEN $275K revenue, 40 locations, colleague priority"
+
+  - naics_code: "7139"
+    description: "Other Amusement and Recreation Industries"
+    max_companies: 300
+    icp_rationale: "Bowling alleys, skating rinks, entertainment venues - PROVEN $287K revenue, colleague priority"
+
+  - naics_code: "5621"
+    description: "Waste Collection"
+    max_companies: 300
+    icp_rationale: "Transfer stations, fleet facilities, heavy-duty cleaning - PROVEN 59 locations, colleague priority"
+
+  - naics_code: "4851"
+    description: "Urban Transit Systems"
+    max_companies: 300
+    icp_rationale: "Public transit (buses, light rail, subway) with multi-location stations and maintenance facilities - colleague priority, NEW"
+
+  # ========================================================================
+  # TIER 3: EXPLORATORY (110 max each) - 17 industries = 1,870 companies
+  # Testing new industries or lower priority markets
+  # ========================================================================
+
+  - naics_code: "6219"
+    description: "Other Ambulatory Health Care Services"
+    max_companies: 110
+    icp_rationale: "Ambulance services, blood banks, and other healthcare facilities with hygiene requirements"
+
+  - naics_code: "5311"
+    description: "Lessors of Real Estate"
+    max_companies: 110
+    icp_rationale: "Property management companies managing multiple buildings requiring cleaning coordination"
+
+  - naics_code: "6117"
+    description: "Educational Support Services"
+    max_companies: 110
+    icp_rationale: "Educational administration and support organizations with office facilities - colleague priority"
+
+  - naics_code: "6222"
+    description: "Psychiatric and Substance Abuse Hospitals"
+    max_companies: 110
+    icp_rationale: "Specialized healthcare facilities with enhanced cleaning and sanitation protocols"
+
+  - naics_code: "4561"
+    description: "Travel Arrangement and Reservation Services"
+    max_companies: 110
+    icp_rationale: "Multi-location travel agencies and corporate travel departments with office cleaning needs"
+
+  - naics_code: "5313"
+    description: "Activities Related to Real Estate"
+    max_companies: 110
+    icp_rationale: "Real estate offices and property management firms with multi-location operations"
+
+  - naics_code: "5324"
+    description: "Commercial and Industrial Machinery and Equipment Rental and Leasing"
+    max_companies: 110
+    icp_rationale: "Equipment rental facilities with showrooms, warehouses, and maintenance areas - colleague priority"
+
+  - naics_code: "5612"
+    description: "Facilities Support Services"
+    max_companies: 110
+    icp_rationale: "Facility management companies potentially partnering or subcontracting for cleaning services - colleague priority"
+
+  - naics_code: "3112"
+    description: "Grain and Oilseed Milling"
+    max_companies: 110
+    icp_rationale: "Food processing facilities requiring sanitation and cleaning for regulatory compliance - colleague priority"
+
+  - naics_code: "3253"
+    description: "Pesticide, Fertilizer, and Other Agricultural Chemical Manufacturing"
+    max_companies: 110
+    icp_rationale: "Manufacturing facilities requiring specialized cleaning for safety and contamination control - colleague priority"
+
+  - naics_code: "3343"
+    description: "Audio and Video Equipment Manufacturing"
+    max_companies: 110
+    icp_rationale: "Manufacturing facilities with clean room requirements and office spaces"
+
+  - naics_code: "4244"
+    description: "Grocery and Related Product Merchant Wholesalers"
+    max_companies: 110
+    icp_rationale: "Food distribution warehouses requiring sanitation and cleaning for health code compliance - colleague priority"
+
+  - naics_code: "4246"
+    description: "Chemical and Allied Products Merchant Wholesalers"
+    max_companies: 110
+    icp_rationale: "Chemical distribution facilities with safety requirements - PROVEN $62K revenue, colleague priority"
+
+  - naics_code: "8121"
+    description: "Personal Care Services"
+    max_companies: 110
+    icp_rationale: "Multi-location salons, spas, and personal care facilities requiring frequent cleaning and sanitation"
+
+  - naics_code: "6116"
+    description: "Other Schools and Instruction"
+    max_companies: 110
+    icp_rationale: "Specialty schools and training centers with facility cleaning needs"
+
+  - naics_code: "6243"
+    description: "Vocational Rehabilitation Services"
+    max_companies: 110
+    icp_rationale: "Rehabilitation facilities with multi-location operations and hygiene requirements"
+
+  - naics_code: "6239"
+    description: "Other Residential Care Facilities"
+    max_companies: 110
+    icp_rationale: "Assisted living and residential care facilities with strict cleaning protocols"
+
+# ========================================================================
+# Summary & Budgeting
+# ========================================================================
+notes:
+  - "Total unique NAICS codes: 39 (added 4851 Urban Transit)"
+  - "Target total companies: ~10,900"
+  - "Breakdown:"
+  - "  - Tier 1 (High Priority): 9 × 600 = 5,400 companies (+600 from adding Rail to Tier 1)"
+  - "  - Tier 2 (Medium Priority): 13 × 300 = 3,900 companies (+900 from promotions + new 4851)"
+  - "  - Tier 3 (Exploratory): 17 × 110 = 1,870 companies (-330 from promotions)"
+  - "  - Total: 10,900 target (+900 from v2.0)"
+  - ""
+  - "Changes from v2.0:"
+  - "  - PROMOTED: 4821 (Rail) from Tier 2 to Tier 1 (300→600)"
+  - "  - PROMOTED: 5121 (Motion Picture) from Tier 3 to Tier 2 (110→300) - $275K revenue"
+  - "  - PROMOTED: 7139 (Amusement/Recreation) from Tier 3 to Tier 2 (110→300) - $287K revenue"
+  - "  - PROMOTED: 5621 (Waste Collection) from Tier 3 to Tier 2 (110→300) - 59 locations"
+  - "  - ADDED: 4851 (Urban Transit Systems) to Tier 2 @ 300 - colleague priority"
+  - ""
+  - "All codes truncated to 4 digits for industry-level targeting"
+  - "Duplicates removed from original list"
+  - "HQ-only discovery with multi-location filter (branch_count > 0)"
+  - "Post-exclusions: Expected ~8,000-9,500 multi-location companies after filters"
+  - "API budget: Recommend 450-550 call budget (39 NAICS × 3-14 calls each)"
+  - "All NAICS aligned with OpenWorks commercial cleaning ICP and colleague feedback"
+
+# ICP Alignment Criteria
+icp_criteria:
+  - "Multi-location businesses (2+ facilities, ideally 10+)"
+  - "High foot traffic or regulatory hygiene requirements"
+  - "Operational, industrial, and community facilities (proven success pattern)"
+  - "Industries with proven OpenWorks revenue and track record"
+  - "Facility-intensive operations (schools, hospitals, warehouses, entertainment, transit)"
+
+# Tier Rationale
+tier_strategy:
+  tier_1_high_priority:
+    limit: 600
+    count: 9
+    total: 5400
+    rationale: "Proven ICP sweet spots + proven OpenWorks success patterns"
+  tier_2_medium_priority:
+    limit: 300
+    count: 13
+    total: 3900
+    rationale: "Strong proven revenue OR colleague endorsement + operational fit"
+  tier_3_exploratory:
+    limit: 110
+    count: 17
+    total: 1870
+    rationale: "Testing new industries or lower priority segments"
+
+# Alignment with Colleague Feedback
+colleague_alignment:
+  codes_from_colleague_list: 25
+  codes_in_config: 25
+  coverage_pct: 100
+  new_additions:
+    - "4851 (Urban Transit Systems) - added based on colleague priority"
+  promotions:
+    - "4821 (Rail) - Tier 2→1 (colleague priority + proven success)"
+    - "5121 (Motion Picture) - Tier 3→2 (colleague priority + $275K revenue)"
+    - "7139 (Amusement) - Tier 3→2 (colleague priority + $287K revenue)"
+    - "5621 (Waste) - Tier 3→2 (colleague priority + 59 locations)"

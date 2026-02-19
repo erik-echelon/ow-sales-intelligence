@@ -1,0 +1,790 @@
+building_id,company_id,name,street,city,state,zip,latitude,longitude,is_headquarters,source
+401802578_HQ,401802578,Azura Vascular Care - Headquarters,,Malvern,PA,19355-1427,40.053756,-75.519105,True,dataaxle
+406329318_HQ,406329318,Rogosin Institute - Headquarters,,New York,NY,10021-9809,40.76548,-73.95434,True,dataaxle
+242323400_HQ,242323400,Lifeline Vascular Access - Headquarters,,Vernon Hills,IL,60061-1450,42.241079,-87.965706,True,dataaxle
+718456284_HQ,718456284,AKDHC Administration - Headquarters,,Phoenix,AZ,85018-2396,33.509699,-112.0094,True,dataaxle
+436100412_HQ,436100412,NxStage Kidney Care Inc - Headquarters,,Lawrence,MA,01843-1748,42.70434,-71.146091,True,dataaxle
+402439265_HQ,402439265,US Renal Care Inc - Headquarters,,Plano,TX,75024-5982,33.081216,-96.821396,True,dataaxle
+722784573_HQ,722784573,Willis-Knighton Behavioral - Headquarters,,Shreveport,LA,71101-3841,32.502763,-93.745571,True,dataaxle
+439815563_HQ,439815563,"American Renal Associates Holdings, Inc - Headquarters",,Beverly,MA,01915-6539,42.562185,-70.889594,True,dataaxle
+7526346_HQ,7526346,Fresenius Medical Care North America - Headquarters,,Waltham,MA,02451-1519,42.404358,-71.276404,True,dataaxle
+645248162_HQ,645248162,Satellite Healthcare Inc - Headquarters,,San Jose,CA,95128-2424,37.322812,-121.94732,True,dataaxle
+510833353_HQ,510833353,Southeastern Renal Dialysis - Headquarters,,Keokuk,IA,52632-4027,40.405999,-91.386716,True,dataaxle
+736695524_HQ,736695524,Pikes Peak Nephrology Associates - Headquarters,,Boise,ID,83706-1309,43.613678,-116.256232,True,dataaxle
+402487709_HQ,402487709,Satellite WellBound - Headquarters,,San Jose,CA,95128-2424,37.322812,-121.94732,True,dataaxle
+886835255_HQ,886835255,DaVita Inc - Headquarters,,Denver,CO,80202-5117,,,True,dataaxle
+736424767_HQ,736424767,"Somatus, Inc - Headquarters",,McLean,VA,22102-4420,38.915928,-77.225338,True,dataaxle
+4628947_HQ,4628947,"Mesa Laboratories, Inc - Headquarters",,Lakewood,CO,80228-1252,39.724407,-105.134626,True,dataaxle
+434093528_HQ,434093528,Multispecialty Physician Partners - Headquarters,,Golden,CO,80401-3262,39.737623,-105.157639,True,dataaxle
+851878272_HQ,851878272,Dialysis Clinic Inc - Headquarters,,Nashville,TN,37203-2948,36.155887,-86.794994,True,dataaxle
+741086390_HQ,741086390,"Dialyze Direct, LLC - Headquarters",,Neptune City,NJ,07753-2763,40.229762,-74.065703,True,dataaxle
+904004990_HQ,904004990,Studer Family Children's Hospital at Ascension Sacred Heart - Headquarters,,Pensacola,FL,32504,30.490764,-87.190349,True,dataaxle
+404314118_HQ,404314118,Harold F Young Neurosurgical - Headquarters,,Richmond,VA,23298-5024,37.541059,-77.43046,True,dataaxle
+425219025_HQ,425219025,Stafford Hospital - Headquarters,,Stafford,VA,22554-6200,38.415389,-77.407291,True,dataaxle
+402013334_HQ,402013334,Deaconess Henderson Hospital - Headquarters,,Henderson,KY,42420-2783,37.854793,-87.582562,True,dataaxle
+15721996_HQ,15721996,Chatham-Kent Health Alliance - Headquarters,,Chatham,ON,N7L1B7,42.405378,-82.193549,True,dataaxle
+425493249_HQ,425493249,Dermatology & Mohs Surgery Institute - Headquarters,,Bloomington,IL,61704-7720,40.481015,-88.942101,True,dataaxle
+714838711_HQ,714838711,Baptist Health Homestead Hospital - Headquarters,,Homestead,FL,33033-7600,25.4799,-80.429745,True,dataaxle
+998937213_HQ,998937213,"Connecticut Gastroenterology Consultants, PC - Headquarters",,Guilford,CT,06437-2770,41.288307,-72.675457,True,dataaxle
+457670404_HQ,457670404,Roy Clinic - Headquarters,,Roy,UT,84067-1454,41.15534,-112.026609,True,dataaxle
+402091902_HQ,402091902,New York Acupuncture & Chinese Herbs Clinic - Headquarters,,New York,NY,10019-6068,40.762838,-73.981297,True,dataaxle
+496845496_HQ,496845496,Institute of Living - Headquarters,,Hartford,CT,06106-3310,41.75157,-72.68183,True,dataaxle
+625041579_HQ,625041579,Counseling & Recovery Services of Oklahoma - Headquarters,,Tulsa,OK,74136-5743,36.062401,-95.922271,True,dataaxle
+417575818_HQ,417575818,Advocate Dreyer Medical Clinic - Headquarters,,Aurora,IL,60506-6222,41.793147,-88.369844,True,dataaxle
+422070219_HQ,422070219,Humboldt County Mental Health - Headquarters,,Eureka,CA,95501-4413,40.780719,-124.16075,True,dataaxle
+738939533_HQ,738939533,Vybe Urgent Care - Headquarters,,Philadelphia,PA,19102-2576,39.950616,-75.165113,True,dataaxle
+21798830_HQ,21798830,Deloraine Health Centre - Headquarters,,Deloraine,MB,R0M0M0,49.194043,-100.498478,True,dataaxle
+15157787_HQ,15157787,ActiveCare Medical Group - Headquarters,,Kanata,ON,K2K0G1,45.354656,-75.932832,True,dataaxle
+439145535_HQ,439145535,Knox Community Hospital - Headquarters,,Mount Vernon,OH,43050-1495,40.40228,-82.44818,True,dataaxle
+683264451_HQ,683264451,Vanderbilt Wilson County Hospital - Headquarters,,Lebanon,TN,37087-2513,36.221651,-86.327133,True,dataaxle
+16664062_HQ,16664062,Woodstock Hospital - Headquarters,,Woodstock,ON,N4V0A4,43.10636,-80.753467,True,dataaxle
+439726222_HQ,439726222,LMC Healthcare - Headquarters,,East York,ON,M4G3E8,43.71734,-79.377527,True,dataaxle
+868795311_HQ,868795311,Gretna Medical Center - Headquarters,,Gretna,VA,24557-2773,36.950738,-79.376313,True,dataaxle
+1424258_HQ,1424258,Syringa Hospital & Clinics - Headquarters,,Grangeville,ID,83530-1345,45.926916,-116.12747,True,dataaxle
+35255884_HQ,35255884,Toronto Western Hospital - Headquarters,,Toronto,ON,M5T2S8,43.653095,-79.405688,True,dataaxle
+12427969_HQ,12427969,Grand Manan Hospital - Headquarters,,Grand Manan,NB,E5G1A3,44.762207,-66.763825,True,dataaxle
+754832223_HQ,754832223,Betty Jean Kerr People's Health Centers - Headquarters,,Saint Louis,MO,63112-2617,38.654426,-90.285662,True,dataaxle
+412719273_HQ,412719273,Cone Health MedCenter Kernersville - Headquarters,,Kernersville,NC,27284,36.106584,-80.101473,True,dataaxle
+738238008_HQ,738238008,"St. Peter's Health Partners Medical Associates, P.C. - Headquarters",,Albany,NY,12208-2726,42.65473,-73.794676,True,dataaxle
+1429570_HQ,1429570,Alta Vista Regional Hospital - Headquarters,,Las Vegas,NM,87701-4804,35.623397,-105.210801,True,dataaxle
+402721021_HQ,402721021,Avera St. Luke's Hospital - Headquarters,,Aberdeen,SD,57401-4590,45.46124,-98.47925,True,dataaxle
+39674338_HQ,39674338,Central Newfoundland Regional Health Centre - Headquarters,,Grand Falls-Windsor,NL,A2A2E1,48.932557,-55.647952,True,dataaxle
+402628785_HQ,402628785,Carle Health Proctor Professional Office Center - Headquarters,,Peoria,IL,61614-5098,40.752215,-89.593331,True,dataaxle
+427269355_HQ,427269355,Miami Valley Hospital South - Headquarters,,Dayton,OH,45459-4774,39.65241,-84.114284,True,dataaxle
+519215917_HQ,519215917,Obstetrix Medical Group Inc - Headquarters,,Sunrise,FL,33323-2843,26.133819,-80.342323,True,dataaxle
+210142006_HQ,210142006,Northfield Hospital + Clinics - Headquarters,,Northfield,MN,55057-1697,44.4738,-93.19172,True,dataaxle
+440351515_HQ,440351515,Canada House Clinics Inc - Headquarters,,Oromocto,NB,E2V2H1,45.83987,-66.496768,True,dataaxle
+738434831_HQ,738434831,St John Providence Medical Center-Farmington Hills - Headquarters,,Farmington Hills,MI,48334-3230,42.505948,-83.321146,True,dataaxle
+427205531_HQ,427205531,Mercy Hospital Berryville - Headquarters,,Berryville,AR,72616-4303,36.358857,-93.551834,True,dataaxle
+487483513_HQ,487483513,Castle Family Health Centers - Headquarters,,Atwater,CA,95301-5173,37.366781,-120.577977,True,dataaxle
+432512872_HQ,432512872,Kaiser Permanente Northern Colorado Administrative Offices - Headquarters,,Loveland,CO,80538-6004,40.412089,-105.008001,True,dataaxle
+813222296_HQ,813222296,Psychological & Behavioral - Headquarters,,Cleveland,OH,44122-6042,41.46536,-81.50199,True,dataaxle
+780981150_HQ,780981150,Bodystream Medical - Headquarters,,Barrie,ON,L4N9P6,44.327761,-79.689627,True,dataaxle
+436391002_HQ,436391002,Essentia Health-Duluth (Miller-Dwan Building) - Headquarters,,Duluth,MN,55805-1913,46.792693,-92.093257,True,dataaxle
+744500417_HQ,744500417,Texas Children's Hospital-The Woodlands - Headquarters,,The Woodlands,TX,77384-5148,30.200994,-95.457611,True,dataaxle
+421560186_HQ,421560186,Valley Heart Associates - Headquarters,,Modesto,CA,95350-4430,37.667114,-120.995813,True,dataaxle
+831293553_HQ,831293553,Vivo Infusion - Headquarters,,Golden,CO,80401-3262,39.737623,-105.157639,True,dataaxle
+404257313_HQ,404257313,Antelope Valley Medical Center - Headquarters,,Lancaster,CA,93534-2814,34.688389,-118.158356,True,dataaxle
+1281823_HQ,1281823,Clarke County Hospital - Headquarters,,Osceola,IA,50213-1694,41.02571,-93.76761,True,dataaxle
+401956396_HQ,401956396,Children's Hospital at Erlanger - Headquarters,,Chattanooga,TN,37403-1499,35.04897,-85.28826,True,dataaxle
+1204015_HQ,1204015,Clinch Memorial Hospital - Headquarters,,Homerville,GA,31634-9701,31.034124,-82.764354,True,dataaxle
+401444852_HQ,401444852,Trinity Health Mid-Atlantic - Headquarters,,Newtown Square,PA,19073-2329,39.986282,-75.409257,True,dataaxle
+52145869_HQ,52145869,Cardston Health Centre - Headquarters,,Cardston,AB,T0K0K0,49.201379,-113.307162,True,dataaxle
+400176657_HQ,400176657,Parkland Medical Center - Headquarters,,Derry,NH,03038-2746,42.876879,-71.316614,True,dataaxle
+150613099_HQ,150613099,Ingalls Family Care Center In Tinley Park - Headquarters,,Tinley Park,IL,60477-1758,41.601898,-87.781971,True,dataaxle
+34791962_HQ,34791962,Sacred Heart Community Health - Headquarters,,McLennan,AB,T0H2L0,55.711143,-116.915465,True,dataaxle
+440442155_HQ,440442155,"Larada Sciences, Inc - Headquarters",,Salt Lake City,UT,84107-4821,40.66561,-111.888038,True,dataaxle
+991471905_HQ,991471905,After Hours Pediatrics Urgent Care - Headquarters,,Brandon,FL,33511-5111,27.935533,-82.287439,True,dataaxle
+539900605_HQ,539900605,McLeod Health Seacoast - Headquarters,,Little River,SC,29566-7833,33.865502,-78.663694,True,dataaxle
+723531057_HQ,723531057,Heally - Headquarters,,New York,NY,10010-3201,40.743131,-73.991532,True,dataaxle
+564944684_HQ,564944684,UPMC Outpatient Center - Headquarters,,Bethel Park,PA,15102-1896,40.34308,-80.048498,True,dataaxle
+483149555_HQ,483149555,St Joseph Heritage Medical Group - Headquarters,,Orange,CA,92869-3204,33.788665,-117.82767,True,dataaxle
+228665741_HQ,228665741,Allina Health Home Care Services - Headquarters,,Minneapolis,MN,55407-1321,44.949337,-93.260769,True,dataaxle
+64334774_HQ,64334774,IWK Health Centre - Headquarters,,Halifax,NS,B3K6R8,44.637252,-63.58426,True,dataaxle
+31213630_HQ,31213630,Churchill Health Centre - Headquarters,,Churchill,MB,R0B0E0,58.772143,-94.169818,True,dataaxle
+874466121_HQ,874466121,Baylor Scott & White All Saints Medical Center-Fort Worth - Headquarters,,Fort Worth,TX,76104-4110,32.729938,-97.345113,True,dataaxle
+28185676_HQ,28185676,Fairview Health Complex - Headquarters,,Fairview,AB,T0H1L0,56.071597,-118.385489,True,dataaxle
+11393733_HQ,11393733,Seton Jasper Healthcare Centre - Headquarters,,Jasper,AB,T0E1E0,52.876102,-118.084124,True,dataaxle
+858283518_HQ,858283518,Napa Valley College - Headquarters,,Napa,CA,94558-7555,38.27343,-122.27281,True,dataaxle
+547556597_HQ,547556597,Reading Hospital - Headquarters,,Reading,PA,19611-2143,40.329816,-75.948111,True,dataaxle
+426428396_HQ,426428396,Yale School of Medicine - Headquarters,,New Haven,CT,06510-3206,41.303254,-72.93311,True,dataaxle
+1389691_HQ,1389691,Wagoner Community Hospital - Headquarters,,Wagoner,OK,74467-4681,35.96006,-95.39252,True,dataaxle
+473707438_HQ,473707438,National Institutes of Health - Headquarters,,Bethesda,MD,20892-0002,39.00507,-77.09763,True,dataaxle
+3566361_HQ,3566361,EHE Health - Headquarters,,New York,NY,10020-2313,40.757581,-73.978137,True,dataaxle
+427980627_HQ,427980627,Resolute Anesthesia & Pain Solutions - Headquarters,,Boca Raton,FL,33433-5510,26.343629,-80.156105,True,dataaxle
+892719584_HQ,892719584,Skyline Hospital - Headquarters,,White Salmon,WA,98672-1948,45.722335,-121.470716,True,dataaxle
+424000362_HQ,424000362,AdventHealth System - Headquarters,,Altamonte Springs,FL,32714-1502,28.641806,-81.414103,True,dataaxle
+1143106_HQ,1143106,Bertrand Chaffee Hospital - Headquarters,,Springville,NY,14141-1497,42.50909,-78.65908,True,dataaxle
+1281419_HQ,1281419,Knoxville Hospital & Clinics - Headquarters,,Knoxville,IA,50138-3121,41.310919,-93.111866,True,dataaxle
+577059322_HQ,577059322,Carepartners Asheville - Headquarters,,Asheville,NC,28803-2318,35.562089,-82.530772,True,dataaxle
+402393213_HQ,402393213,Surgical Care Affiliates - Headquarters,,Deerfield,IL,60015-5031,42.155752,-87.840808,True,dataaxle
+404496292_HQ,404496292,Woodlawn Hospital - Headquarters,,Rochester,IN,46975-8937,41.06173,-86.19549,True,dataaxle
+499772192_HQ,499772192,Prisma Health North Greenville Hospital - Headquarters,,Travelers Rest,SC,29690-1551,34.975514,-82.45607,True,dataaxle
+8714198_HQ,8714198,Avera Cardiology-Marshall - Headquarters,,Marshall,MN,56258-1934,44.448007,-95.777687,True,dataaxle
+557061538_HQ,557061538,AVALA Hospital - Headquarters,,Covington,LA,70433-8704,30.408329,-90.082136,True,dataaxle
+640238598_HQ,640238598,Sanger Heart & Vascular Institute-Charlotte - Headquarters,,Charlotte,NC,28204,35.209369,-80.838682,True,dataaxle
+135023224_HQ,135023224,Hoskins Drug Store - Headquarters,,Clinton,TN,37716-3677,36.10006,-84.13324,True,dataaxle
+937714996_HQ,937714996,Denver Public Health - Headquarters,,Denver,CO,80204-4505,39.725959,-104.991085,True,dataaxle
+440630851_HQ,440630851,Geisinger Janet Weis Children's Hospital - Headquarters,,Danville,PA,17822-0001,40.970326,-76.60344,True,dataaxle
+401638849_HQ,401638849,"QuadMed, LLC - Headquarters",,Sussex,WI,53089-3230,43.134569,-88.206226,True,dataaxle
+804540425_HQ,804540425,St. Joseph Medical Center - Headquarters,,Tacoma,WA,98405-4933,47.245446,-122.44795,True,dataaxle
+735821385_HQ,735821385,St. Luke's Healthcare - Headquarters,,Baton Rouge,LA,70806-5755,30.444566,-91.148822,True,dataaxle
+417285399_HQ,417285399,North Memorial Medical Center - Headquarters,,Robbinsdale,MN,55422-2926,45.01382,-93.322288,True,dataaxle
+738935215_HQ,738935215,Vision Innovation Partners - Headquarters,,Annapolis,MD,21401-7131,38.973826,-76.559719,True,dataaxle
+402164759_HQ,402164759,Dean Health Plan Inc - Headquarters,,Madison,WI,53717-1971,43.083995,-89.530656,True,dataaxle
+225965003_HQ,225965003,BETA Healthcare Group - Headquarters,,Alamo,CA,94507-1911,37.846069,-122.030089,True,dataaxle
+435587393_HQ,435587393,Immediate Care Urgent Care of Oklahoma - Headquarters,,Oklahoma City,OK,73135-1110,35.39255,-97.421984,True,dataaxle
+407926963_HQ,407926963,"Wagner Chemist, Inc - Headquarters",,Clinton,IA,52732-2645,41.86478,-90.183104,True,dataaxle
+208611491_HQ,208611491,Pawnee Valley Community Hospital - Headquarters,,Larned,KS,67550-2429,38.183822,-99.107723,True,dataaxle
+589326412_HQ,589326412,Northwest Childrens Heart Care - Headquarters,,Tacoma,WA,98405-4250,47.259688,-122.453904,True,dataaxle
+436789798_HQ,436789798,Urgent Team Corporate Office - Headquarters,,Nashville,TN,37215-6403,36.095732,-86.822592,True,dataaxle
+125643098_HQ,125643098,Eastern Nephrology Associates - Headquarters,,Greenville,NC,27834-7826,35.618415,-77.412077,True,dataaxle
+538978370_HQ,538978370,"Medical Services of America, Inc - Headquarters",,Lexington,SC,29072-3904,33.982926,-81.194222,True,dataaxle
+212770333_HQ,212770333,Advanced Dermatology LLC - Headquarters,,Lincolnshire,IL,60069-4344,42.180349,-87.92741,True,dataaxle
+366784312_HQ,366784312,Asante Health System - Headquarters,,Medford,OR,97504-8170,42.319418,-122.830806,True,dataaxle
+872776752_HQ,872776752,OSF Saint Katharine Medical Center - Headquarters,,Dixon,IL,61021-3116,41.844074,-89.479563,True,dataaxle
+423821495_HQ,423821495,Pediatrix Medical Group of Florida Inc - Headquarters,,Sunrise,FL,33323-2843,26.133819,-80.342323,True,dataaxle
+1192780_HQ,1192780,Betsy Johnson Hospital - Headquarters,,Dunn,NC,28334-5599,35.30735,-78.63313,True,dataaxle
+406121151_HQ,406121151,Local Pharmacy - Headquarters,,Cleveland,TX,77327-4541,30.34066,-95.085197,True,dataaxle
+1423854_HQ,1423854,Franklin County Medical Center - Headquarters,,Preston,ID,83263-1326,42.097235,-111.873424,True,dataaxle
+738242184_HQ,738242184,"The Wound Pros, Inc - Headquarters",,Los Angeles,CA,90045-5443,33.946123,-118.386626,True,dataaxle
+543036768_HQ,543036768,Rosenbaum Eye & Laser Center - Headquarters,,Lansing,MI,48910-8547,42.682345,-84.503101,True,dataaxle
+416947304_HQ,416947304,U.S. Dermatology Partners - Headquarters,,Dallas,TX,75230-5826,32.92112,-96.817035,True,dataaxle
+18783779_HQ,18783779,TELUS Health Care Centre - Headquarters,,Montreal,QC,H3A3J2,45.504214,-73.571126,True,dataaxle
+464831510_HQ,464831510,Gundersen Health System - Headquarters,,La Crosse,WI,54601-5467,43.79442,-91.247276,True,dataaxle
+700327039_HQ,700327039,Family Health Centers of San Diego - Headquarters,,San Diego,CA,92102-4541,32.715408,-117.113495,True,dataaxle
+780992633_HQ,780992633,"American Pain Consortium Management, LLC - Headquarters",,Carmel,IN,46032-4544,39.955045,-86.156625,True,dataaxle
+403450460_HQ,403450460,Memorial Hermann Health Solutions - Headquarters,,Houston,TX,77024-2675,29.782553,-95.545536,True,dataaxle
+749072137_HQ,749072137,BodyLogicMD - Headquarters,,Boca Raton,FL,33431-4443,26.390558,-80.108443,True,dataaxle
+223019282_HQ,223019282,Westchester Medical Center Advanced Physician Services - Headquarters,,Hawthorne,NY,10532-2190,41.08793,-73.801519,True,dataaxle
+438129129_HQ,438129129,BayCare Medical Group - Headquarters,,Clearwater,FL,33759-3012,27.966738,-82.715773,True,dataaxle
+528059470_HQ,528059470,Children's Healthcare of Atlanta-Hughes Spalding Hospital - Headquarters,,Atlanta,GA,30303-3032,33.75329,-84.382282,True,dataaxle
+423040789_HQ,423040789,QPS Miami - Headquarters,,South Miami,FL,33143-4875,25.703453,-80.295186,True,dataaxle
+25657446_HQ,25657446,Royal University Hospital - Headquarters,,Saskatoon,SK,S7N0W8,52.129532,-106.643707,True,dataaxle
+421528399_HQ,421528399,Kaiser Permanente Woodland Hills Medical Center - Headquarters,,Woodland Hills,CA,91367-6798,34.17221,-118.58818,True,dataaxle
+702601717_HQ,702601717,Hamzavi Dermatology of Fort Gratiot - Headquarters,,Fort Gratiot,MI,48059-3526,43.040024,-82.455236,True,dataaxle
+109493544_HQ,109493544,Starling Physicians - Headquarters,,Rocky Hill,CT,06067-2353,41.671137,-72.64113,True,dataaxle
+508398088_HQ,508398088,Oregon Medical Group - Headquarters,,Eugene,OR,97401-2177,44.071671,-123.111757,True,dataaxle
+788580367_HQ,788580367,OrthoVirginia - Headquarters,,Richmond,VA,23294-4222,37.62629,-77.526172,True,dataaxle
+714717446_HQ,714717446,Norton Sound Health Corporation - Headquarters,,Nome,AK,99762,64.49825,-165.377815,True,dataaxle
+653936773_HQ,653936773,Polyclinic Medical Center - Headquarters,,Harrisburg,PA,17110-1904,40.286367,-76.89814,True,dataaxle
+538255944_HQ,538255944,Pullman Regional Hospital - Headquarters,,Pullman,WA,99163-5512,46.713449,-117.170286,True,dataaxle
+707907280_HQ,707907280,University of Vermont Medical Center-Fanny Allen - Headquarters,,Colchester,VT,05446-3007,44.496571,-73.157812,True,dataaxle
+743844121_HQ,743844121,Community Health Center of Southeast Kansas - Headquarters,,Pittsburg,KS,66762-2546,37.437642,-94.696396,True,dataaxle
+12606802_HQ,12606802,University Hospital - Headquarters,,London,ON,N6A5W9,43.013575,-81.275309,True,dataaxle
+32725723_HQ,32725723,Bochner Eye Institute - Headquarters,,Toronto,ON,M5R1A9,43.669541,-79.397806,True,dataaxle
+726976799_HQ,726976799,Atrium Health Pineville - Headquarters,,Charlotte,NC,28210-8407,35.091659,-80.871622,True,dataaxle
+57272692_HQ,57272692,Chinook Primary Care Network - Headquarters,,Lethbridge,AB,T1J0P3,49.69485,-112.834385,True,dataaxle
+510946205_HQ,510946205,Baystate Children's Hospital - Headquarters,,Springfield,MA,01199-1001,42.122598,-72.602856,True,dataaxle
+559711064_HQ,559711064,Neil King Physical Therapy - Headquarters,,Rochester Hills,MI,48307-4103,42.6434,-83.128524,True,dataaxle
+928499037_HQ,928499037,Holladay Clinic - Headquarters,,Murray,UT,84121-2126,40.637257,-111.83503,True,dataaxle
+401679127_HQ,401679127,CommUnityCare Health Centers - Headquarters,,Austin,TX,78701-3319,30.267948,-97.737622,True,dataaxle
+10930881_HQ,10930881,Northern Lights Regional Health Centre - Headquarters,,Fort McMurray,AB,T9H1P2,56.716298,-111.361743,True,dataaxle
+159003029_HQ,159003029,Duncan Regional Hospital - Headquarters,,Duncan,OK,73533-0911,34.516671,-97.976059,True,dataaxle
+11022498_HQ,11022498,Peace River Community Health Centre - Headquarters,,Peace River,AB,T8S1Z7,56.230433,-117.353291,True,dataaxle
+1259621_HQ,1259621,Eskenazi Health - Headquarters,,Indianapolis,IN,46202-5189,39.777697,-86.184091,True,dataaxle
+137170403_HQ,137170403,Graves-Gilbert Clinic - Headquarters,,Bowling Green,KY,42101-1708,36.99647,-86.43012,True,dataaxle
+30127104_HQ,30127104,Action Sport Physio - Headquarters,,Pointe-Claire,QC,H9R5P1,45.469593,-73.832531,True,dataaxle
+901067595_HQ,901067595,"IMX Medical Management Services, Inc - Headquarters",,Malvern,PA,19355-3347,40.005812,-75.537298,True,dataaxle
+1106889_HQ,1106889,Calais Community Hospital - Headquarters,,Calais,ME,04619-1329,45.177649,-67.267949,True,dataaxle
+38561999_HQ,38561999,Clinique D'opto L'emerillon - Headquarters,,Chandler,QC,G0C1K0,48.350564,-64.667662,True,dataaxle
+898045000_HQ,898045000,"Whitefoord, Inc - Headquarters",,Atlanta,GA,30317-1743,33.7523,-84.343356,True,dataaxle
+790385687_HQ,790385687,"QualDerm Partners, LLC - Headquarters",,Nashville,TN,37207,36.223921,-86.768112,True,dataaxle
+869588350_HQ,869588350,Lompoc Valley Medical Center - Headquarters,,Lompoc,CA,93436-7092,34.639845,-120.439676,True,dataaxle
+1287689_HQ,1287689,MercyOne Elkader Medical Center - Headquarters,,Elkader,IA,52043-9015,42.86058,-91.417068,True,dataaxle
+713350326_HQ,713350326,"T.J. Health Columbia, Inc - Headquarters",,Columbia,KY,42728-1123,37.096596,-85.294514,True,dataaxle
+403258890_HQ,403258890,Ochsner St. Mary - Headquarters,,Morgan City,LA,70380-1855,29.708617,-91.200869,True,dataaxle
+19514967_HQ,19514967,Centre Hospitalier De St Mary - Headquarters,,Montreal,QC,H3T1M5,45.495009,-73.62436,True,dataaxle
+39689815_HQ,39689815,Quinte Health Care North Hastings Hospital - Headquarters,,Bancroft,ON,K0L1C0,45.055076,-77.864212,True,dataaxle
+28716686_HQ,28716686,Bonnyville Health Centre - Headquarters,,Bonnyville,AB,T9N2J7,54.263728,-110.739296,True,dataaxle
+735742240_HQ,735742240,Ascension Medical Group Cornerstone Romeo Plank Family Medical Center - Headquarters,,Macomb,MI,48044-5705,42.640174,-82.937461,True,dataaxle
+1112838_HQ,1112838,"Yale New Haven Hospital, Saint Raphael Campus - Headquarters",,New Haven,CT,06511-4405,41.310406,-72.943297,True,dataaxle
+381241355_HQ,381241355,Lincoln County Medical Center - Headquarters,,Ruidoso,NM,88345-6043,33.32305,-105.63062,True,dataaxle
+707201779_HQ,707201779,UCSF Benioff Children's Hospital - Headquarters,,Walnut Creek,CA,94598-2428,37.925264,-122.02675,True,dataaxle
+400684825_HQ,400684825,St Luke's Allentown Hospital - Headquarters,,Allentown,PA,18104-5695,40.59617,-75.49353,True,dataaxle
+10637726_HQ,10637726,Barrhead Healthcare Centre - Headquarters,,Barrhead,AB,T7N1M1,54.118908,-114.400315,True,dataaxle
+684865389_HQ,684865389,UAB Hospital-Highlands - Headquarters,,Birmingham,AL,35205-3410,33.494645,-86.806429,True,dataaxle
+718966836_HQ,718966836,Duke Clinic - Headquarters,,Durham,NC,27710-4000,36.00418,-78.935634,True,dataaxle
+587960709_HQ,587960709,St. Luke's Meridian Medical Center - Headquarters,,Meridian,ID,83642-6351,43.600527,-116.351841,True,dataaxle
+401372529_HQ,401372529,Prisma Health Laurens County Hospital - Headquarters,,Clinton,SC,29325-7527,34.481578,-81.940511,True,dataaxle
+14284426_HQ,14284426,Dynacare - Headquarters,,Brampton,ON,L6T5M3,43.730199,-79.675833,True,dataaxle
+37983038_HQ,37983038,Nordion Inc - Headquarters,,Kanata,ON,K2K1X8,45.33977,-75.918953,True,dataaxle
+742620572_HQ,742620572,"SpringWorks Therapeutics, Inc - Headquarters",,Stamford,CT,06902-9302,41.040391,-73.542579,True,dataaxle
+629657032_HQ,629657032,Capitol Pain Institute-North Austin - Headquarters,,Austin,TX,78757-8051,30.363935,-97.738429,True,dataaxle
+155024144_HQ,155024144,"Clinical Reference Laboratory, Inc - Headquarters",,Lenexa,KS,66215-2802,38.976225,-94.722314,True,dataaxle
+1456789_HQ,1456789,Adventist Health Feather River - Headquarters,,Paradise,CA,95969-5509,39.757059,-121.571366,True,dataaxle
+497963579_HQ,497963579,Lakeview Hospital - Headquarters,,Covington,LA,70433-7500,30.411147,-90.080808,True,dataaxle
+898224399_HQ,898224399,ExamOne - Headquarters,,Lenexa,KS,66219-9752,38.946641,-94.776202,True,dataaxle
+1283993_HQ,1283993,Van Diest Medical Center - Headquarters,,Webster City,IA,50595-6600,42.452851,-93.812165,True,dataaxle
+682368824_HQ,682368824,Laboratory Corporation of America - Headquarters,,Burlington,NC,27215-5866,36.091722,-79.43904,True,dataaxle
+24118697_HQ,24118697,Orchid PRO-DNA - Headquarters,,Laval,QC,H7L4S3,45.595406,-73.746524,True,dataaxle
+737554787_HQ,737554787,"IMAC Holdings, Inc - Headquarters",,Franklin,TN,37067-2026,35.940631,-86.822628,True,dataaxle
+443789490_HQ,443789490,Oneida Health - Headquarters,,Oneida,NY,13421-2699,43.07863,-75.65392,True,dataaxle
+893108142_HQ,893108142,San Jorge Children & Women's Hospital - Headquarters,,San Juan,PR,00925-3510,18.395528,-66.044338,True,dataaxle
+752976145_HQ,752976145,Limb Lab - Headquarters,,Scottsdale,AZ,85260-2585,33.623891,-111.904269,True,dataaxle
+10488252_HQ,10488252,Calgary Laboratory Services - Headquarters,,Calgary,AB,T2L2K8,51.084147,-114.138842,True,dataaxle
+427913492_HQ,427913492,Pluralsight LLC - Headquarters,,Roanoke,TX,76262-1703,32.983481,-97.174294,True,dataaxle
+447108663_HQ,447108663,Hardy Diagnostics - Headquarters,,Santa Maria,CA,93455-1005,34.915258,-120.461983,True,dataaxle
+737916518_HQ,737916518,"Oncoresponse, Inc - Headquarters",,Houston,TX,77010-1018,29.756537,-95.363283,True,dataaxle
+734595909_HQ,734595909,"BlueRock Therapeutics, LLC - Headquarters",,Cambridge,MA,02142-1099,42.362085,-71.084703,True,dataaxle
+439669913_HQ,439669913,Capital University - Headquarters,,Columbus,OH,43209,39.95727,-82.940046,True,dataaxle
+211974969_HQ,211974969,SSM Health Saint Louis University Hospital - Headquarters,,Saint Louis,MO,63104-1016,38.624374,-90.237444,True,dataaxle
+713761331_HQ,713761331,Mount Sinai South Nassau - Headquarters,,Oceanside,NY,11572-1551,40.651302,-73.63107,True,dataaxle
+18578708_HQ,18578708,Biron Groupe Sante - Headquarters,,Brossard,QC,J4Y2P4,45.428673,-73.457865,True,dataaxle
+1321983_HQ,1321983,Phillips County Hospital - Headquarters,,Malta,MT,59538,48.357199,-107.859303,True,dataaxle
+6690523_HQ,6690523,UM Holdings Ltd - Headquarters,,Haddonfield,NJ,08033-2438,39.898878,-75.034281,True,dataaxle
+991985805_HQ,991985805,Knox OK Regional Laboratory - Headquarters,,Tulsa,OK,74145-9001,36.082931,-95.886901,True,dataaxle
+717772980_HQ,717772980,Clearway Pain Solutions LLC - Headquarters,,Annapolis,MD,21401-7096,38.985341,-76.566582,True,dataaxle
+402468149_HQ,402468149,Laboratory Sciences of Arizona - Headquarters,,Phoenix,AZ,85034-2177,33.442928,-111.961829,True,dataaxle
+705663224_HQ,705663224,"bioAffinity Technologies, Inc - Headquarters",,San Antonio,TX,78217-3368,29.527682,-98.433867,True,dataaxle
+817703318_HQ,817703318,J-KAL Mobile Labs - Headquarters,,Madison,MS,39110-5541,32.537413,-90.101949,True,dataaxle
+983576042_HQ,983576042,Providence Kodiak Island Medical Center - Headquarters,,Kodiak,AK,99615-6602,57.801798,-152.37433,True,dataaxle
+4377354_HQ,4377354,Repligen Corporation - Headquarters,,Waltham,MA,02453-8358,42.37112,-71.21438,True,dataaxle
+460612724_HQ,460612724,Ligand Pharmaceuticals Incorporated - Headquarters,,Jupiter,FL,33458-5290,26.889292,-80.104039,True,dataaxle
+312476203_HQ,312476203,CompuNet Clinical Laboratories - Headquarters,,Moraine,OH,45439-1856,39.72002,-84.21276,True,dataaxle
+424908811_HQ,424908811,"FUJIFILM Cellular Dynamics, Inc - Headquarters",,Madison,WI,53711-1060,43.056447,-89.466961,True,dataaxle
+433961986_HQ,433961986,Prisma Health Oconee Memorial Hospital - Headquarters,,Seneca,SC,29672-9443,34.695339,-82.987165,True,dataaxle
+11373164_HQ,11373164,DynaLIFE Medical Labs - Headquarters,,Edmonton,AB,T5J5E2,53.542255,-113.496483,True,dataaxle
+740475856_HQ,740475856,UH Beachwood Medical Center Laboratory Services - Headquarters,,Beachwood,OH,44122-5603,41.464967,-81.49899,True,dataaxle
+439988638_HQ,439988638,Stanton Optical - Headquarters,,Palm Springs,FL,33461-4140,26.619989,-80.089662,True,dataaxle
+700087513_HQ,700087513,Advanced Family Chiropractic LLC - Headquarters,,Belpre,OH,45714-1617,39.277904,-81.569476,True,dataaxle
+739470445_HQ,739470445,Mymichigan Medical Center Standish - Headquarters,,Standish,MI,48658-9526,43.981959,-83.969065,True,dataaxle
+788514033_HQ,788514033,"Revitalize Hydration and Wellness, Inc - Headquarters",,New Bedford,MA,02740-3700,41.635811,-70.94413,True,dataaxle
+400735003_HQ,400735003,Pinnacle Medical Management - Headquarters,,Houston,TX,77060-5903,29.937542,-95.387162,True,dataaxle
+46529673_HQ,46529673,Cann Amm Occupational Testing - Headquarters,,Edmonton,AB,T6E6A5,53.488693,-113.47847,True,dataaxle
+309188951_HQ,309188951,Dsi Labcorp - Headquarters,,Tampa,FL,33607-1770,27.954447,-82.539156,True,dataaxle
+473425817_HQ,473425817,Peace Health Laboratories - Headquarters,,Springfield,OR,97477-1047,44.087032,-123.029446,True,dataaxle
+749574515_HQ,749574515,Blueprint Genetics - Headquarters,,Marlborough,MA,01752-3023,42.329807,-71.57998,True,dataaxle
+472358746_HQ,472358746,Stryker Instruments - Headquarters,,Portage,MI,49002-9704,42.228811,-85.539736,True,dataaxle
+374712792_HQ,374712792,Premier Research - Headquarters,,Morrisville,NC,27560-6950,35.856223,-78.829245,True,dataaxle
+20778106_HQ,20778106,Mount Saint Joseph Hospital - Headquarters,,Vancouver,BC,V5T3N4,49.257914,-123.095204,True,dataaxle
+952394740_HQ,952394740,American Bio Medica Corporation - Headquarters,,Kinderhook,NY,12106-2819,42.387658,-73.730258,True,dataaxle
+532095874_HQ,532095874,"Idenix Pharmaceuticals, Inc - Headquarters",,Cambridge,MA,02141-2005,42.367453,-71.087473,True,dataaxle
+400776565_HQ,400776565,Sentara Medical Group - Headquarters,,Norfolk,VA,23502-3767,36.851116,-76.201444,True,dataaxle
+782842653_HQ,782842653,Louisiana Pain Specialists - Headquarters,,Kenner,LA,70065-2580,30.022902,-90.271016,True,dataaxle
+709620597_HQ,709620597,Clearway Pain Solutions Institute - Headquarters,,Pensacola,FL,32504-8986,30.470125,-87.204216,True,dataaxle
+416210458_HQ,416210458,Advanced Radiology LLC - Headquarters,,Baltimore,MD,21244-2710,39.330243,-76.750038,True,dataaxle
+723532225_HQ,723532225,1Body1Life - Headquarters,,Naperville,IL,60564-8044,41.686771,-88.205715,True,dataaxle
+266412394_HQ,266412394,Mobilex USA - Headquarters,,Sparks Glencoe,MD,21152-9482,39.525671,-76.655003,True,dataaxle
+586280232_HQ,586280232,"DISA Global Solutions, Inc - Headquarters",,Houston,TX,77079-1272,29.785991,-95.593056,True,dataaxle
+440199854_HQ,440199854,Memorial MRI & Diagnostic - Headquarters,,Houston,TX,77055-6309,29.787288,-95.525128,True,dataaxle
+607530839_HQ,607530839,Intermountain Medical Center - Headquarters,,Murray,UT,84107-5701,40.659587,-111.8918,True,dataaxle
+752969801_HQ,752969801,Care Access Research LLC - Headquarters,,Boston,MA,02110-1424,42.356217,-71.058041,True,dataaxle
+758720644_HQ,758720644,Personal Genome Diagnostics Inc - Headquarters,,Baltimore,MD,21224-5729,39.278114,-76.566155,True,dataaxle
+439857805_HQ,439857805,Tidal Health Peninsula Regional Health System - Headquarters,,Salisbury,MD,21801-5422,38.36183,-75.598186,True,dataaxle
+754858356_HQ,754858356,"MEDTOX Diagnostics, Inc - Headquarters",,Burlington,NC,27215-8936,36.057794,-79.437232,True,dataaxle
+438235953_HQ,438235953,"M&D Optical Franchise, LLC - Headquarters",,Palm Springs,FL,33461-4140,26.619989,-80.089662,True,dataaxle
+426871026_HQ,426871026,"Prairie Rehabilitation Services, Inc - Headquarters",,Sioux Falls,SD,57105-2129,43.530202,-96.710778,True,dataaxle
+526170147_HQ,526170147,Luminex Corporation - Headquarters,,Austin,TX,78727-6100,30.43354,-97.76005,True,dataaxle
+366896462_HQ,366896462,The Jackson Laboratory - Headquarters,,Bar Harbor,ME,04609-1500,44.36557,-68.19752,True,dataaxle
+421458461_HQ,421458461,Biomedical Structures LLC - Headquarters,,Warwick,RI,02886-2470,41.736786,-71.418538,True,dataaxle
+459287173_HQ,459287173,"Myriad Genetics, Inc - Headquarters",,Salt Lake City,UT,84116-2922,40.776707,-111.952084,True,dataaxle
+56778475_HQ,56778475,LifeLabs - Headquarters,,Etobicoke,ON,M9W6J6,43.678533,-79.586031,True,dataaxle
+714826619_HQ,714826619,Lee County Community Hospital - Headquarters,,Pennington Gap,VA,24277-2853,36.748822,-83.050602,True,dataaxle
+400554860_HQ,400554860,APAC Centers For Pain Management - Headquarters,,Crown Point,IN,46307-7106,41.410467,-87.336436,True,dataaxle
+789816400_HQ,789816400,HealthyU Clinics - Headquarters,,Mesa,AZ,85203-9654,33.451692,-111.812508,True,dataaxle
+1153196_HQ,1153196,Guthrie Troy Community Hospital Gastroenterology - Headquarters,,Troy,PA,16947-1134,41.792335,-76.794416,True,dataaxle
+244741310_HQ,244741310,"CBLPath, Inc - Headquarters",,Rye Brook,NY,10573-1341,41.006241,-73.688107,True,dataaxle
+554121392_HQ,554121392,Comprehensive Health Service Inc - Headquarters,,Cape Canaveral,FL,32920-4229,28.397342,-80.612438,True,dataaxle
+1080415_HQ,1080415,Instrumentation Laboratory Company - Headquarters,,Bedford,MA,01730-2443,42.477539,-71.296566,True,dataaxle
+829627793_HQ,829627793,Orlando Health Arnold Palmer Hospital For Children - Headquarters,,Orlando,FL,32806-2032,28.523319,-81.379534,True,dataaxle
+761519823_HQ,761519823,"PainTEQ, LLC - Headquarters",,Tampa,FL,33607-4192,27.951534,-82.517147,True,dataaxle
+779370486_HQ,779370486,Pause Pain & Wellness - Headquarters,,Oxford,MS,38655-9103,34.355209,-89.590432,True,dataaxle
+1141902_HQ,1141902,RRH Laboratory Service Center-Gouverneur - Headquarters,,Gouverneur,NY,13642-1040,44.337636,-75.474248,True,dataaxle
+517050266_HQ,517050266,RadNet Management Inc - Headquarters,,Los Angeles,CA,90025-3303,34.049318,-118.447581,True,dataaxle
+6969224_HQ,6969224,Canberra Industries Inc - Headquarters,,Meriden,CT,06450-7169,41.50503,-72.76581,True,dataaxle
+119047439_HQ,119047439,Associated Clinical Laboratories - Headquarters,,Erie,PA,16501-2190,42.11956,-80.08045,True,dataaxle
+607523446_HQ,607523446,Aurora Diagnostics Holdings LLC - Headquarters,,Palm Beach Gardens,FL,33410-4269,26.839279,-80.096304,True,dataaxle
+416601092_HQ,416601092,Melrosewakefield Hospital Central Pharmacy - Headquarters,,Melrose,MA,02176-3298,42.46037,-71.0608,True,dataaxle
+747272277_HQ,747272277,UCHealth Greeley Hospital - Headquarters,,Greeley,CO,80634-5474,40.391034,-104.790339,True,dataaxle
+645519364_HQ,645519364,Vigilnet Community Monitoring - Headquarters,,Omaha,NE,68127,41.208741,-96.056306,True,dataaxle
+395821119_HQ,395821119,Danco Inc - Headquarters,,Irving,TX,75062-6454,32.842371,-96.92336,True,dataaxle
+996273199_HQ,996273199,TriCore Reference Laboratories - Headquarters,,Albuquerque,NM,87102-2705,35.092637,-106.637061,True,dataaxle
+723517571_HQ,723517571,"Vyaire Medical, Inc - Headquarters",,Mettawa,IL,60045-3420,42.242193,-87.904034,True,dataaxle
+215051657_HQ,215051657,"eClinicalWorks, LLC - Headquarters",,Westborough,MA,01581-9811,42.267514,-71.610458,True,dataaxle
+542261649_HQ,542261649,Imaging Healthcare Specialists - Headquarters,,San Diego,CA,92103-2005,32.750209,-117.16471,True,dataaxle
+468030424_HQ,468030424,Clinical Laboratory Partners - Headquarters,,Newington,CT,06111-1541,41.69801,-72.71722,True,dataaxle
+643945983_HQ,643945983,Laboratory Alliance of Central New York - Headquarters,,Liverpool,NY,13088-4387,43.107105,-76.185929,True,dataaxle
+644521197_HQ,644521197,Mercy Health-St. Joseph Warren Hospital - Headquarters,,Warren,OH,44484-4531,41.23157,-80.77828,True,dataaxle
+426091867_HQ,426091867,Saint Francis Medical Center - Headquarters,,Cape Girardeau,MO,63703-5049,37.303677,-89.571412,True,dataaxle
+417133169_HQ,417133169,Ascension Seton Southwest Hospital - Headquarters,,Austin,TX,78737-1405,30.226614,-97.892139,True,dataaxle
+713604402_HQ,713604402,Stony Brook Southampton Hospital - Headquarters,,Southampton,NY,11968-5090,40.885057,-72.380296,True,dataaxle
+863434791_HQ,863434791,Rochester Regional Health Laboratory Service Center - Headquarters,,Rochester,NY,14624-6246,43.15251,-77.731074,True,dataaxle
+3769817_HQ,3769817,UL Solutions Inc - Headquarters,,Northbrook,IL,60062-2002,42.146089,-87.846399,True,dataaxle
+681762803_HQ,681762803,"Clinical Pathology Laboratories, Inc - Headquarters",,Austin,TX,78754-4534,30.34433,-97.669927,True,dataaxle
+404538271_HQ,404538271,"VistaGen Therapeutics, Inc - Headquarters",,South San Francisco,CA,94080-4816,37.652958,-122.391548,True,dataaxle
+479675183_HQ,479675183,Sunrise Medical Laboratories - Headquarters,,Hicksville,NY,11801-1826,40.788175,-73.516161,True,dataaxle
+439095987_HQ,439095987,Akumin Inc - Headquarters,,Plantation,FL,33322-5406,26.148073,-80.260718,True,dataaxle
+480442235_HQ,480442235,AdventHealth Wauchula - Headquarters,,Wauchula,FL,33873-3158,27.539421,-81.807291,True,dataaxle
+4673646_HQ,4673646,Adventist Health and Rideout - Headquarters,,Marysville,CA,95901-5656,39.138291,-121.594374,True,dataaxle
+597587856_HQ,597587856,Eurofins Viracor - Headquarters,,Lenexa,KS,66219-1233,38.951053,-94.793399,True,dataaxle
+742095398_HQ,742095398,"Veravas, Inc - Headquarters",,Charleston,SC,29403-4898,32.794696,-79.940413,True,dataaxle
+427079825_HQ,427079825,Johnson City Medical Center - Headquarters,,Johnson City,TN,37604-6094,36.3074,-82.38631,True,dataaxle
+719354376_HQ,719354376,Pacific Vascular Inc - Headquarters,,Bothell,WA,98011-8099,47.77535,-122.18384,True,dataaxle
+4674115_HQ,4674115,CommonSpirit Longmont United Hospital - Headquarters,,Longmont,CO,80501-3129,40.182339,-105.125993,True,dataaxle
+439933125_HQ,439933125,Professional Hospital Guaynabo - Headquarters,,Guaynabo,PR,00969,18.361479,-66.111685,True,dataaxle
+553236829_HQ,553236829,Hospital Pavia Hato Rey - Headquarters,,Hato Rey,PR,00917-3424,18.419382,-66.056037,True,dataaxle
+14554638_HQ,14554638,Norfolk General Hospital - Headquarters,,Simcoe,ON,N3Y1T7,42.834868,-80.314132,True,dataaxle
+16159089_HQ,16159089,West Parry Sound Health Centre - Headquarters,,Parry Sound,ON,P2A3A4,45.341089,-80.017434,True,dataaxle
+893107953_HQ,893107953,Bayamon Medical Center - Headquarters,,Bayamon,PR,00959,18.391665,-66.151307,True,dataaxle
+21606207_HQ,21606207,Roseway Hospital - Headquarters,,Shelburne,NS,B0T1W0,43.74999,-65.309531,True,dataaxle
+21439351_HQ,21439351,Cobequid Community Health Centre - Headquarters,,Lower Sackville,NS,B4C0A2,44.756917,-63.658601,True,dataaxle
+40400400_HQ,40400400,Waterford Hospital - Headquarters,,St John's,NL,A1E4J8,47.528947,-52.749431,True,dataaxle
+59165373_HQ,59165373,Georgian Bay General Hospital - Headquarters,,Midland,ON,L4R4P4,44.7422,-79.913826,True,dataaxle
+15581770_HQ,15581770,Reginal De Pembroke - Headquarters,,Pembroke,ON,K8A1G8,45.815143,-77.107931,True,dataaxle
+10972479_HQ,10972479,Grande Cache Comm Health Centre - Headquarters,,Grande Cache,AB,T0E0Y0,53.891598,-119.119691,True,dataaxle
+11912961_HQ,11912961,Canora Hospital - Headquarters,,Canora,SK,S0A0E5,51.643566,-102.466628,True,dataaxle
+21600341_HQ,21600341,Yarmouth Regional Hospital - Headquarters,,Yarmouth,NS,B5A2P5,43.850524,-66.121568,True,dataaxle
+47067970_HQ,47067970,Taber Health Centre - Headquarters,,Taber,AB,T1G1N9,49.785827,-112.164477,True,dataaxle
+489584375_HQ,489584375,Saint Luke's North Hospital-Smithville - Headquarters,,Smithville,MO,64089-9334,39.37813,-94.58308,True,dataaxle
+1212414_HQ,1212414,Baptist Health Fishermen's Community Hospital - Headquarters,,Marathon,FL,33050-2329,24.710216,-81.094475,True,dataaxle
+404257447_HQ,404257447,Hospital Pavia Santurce - Headquarters,,San Juan,PR,00909-2199,18.446339,-66.070432,True,dataaxle
+440589244_HQ,440589244,Providence Care Hospital - Headquarters,,Kingston,ON,K7L4X3,44.215886,-76.527995,True,dataaxle
+439933652_HQ,439933652,Schneider Regional Medical Center - Headquarters,,St Thomas,VI,00802,18.341264,-64.920638,True,dataaxle
+420382221_HQ,420382221,El Paso Children's Hospital - Headquarters,,El Paso,TX,79905-2705,31.771685,-106.434209,True,dataaxle
+787933612_HQ,787933612,San Fernando De La Carolina Doctors' Center Hospital - Headquarters,,Carolina,PR,00986,18.379811,-65.956168,True,dataaxle
+20493417_HQ,20493417,UBC Hospital-Koerner Pavilion - Headquarters,,Vancouver,BC,V6T2B5,49.265419,-123.244997,True,dataaxle
+20065660_HQ,20065660,Boundary Hospital - Headquarters,,Grand Forks,BC,V0H1H0,49.029989,-118.467677,True,dataaxle
+14927628_HQ,14927628,Lennox & Addington County General Hospital - Headquarters,,Napanee,ON,K7R2Z4,44.240015,-76.967015,True,dataaxle
+596764043_HQ,596764043,Tidelands Waccamaw Community Hospital - Headquarters,,Murrells Inlet,SC,29576-5033,33.560513,-79.042921,True,dataaxle
+10931251_HQ,10931251,Fort Saskatchewan Community Hospital - Headquarters,,Fort Saskatchewan,AB,T8L0C6,53.691572,-113.210814,True,dataaxle
+893109264_HQ,893109264,Hospital San Francisco - Headquarters,,San Juan,PR,00923-3002,18.398656,-66.038748,True,dataaxle
+683539555_HQ,683539555,Kaiser Permanente Orange County-Irvine Medical Center - Headquarters,,Irvine,CA,92618-3734,33.658225,-117.774663,True,dataaxle
+22217236_HQ,22217236,Sackville Memorial Hospital - Headquarters,,Sackville,NB,E4L4A3,45.892204,-64.373358,True,dataaxle
+59777847_HQ,59777847,St Joseph's Healthcare Hamilton - Headquarters,,Hamilton,ON,L8E3K7,43.241899,-79.882029,True,dataaxle
+20929394_HQ,20929394,Port McNeill & District Hospital - Headquarters,,Port McNeill,BC,V0N2R0,50.581064,-127.066957,True,dataaxle
+15416100_HQ,15416100,Oakville Trafalgar Memorial Hospital - Headquarters,,Oakville,ON,L6M0L8,43.450458,-79.763365,True,dataaxle
+40497000_HQ,40497000,Welland Hospital - Headquarters,,Welland,ON,L3B4W6,42.979422,-79.248604,True,dataaxle
+25757204_HQ,25757204,Musquodoboit Valley Memorial Hospital - Headquarters,,Middle Musquodoboit,NS,B0N1X0,45.040289,-63.140378,True,dataaxle
+32959249_HQ,32959249,Ottawa Hospital-Civic Campus - Headquarters,,Ottawa,ON,K1Y4E9,45.393079,-75.721393,True,dataaxle
+22059570_HQ,22059570,St Boniface Hospital - Headquarters,,Winnipeg,MB,R2H2A6,49.884004,-97.124998,True,dataaxle
+16639098_HQ,16639098,Wilson Memorial General Hospital - Headquarters,,Marathon,ON,P0T2E0,48.718523,-86.3754,True,dataaxle
+407716570_HQ,407716570,OhioHealth Mansfield Hospital and Emergency Department - Headquarters,,Mansfield,OH,44903-2269,40.752526,-82.528565,True,dataaxle
+892219361_HQ,892219361,Hanover Hospital - Headquarters,,Hanover,KS,66945,39.891101,-96.875122,True,dataaxle
+40120701_HQ,40120701,Glace Bay General Hospital - Headquarters,,Glace Bay,NS,B1A1W5,46.183211,-59.938572,True,dataaxle
+28170199_HQ,28170199,L'hopital De Timmins-District - Headquarters,,Timmins,ON,P4N8P2,48.487724,-81.313805,True,dataaxle
+16649246_HQ,16649246,Wingham & District Hospital - Headquarters,,Wingham,ON,N0G2W0,43.8848,-81.306698,True,dataaxle
+1430784_HQ,1430784,Banner Churchill Community Hospital - Headquarters,,Fallon,NV,89406-3052,39.476546,-118.766196,True,dataaxle
+439911131_HQ,439911131,Windsor Regional Hospital-Metropolitan - Headquarters,,Windsor,ON,N8W1L9,42.300406,-82.99723,True,dataaxle
+761701635_HQ,761701635,WellSpan New Holland Health Center - Headquarters,,New Holland,PA,17557-8706,40.100126,-76.073288,True,dataaxle
+412340516_HQ,412340516,Olin E Teague Veteran's Medical Center - Headquarters,,Temple,TX,76504-7451,31.080469,-97.346604,True,dataaxle
+424572949_HQ,424572949,UnityPoint Health Moline Campus - Headquarters,,Moline,IL,61265-6892,41.468112,-90.530878,True,dataaxle
+22074306_HQ,22074306,Swan Valley Health Centre - Headquarters,,Swan River,MB,R0L1Z0,52.105962,-101.261998,True,dataaxle
+899885818_HQ,899885818,UHS Chenango Memorial Hospital - Headquarters,,Norwich,NY,13815-1097,42.55574,-75.56398,True,dataaxle
+58235334_HQ,58235334,La Verendrye Hospital-Riverside Health Care - Headquarters,,Fort Frances,ON,P9A2B7,48.606208,-93.392465,True,dataaxle
+32449373_HQ,32449373,All Saints Hospital - Headquarters,,Springhill,NS,B0M1X0,45.658739,-64.035218,True,dataaxle
+18403279_HQ,18403279,Centre Hospitalier Universitaire Sainte-Justine - Headquarters,,Montreal,QC,H3T1C5,45.503484,-73.624523,True,dataaxle
+735761909_HQ,735761909,St Lukes Community Hospital-Leawood - Headquarters,,Leawood,KS,66209-1701,38.889083,-94.608643,True,dataaxle
+10994135_HQ,10994135,Hanna Health Centre - Headquarters,,Hanna,AB,T0J1P0,51.650166,-111.92799,True,dataaxle
+11010857_HQ,11010857,High River Hospital - Headquarters,,High River,AB,T1V1B3,50.57602,-113.87941,True,dataaxle
+1457308_HQ,1457308,Kula Hospital - Headquarters,,Kula,HI,96790-7450,20.701543,-156.357545,True,dataaxle
+538456062_HQ,538456062,Mayo Clinic Health-Lake City - Headquarters,,Lake City,MN,55041-1143,44.459189,-92.287154,True,dataaxle
+426656111_HQ,426656111,Kaiser Permanente San Jose Medical Center - Headquarters,,San Jose,CA,95119-1199,37.23935,-121.80057,True,dataaxle
+1236207_HQ,1236207,Baptist Memorial Hospital-Booneville - Headquarters,,Booneville,MS,38829-3359,34.6575,-88.56578,True,dataaxle
+1283829_HQ,1283829,Loring Hospital - Headquarters,,Sac City,IA,50583-2416,42.41866,-94.97813,True,dataaxle
+8720641_HQ,8720641,Northwood Deaconess Health Center - Headquarters,,Northwood,ND,58267-4102,47.734665,-97.574992,True,dataaxle
+963418116_HQ,963418116,Johnston Memorial Hospital - Headquarters,,Abingdon,VA,24211-7664,36.723109,-81.911834,True,dataaxle
+753156539_HQ,753156539,Methodist Midlothian Medical Center - Headquarters,,Midlothian,TX,76065-4107,32.472172,-96.981717,True,dataaxle
+403669575_HQ,403669575,Hansford County Hospital District - Headquarters,,Spearman,TX,79081-3441,36.190333,-101.19973,True,dataaxle
+802891986_HQ,802891986,Crenshaw Community Hospital - Headquarters,,Luverne,AL,36049-7344,31.693623,-86.264885,True,dataaxle
+488158783_HQ,488158783,Ochsner Laird Hospital - Headquarters,,Union,MS,39365-9099,32.57567,-89.10441,True,dataaxle
+8671992_HQ,8671992,Jefferson Regional Medical Center - Headquarters,,Pine Bluff,AR,71603-6301,34.18755,-92.018466,True,dataaxle
+426506322_HQ,426506322,Thompson Hospital - Headquarters,,Canandaigua,NY,14424-1793,42.87616,-77.28906,True,dataaxle
+437420141_HQ,437420141,WhidbeyHealth Medical Center - Headquarters,,Coupeville,WA,98239-3413,48.213757,-122.684279,True,dataaxle
+635373749_HQ,635373749,Dignity Health Yavapai Regional Medical Center East - Headquarters,,Prescott Valley,AZ,86314-2245,34.590625,-112.330503,True,dataaxle
+735685439_HQ,735685439,Sanford Medical Center Fargo - Headquarters,,Fargo,ND,58104-7927,46.845466,-96.875367,True,dataaxle
+746454002_HQ,746454002,Roper St. Francis Berkeley Hospital - Headquarters,,Summerville,SC,29486-2807,33.068697,-80.095357,True,dataaxle
+665021044_HQ,665021044,AdventHealth Manchester - Headquarters,,Manchester,KY,40962-6388,37.162165,-83.761429,True,dataaxle
+438237544_HQ,438237544,Trinity Hospital - Headquarters,,Minot,ND,58701-7669,48.194395,-101.328436,True,dataaxle
+524833910_HQ,524833910,CHRISTUS Spohn Hospital-Alice - Headquarters,,Alice,TX,78332-4169,27.765152,-98.042617,True,dataaxle
+1421304_HQ,1421304,Spanish Peaks Regional Health - Headquarters,,Walsenburg,CO,81089-9524,37.607625,-104.819785,True,dataaxle
+168876050_HQ,168876050,White Mountain Regional Med Center - Headquarters,,Springerville,AZ,85938-5104,34.131386,-109.28542,True,dataaxle
+230012726_HQ,230012726,UP Health System-Bell - Headquarters,,Ishpeming,MI,49849-2197,46.49856,-87.68301,True,dataaxle
+439845151_HQ,439845151,Piedmont Newton Hospital - Headquarters,,Covington,GA,30014-2566,33.601326,-83.847935,True,dataaxle
+902733732_HQ,902733732,AdventHealth Kissimmee - Headquarters,,Kissimmee,FL,34744-2316,28.316108,-81.405851,True,dataaxle
+554663054_HQ,554663054,Methodist Hospital Specialty and Transplant - Headquarters,,San Antonio,TX,78229-3915,29.514174,-98.576185,True,dataaxle
+822725133_HQ,822725133,Lehigh Valley Hospital-Gilbertsville - Headquarters,,Gilbertsville,PA,19525-9228,40.30829,-75.62921,True,dataaxle
+148535057_HQ,148535057,CentraCare-Sauk Centre Care Center - Headquarters,,Sauk Centre,MN,56378-1010,45.745722,-94.95587,True,dataaxle
+713589490_HQ,713589490,DMC Harper University Hospital - Headquarters,,Detroit,MI,48201-2018,42.350871,-83.056243,True,dataaxle
+819042264_HQ,819042264,UF Health Durbin Park - Headquarters,,Saint Johns,FL,32259-7166,30.089895,-81.587528,True,dataaxle
+431898092_HQ,431898092,Elite Hospital Kingswood - Headquarters,,Kingwood,TX,77339-4471,30.054548,-95.249925,True,dataaxle
+425331236_HQ,425331236,Bethesda Hospital West - Headquarters,,Boynton Beach,FL,33472-4421,26.529952,-80.199951,True,dataaxle
+1197474_HQ,1197474,Northside Hospital-Forsyth - Headquarters,,Cumming,GA,30041-7659,34.178754,-84.140201,True,dataaxle
+404869828_HQ,404869828,Desert Regional Medical Center - Headquarters,,Palm Springs,CA,92262-4872,33.838626,-116.542738,True,dataaxle
+551650047_HQ,551650047,Methodist Hospital Atascosa - Headquarters,,Jourdanton,TX,78026-1504,28.933285,-98.525719,True,dataaxle
+553622333_HQ,553622333,Johnson County Community Hospital - Headquarters,,Mountain City,TN,37683-2021,36.453552,-81.79771,True,dataaxle
+1280833_HQ,1280833,Cass County Memorial Hospital - Headquarters,,Atlantic,IA,50022-1997,41.40141,-94.99281,True,dataaxle
+824065478_HQ,824065478,IU Health University Hospital - Headquarters,,Indianapolis,IN,46202-5250,39.77522,-86.1756,True,dataaxle
+1187780_HQ,1187780,Summers County ARH Hospital - Headquarters,,Hinton,WV,25951-5172,37.650508,-80.860467,True,dataaxle
+401825142_HQ,401825142,Carrus Health-Main Campus - Headquarters,,Sherman,TX,75092-7069,33.6699,-96.634688,True,dataaxle
+733573697_HQ,733573697,INTEGRIS Southwest Medical Center - Headquarters,,Oklahoma City,OK,73109-3413,35.421764,-97.533634,True,dataaxle
+1373042_HQ,1373042,Dundy County Hospital - Headquarters,,Benkelman,NE,69021-3074,40.056477,-101.53761,True,dataaxle
+389104597_HQ,389104597,Riley Hospital For Children - Headquarters,,Indianapolis,IN,46202-5109,39.777257,-86.180015,True,dataaxle
+724330408_HQ,724330408,Golisano Children's Hospital - Headquarters,,Rochester,NY,14620,43.127666,-77.600101,True,dataaxle
+708181615_HQ,708181615,Bon Secours St. Francis Downtown - Headquarters,,Greenville,SC,29601-3999,34.84018,-82.42082,True,dataaxle
+786471351_HQ,786471351,BayCare Hospital Wesley Chapel - Headquarters,,Wesley Chapel,FL,33544-9216,28.223183,-82.35548,True,dataaxle
+463273805_HQ,463273805,Mount Graham Regional Medical Center - Headquarters,,Safford,AZ,85546-4011,32.822633,-109.735127,True,dataaxle
+401456474_HQ,401456474,Sharp Chula Vista Medical Center - Headquarters,,Chula Vista,CA,91911-6617,32.618753,-117.023049,True,dataaxle
+403456944_HQ,403456944,Baptist Health West Kendall Baptist Hospital - Headquarters,,Miami,FL,33196-6408,25.6782,-80.455905,True,dataaxle
+422030156_HQ,422030156,Baylor Scott & White Medical Center-McKinney - Headquarters,,McKinney,TX,75071-7822,33.221408,-96.682543,True,dataaxle
+420655011_HQ,420655011,Banner Boswell Medical Center - Headquarters,,Sun City,AZ,85351-3004,33.603885,-112.283179,True,dataaxle
+248938938_HQ,248938938,Central Alabama VA Hospital Medical Center-Montgomery - Headquarters,,Montgomery,AL,36109-3798,32.37951,-86.24647,True,dataaxle
+1403807_HQ,1403807,Memorial Hermann Southwest Hospital - Headquarters,,Houston,TX,77074-4389,29.69165,-95.52056,True,dataaxle
+701412934_HQ,701412934,Piedmont Macon North - Headquarters,,Macon,GA,31210-4831,32.871684,-83.694475,True,dataaxle
+706657087_HQ,706657087,Oklahoma Heart Hospital North Campus - Headquarters,,Oklahoma City,OK,73120-8358,35.60831,-97.5969,True,dataaxle
+166856344_HQ,166856344,North Big Horn Hospital District - Headquarters,,Lovell,WY,82431-9537,44.826603,-108.389803,True,dataaxle
+667144588_HQ,667144588,A O Fox Hospital-Tri-Town Campus - Headquarters,,Sidney,NY,13838-1369,42.304143,-75.395542,True,dataaxle
+429239411_HQ,429239411,Carroll County Memorial Hospital - Headquarters,,Carrollton,KY,41008-1435,38.680009,-85.168576,True,dataaxle
+461429631_HQ,461429631,North Kansas City Hospital - Headquarters,,North Kansas City,MO,64116-3281,39.14957,-94.55194,True,dataaxle
+825940430_HQ,825940430,South County Hospital - Headquarters,,Wakefield,RI,02879-4299,41.43179,-71.49609,True,dataaxle
+825034911_HQ,825034911,Lake Charles Memorial Hospital - Headquarters,,Lake Charles,LA,70601-8911,30.204234,-93.197677,True,dataaxle
+437562218_HQ,437562218,AdventHealth Durand - Headquarters,,Durand,WI,54736-1600,44.620514,-91.962102,True,dataaxle
+403815426_HQ,403815426,Imaging & Radiology at CommonSpirit St. Mary-Corwin Hospital - Headquarters,,Pueblo,CO,81004-3733,38.233977,-104.62362,True,dataaxle
+402980249_HQ,402980249,Carroll Hospital - Headquarters,,Westminster,MD,21157-5797,39.55876,-76.99042,True,dataaxle
+406920203_HQ,406920203,Griffin Hospital - Headquarters,,Derby,CT,06418-1326,41.335556,-73.088535,True,dataaxle
+484622840_HQ,484622840,Dardanelle Regional Medical Center - Headquarters,,Dardanelle,AR,72834-3802,35.220256,-93.156553,True,dataaxle
+1150457_HQ,1150457,Penn Highlands Brookville - Headquarters,,Brookville,PA,15825-1367,41.157467,-79.092789,True,dataaxle
+976751396_HQ,976751396,Cascade Valley Hospital - Headquarters,,Arlington,WA,98223-1603,48.18897,-122.11775,True,dataaxle
+447928763_HQ,447928763,Morrow County Hospital - Headquarters,,Mount Gilead,OH,43338-1096,40.54914,-82.84918,True,dataaxle
+1279181_HQ,1279181,Munson Healthcare Manistee Hospital - Headquarters,,Manistee,MI,49660-9709,44.271087,-86.274282,True,dataaxle
+403311420_HQ,403311420,Bernard A Mitchell Hospital - Headquarters,,Chicago,IL,60637-1463,41.789027,-87.604573,True,dataaxle
+1161371_HQ,1161371,Jeanes Campus-Temple University Hospital - Headquarters,,Philadelphia,PA,19111-2442,40.069488,-75.086358,True,dataaxle
+434744376_HQ,434744376,Sequoia Hospital - Headquarters,,Redwood City,CA,94062-2799,37.481,-122.25331,True,dataaxle
+434185642_HQ,434185642,Methodist Hospital Northeast Emergency Room - Headquarters,,Live Oak,TX,78233-3255,29.552524,-98.348001,True,dataaxle
+427009308_HQ,427009308,CentraCare-Rice Memorial Hospital - Headquarters,,Willmar,MN,56201-3395,45.12047,-95.04634,True,dataaxle
+433958294_HQ,433958294,Prisma Health Blount Memorial Hospital - Headquarters,,Maryville,TN,37804-5015,35.756496,-83.95856,True,dataaxle
+438786918_HQ,438786918,Adena Regional Medical Center - Headquarters,,Chillicothe,OH,45601-9031,39.39605,-82.968367,True,dataaxle
+439933093_HQ,439933093,Marshfield Children's Hospital - Headquarters,,Marshfield,WI,54449-1832,44.676999,-90.178845,True,dataaxle
+422106378_HQ,422106378,UAB Medicine St. Vincent's One Nineteen - Headquarters,,Hoover,AL,35242-6443,33.426846,-86.666752,True,dataaxle
+1163278_HQ,1163278,Suburban Community Hospital - Headquarters,,Norristown,PA,19401-1820,40.140014,-75.316045,True,dataaxle
+712220940_HQ,712220940,Lakeland Community Hospital - Headquarters,,Haleyville,AL,35565-7054,34.241188,-87.590744,True,dataaxle
+1430230_HQ,1430230,Covenant Health Hobbs Hospital - Headquarters,,Hobbs,NM,88240-9109,32.756324,-103.176365,True,dataaxle
+1236496_HQ,1236496,Yalobusha General Hospital - Headquarters,,Water Valley,MS,38965-3468,34.131359,-89.642695,True,dataaxle
+498243088_HQ,498243088,Freeman Neosho Hospital - Headquarters,,Neosho,MO,64850-1705,36.866997,-94.369508,True,dataaxle
+1393875_HQ,1393875,"Baylor University Medical Center, Part of Baylor Scott & White Health - Headquarters",,Dallas,TX,75246-2088,32.79073,-96.78055,True,dataaxle
+426436160_HQ,426436160,Renown Regional Medical Center - Headquarters,,Reno,NV,89502-1576,39.525568,-119.796287,True,dataaxle
+688697192_HQ,688697192,Independence Health Frick Hospital - Headquarters,,Mount Pleasant,PA,15666-1790,40.14593,-79.54809,True,dataaxle
+4675674_HQ,4675674,Satanta District Hospital & Long Term Care Unit - Headquarters,,Satanta,KS,67870,37.437192,-100.986665,True,dataaxle
+620916866_HQ,620916866,Jackson Medical Center - Headquarters,,Jackson,AL,36545-2459,31.531678,-87.89546,True,dataaxle
+650374861_HQ,650374861,Cordova Community Medical Center - Headquarters,,Cordova,AK,99574,60.541428,-145.749706,True,dataaxle
+983725748_HQ,983725748,St Louise Regional Hospital - Headquarters,,Gilroy,CA,95020-3528,37.035599,-121.571089,True,dataaxle
+603348236_HQ,603348236,UPMC St Margaret - Headquarters,,Pittsburgh,PA,15215-3301,40.488153,-79.898349,True,dataaxle
+700249104_HQ,700249104,Big Fork South Medical Center - Headquarters,,Oneida,TN,37841-2127,36.504384,-84.515917,True,dataaxle
+984962696_HQ,984962696,Aurora West Allis Medical Center - Headquarters,,West Allis,WI,53227-2409,43.001501,-88.023469,True,dataaxle
+490394483_HQ,490394483,Aurora Medical Center-Sheboygan County - Headquarters,,Sheboygan,WI,53081-8426,43.733923,-87.75372,True,dataaxle
+440447085_HQ,440447085,Maria Parham Health - Headquarters,,Henderson,NC,27536-2927,36.330849,-78.449216,True,dataaxle
+838001790_HQ,838001790,Asante Rogue Regional Medical Center - Headquarters,,Medford,OR,97504-8332,42.317654,-122.8306,True,dataaxle
+734037945_HQ,734037945,UofL Health-Medical Center East - Headquarters,,Louisville,KY,40207-4702,38.231643,-85.636419,True,dataaxle
+438276766_HQ,438276766,Westchester Medical Center - Headquarters,,Valhalla,NY,10595-1530,41.087748,-73.803844,True,dataaxle
+687398743_HQ,687398743,Nutrition Services at SSM Health St. Clare Hospital-Fenton - Headquarters,,Fenton,MO,63026-2394,38.528005,-90.476417,True,dataaxle
+27226976_HQ,27226976,Celestica Inc - Headquarters,,Toronto,ON,M2N6L7,43.768498,-79.413143,True,dataaxle
+57036030_HQ,57036030,Arcadis - Headquarters,,Toronto,ON,M4V2Y7,43.687254,-79.396844,True,dataaxle
+52213220_HQ,52213220,ISL - Headquarters,,Edmonton,AB,T6E5L9,53.48727,-113.446838,True,dataaxle
+440579041_HQ,440579041,MJ Roofing - Headquarters,,Winnipeg,MB,R2X0A1,49.917774,-97.164436,True,dataaxle
+14661573_HQ,14661573,J.L. Richards & Associates Limited - Headquarters,,Ottawa,ON,K1S1N4,45.402318,-75.709235,True,dataaxle
+23177645_HQ,23177645,Groupe ABS - Headquarters,,Anjou,QC,H1J2X5,45.619083,-73.587451,True,dataaxle
+31817000_HQ,31817000,Fleetway Inc - Headquarters,,Dartmouth,NS,B3A4Y8,44.687652,-63.562827,True,dataaxle
+47097407_HQ,47097407,Acuren Group Inc - Headquarters,,Sherwood Park,AB,T8H2K8,53.565063,-113.316814,True,dataaxle
+2135432_HQ,2135432,Lawson Electric Co - Headquarters,,Hixson,TN,37343,35.180038,-85.247011,True,dataaxle
+15515893_HQ,15515893,Akkodis Canada - Headquarters,,Toronto,ON,M5J2N8,43.661172,-79.386439,True,dataaxle
+62887658_HQ,62887658,Kelt Exploration Ltd - Headquarters,,Calgary,AB,T2P3H2,51.047327,-114.068742,True,dataaxle
+53965422_HQ,53965422,Carmeuse Systems - Headquarters,,Milton,ON,L9T5E9,43.533476,-79.906951,True,dataaxle
+19300656_HQ,19300656,Rolls-Royce Canada Ltd - Headquarters,,Lachine,QC,H8T1A2,45.469312,-73.710084,True,dataaxle
+48318208_HQ,48318208,FWS Group of Companies - Headquarters,,Winnipeg,MB,R3P1B3,49.828853,-97.21828,True,dataaxle
+6385421_HQ,6385421,AMETEK Sensor Technologies - Headquarters,,Horsham,PA,19044-1408,40.211144,-75.164699,True,dataaxle
+464637719_HQ,464637719,"KBR, Inc - Headquarters",,Houston,TX,77002-7901,29.753274,-95.37233,True,dataaxle
+26773358_HQ,26773358,Williams Engineering Canada Inc - Headquarters,,Edmonton,AB,T5J3B1,53.540642,-113.492931,True,dataaxle
+59726018_HQ,59726018,Exp Services Inc - Headquarters,,Brampton,ON,L6T4V1,43.732472,-79.688796,True,dataaxle
+17843061_HQ,17843061,WSP Global Inc - Headquarters,,Montreal,QC,H3H1P9,45.493413,-73.574929,True,dataaxle
+426132320_HQ,426132320,"Image Sensing Systems, Inc - Headquarters",,Saint Paul,MN,55104-3893,44.95551,-93.16729,True,dataaxle
+432653244_HQ,432653244,"Wilson & Company, Inc - Headquarters",,Albuquerque,NM,87109-4682,35.166749,-106.594561,True,dataaxle
+15965718_HQ,15965718,Sandvik Canada Inc - Headquarters,,Mississauga,ON,L5N8C2,43.605429,-79.771276,True,dataaxle
+861060309_HQ,861060309,Wood Group - Headquarters,,Houston,TX,77084-4932,29.788235,-95.68241,True,dataaxle
+200065498_HQ,200065498,Fluor Corporation - Headquarters,,Irving,TX,75039-2902,32.901329,-96.95179,True,dataaxle
+11927811_HQ,11927811,Clifton Engineering Group Inc - Headquarters,,Regina,SK,S4N5Y5,50.473537,-104.568035,True,dataaxle
+11483716_HQ,11483716,Thermo Design Engineering - Headquarters,,Edmonton,AB,T6P1P5,53.508415,-113.364319,True,dataaxle
+496487596_HQ,496487596,Zapata Incorporated - Headquarters,,Charlotte,NC,28210-2244,35.149165,-80.835896,True,dataaxle
+256970310_HQ,256970310,Wood Environment & Infrastructure Solutions Inc - Headquarters,,Alpharetta,GA,30009-7625,34.048188,-84.31448,True,dataaxle
+831481817_HQ,831481817,PVE LLC - Headquarters,,Sewickley,PA,15143-8992,40.609327,-80.103592,True,dataaxle
+102190899_HQ,102190899,Environmental Science Associates - Headquarters,,San Francisco,CA,94108-2512,37.793342,-122.404218,True,dataaxle
+310307541_HQ,310307541,Pratt Miller - Headquarters,,New Hudson,MI,48165-9722,42.507157,-83.582531,True,dataaxle
+962125951_HQ,962125951,"ECS Southeast, LLP - Headquarters",,Charlotte,NC,28217-2812,35.175215,-80.929477,True,dataaxle
+508760592_HQ,508760592,Salas O'Brien Engineers Inc - Headquarters,,Irvine,CA,92618-4236,33.644259,-117.737839,True,dataaxle
+705767521_HQ,705767521,Deep Space Systems Inc - Headquarters,,Littleton,CO,80127-4124,39.570004,-105.12709,True,dataaxle
+465036044_HQ,465036044,George Reed Inc - Headquarters,,Modesto,CA,95354-3804,37.637131,-120.967605,True,dataaxle
+564203073_HQ,564203073,Veraxx Engineering Corporation - Headquarters,,Chantilly,VA,20151-1611,38.894201,-77.438901,True,dataaxle
+721114531_HQ,721114531,"Motiv Power Systems, Inc - Headquarters",,Foster City,CA,94404-1106,37.567028,-122.275093,True,dataaxle
+424165546_HQ,424165546,Underwood Air Systems - Headquarters,,Powder Springs,GA,30127-3857,33.881027,-84.707675,True,dataaxle
+471902023_HQ,471902023,"Neel-Schaffer, Inc - Headquarters",,Jackson,MS,39211-5990,32.352281,-90.15044,True,dataaxle
+714830805_HQ,714830805,VPT Inc - Headquarters,,Blacksburg,VA,24060-6357,37.202764,-80.40939,True,dataaxle
+614500965_HQ,614500965,Peraton Inc - Headquarters,,Herndon,VA,20170-6010,38.956433,-77.399347,True,dataaxle
+3816501_HQ,3816501,Simpson Gumpertz & Heger Inc - Headquarters,,Waltham,MA,02451-1908,42.396374,-71.257643,True,dataaxle
+843292665_HQ,843292665,"Shuck-Britson, Inc - Headquarters",,Des Moines,IA,50309-2000,41.588083,-93.611534,True,dataaxle
+759122003_HQ,759122003,"The Integration Group of Americas, Inc - Headquarters",,Spring,TX,77386-9924,30.135852,-95.443612,True,dataaxle
+134695048_HQ,134695048,Smith Seckman Reid Inc - Headquarters,,Nashville,TN,37204-3709,36.104154,-86.757903,True,dataaxle
+706341697_HQ,706341697,"Kodiak Gas Services, Inc - Headquarters",,Spring,TX,77380-4253,30.160581,-95.453726,True,dataaxle
+688803428_HQ,688803428,Evans Analytical Group LLC - Headquarters,,Santa Clara,CA,95051-0963,37.37334,-121.975423,True,dataaxle
+631322773_HQ,631322773,U.S. Forensic LLC - Headquarters,,Metairie,LA,70002-4928,30.007611,-90.153188,True,dataaxle
+438281757_HQ,438281757,"Vista Defense Technologies, LLC - Headquarters",,Rock Island,IL,61201-9103,41.516738,-90.54717,True,dataaxle
+116338716_HQ,116338716,"CHA Consulting, Inc - Headquarters",,Albany,NY,12205-1161,42.719804,-73.798359,True,dataaxle
+459993739_HQ,459993739,"JESCO Construction, Inc - Headquarters",,Tupelo,MS,38801-7108,34.290456,-88.747522,True,dataaxle
+907585566_HQ,907585566,MSX International Inc - Headquarters,,Detroit,MI,48226-5400,42.330074,-83.044941,True,dataaxle
+433958673_HQ,433958673,"Reynolds Enterprises, Inc - Headquarters",,Harrisburg,PA,17110-1479,40.30006,-76.89947,True,dataaxle
+951746189_HQ,951746189,Genesis Halff - Headquarters,,Tampa,FL,33602-3718,27.952197,-82.462374,True,dataaxle
+401392419_HQ,401392419,Holloman Corporation - Headquarters,,Houston,TX,77060-2484,29.941222,-95.398133,True,dataaxle
+10829570_HQ,10829570,Fluor Canada Ltd - Headquarters,,Calgary,AB,T2X3R4,50.901062,-114.056826,True,dataaxle
+130040629_HQ,130040629,"Jones Edmunds & Associates, Inc - Headquarters",,Alachua,FL,32615-9402,29.77898,-82.474159,True,dataaxle
+483078622_HQ,483078622,AEI Consultants - Headquarters,,Walnut Creek,CA,94597-3905,37.896818,-122.074086,True,dataaxle
+20092672_HQ,20092672,"COWI North America, Ltd - Headquarters",,North Vancouver,BC,V7L0E5,49.320023,-123.070597,True,dataaxle
+949019657_HQ,949019657,Gleason Research Associates Inc - Headquarters,,Huntsville,AL,35805-1923,34.729296,-86.666698,True,dataaxle
+11322872_HQ,11322872,Applus+ - Headquarters,,Edmonton,AB,T6B1E5,53.517376,-113.417236,True,dataaxle
+30612279_HQ,30612279,Bombardier Aerospace - Headquarters,,Dorval,QC,H4S1Y9,45.473637,-73.730408,True,dataaxle
+39519079_HQ,39519079,Pronghorn Controls - Headquarters,,Calgary,AB,T2C3H3,50.988954,-113.963347,True,dataaxle
+981319213_HQ,981319213,"Pioneer Natural Resources USA, Inc - Headquarters",,Irving,TX,75038-3802,32.879394,-96.956206,True,dataaxle
+856988928_HQ,856988928,Unified Industries Incorporated - Headquarters,,Alexandria,VA,22315-5755,38.771529,-77.133047,True,dataaxle
+967374216_HQ,967374216,"Opus Holding, LLC - Headquarters",,Hopkins,MN,55343-9002,44.89914,-93.41142,True,dataaxle
+532499647_HQ,532499647,ON Semiconductor Corporation - Headquarters,,Scottsdale,AZ,85250-2634,33.519444,-111.889114,True,dataaxle
+421799019_HQ,421799019,INTERA Incorporated - Headquarters,,Austin,TX,78759-5682,30.395401,-97.753712,True,dataaxle
+689157477_HQ,689157477,Rekall Technologies - Headquarters,,Eatontown,NJ,07724-3331,40.277086,-74.038671,True,dataaxle
+908035942_HQ,908035942,Mason & Hanger Group Inc - Headquarters,,Lexington,KY,40507-1888,38.047631,-84.50079,True,dataaxle
+4601340_HQ,4601340,Insituform Technologies LLC - Headquarters,,Chesterfield,MO,63005-3713,38.665958,-90.633046,True,dataaxle
+416532770_HQ,416532770,Razorleaf Corporation - Headquarters,,,,,41.157698,-81.400608,True,dataaxle
+695227744_HQ,695227744,Harrison French & Associates Ltd - Headquarters,,Bentonville,AR,72712-7113,36.352187,-94.210031,True,dataaxle
+420405073_HQ,420405073,Bates Electric Inc - Headquarters,,Arnold,MO,63010-5108,38.403085,-90.385643,True,dataaxle
+6910004_HQ,6910004,Devon Energy Corporation - Headquarters,,Oklahoma City,OK,73102-5015,35.46653,-97.51843,True,dataaxle
+484445879_HQ,484445879,EMCOR Government Services - Headquarters,,Arlington,VA,22202-3589,38.847589,-77.052559,True,dataaxle
+438775526_HQ,438775526,Tetra Tech Canada - Headquarters,,Edmonton,AB,T5V1B4,53.577083,-113.580212,True,dataaxle
+50241744_HQ,50241744,EFI Global Inc - Headquarters,,Hamilton,ON,L8P4M3,43.258011,-79.892868,True,dataaxle
+585909492_HQ,585909492,AXIS Geospatial LLC - Headquarters,,Easton,MD,21601-2852,38.784173,-76.089107,True,dataaxle
+352928949_HQ,352928949,Thornton Tomasetti - Headquarters,,New York,NY,10271-1601,40.708364,-74.011013,True,dataaxle
+481936367_HQ,481936367,"Applied Control Engineering, Inc - Headquarters",,Newark,DE,19711-8544,39.689645,-75.74239,True,dataaxle
+416141925_HQ,416141925,North Wind Service LLC - Headquarters,,Idaho Falls,ID,83402-1513,43.510907,-112.050115,True,dataaxle
+3807310_HQ,3807310,IMEG Corporation - Headquarters,,Rock Island,IL,61201-5263,41.485392,-90.589584,True,dataaxle
+698383148_HQ,698383148,Borets US Inc - Headquarters,,Houston,TX,77024-4496,29.777349,-95.54322,True,dataaxle
+436382636_HQ,436382636,CASL Surface Technologies Corp. - Headquarters,,Nisku,AB,T9E0A7,53.327637,-113.51129,True,dataaxle
+706510369_HQ,706510369,R.F. Peck Co Inc - Headquarters,,Albany,NY,12205-1695,42.721638,-73.808139,True,dataaxle
+11147790_HQ,11147790,Magna IV Engineering Inc - Headquarters,,Edmonton,AB,T6X0X2,53.421967,-113.478416,True,dataaxle
+747268073_HQ,747268073,Aquawolf LLC - Headquarters,,Lakewood,CO,80401-3127,39.741745,-105.15859,True,dataaxle
+471610287_HQ,471610287,Whiting-Turner Contracting Company - Headquarters,,Towson,MD,21286-3047,39.40215,-76.59844,True,dataaxle
+904695566_HQ,904695566,Schneider-Sharples Corporation - Headquarters,,Omaha,NE,68137-2358,41.207893,-96.088652,True,dataaxle
+436035919_HQ,436035919,"Lockwood, Andrews & Newnam, Inc - Headquarters",,Houston,TX,77042-5121,29.724182,-95.559002,True,dataaxle
+431526561_HQ,431526561,InTech Aerospace LLC - Headquarters,,Houston,TX,77032-2589,29.942785,-95.320638,True,dataaxle
+7539919_HQ,7539919,"Venturedyne, Ltd. - Headquarters",,Pewaukee,WI,53072-3572,43.067754,-88.254795,True,dataaxle
+641622600_HQ,641622600,HDT Global - Headquarters,,Solon,OH,44139-2776,41.39485,-81.461855,True,dataaxle
+404749226_HQ,404749226,"Bristol Engineering Services Company, LLC - Headquarters",,Anchorage,AK,99501-6206,61.206483,-149.88419,True,dataaxle
+471981613_HQ,471981613,"Control Point Associates, Inc - Headquarters",,Warren,NJ,07059-6747,40.652911,-74.571143,True,dataaxle
+386694665_HQ,386694665,Olgoonik Development LLC - Headquarters,,Anchorage,AK,99503-3934,61.191013,-149.886404,True,dataaxle
+850904897_HQ,850904897,"Westwood Professional Services, Inc - Headquarters",,Plano,TX,75093-8727,33.039359,-96.831385,True,dataaxle
+893728246_HQ,893728246,Alliance Engineering Inc - Headquarters,,North Chesterfield,VA,23236-3486,37.491895,-77.567117,True,dataaxle
+384772083_HQ,384772083,Avl North America Inc - Headquarters,,Plymouth,MI,48170-2438,42.384559,-83.511173,True,dataaxle
+740443052_HQ,740443052,1 Tom Plumber Global Inc - Headquarters,,Milford,OH,45150-2749,39.156076,-84.251509,True,dataaxle
+406077123_HQ,406077123,"GZA GeoEnvironmental, Inc - Headquarters",,Norwood,MA,02062-5033,42.17134,-71.189563,True,dataaxle
+10789246_HQ,10789246,Worley Canada - Headquarters,,Calgary,AB,T2C5H9,50.963034,-114.004107,True,dataaxle
+23966625_HQ,23966625,Teck Resources Limited - Headquarters,,Vancouver,BC,V6C0B3,49.285718,-123.118287,True,dataaxle
+149815946_HQ,149815946,"Wiss, Janney, Elstner Associates, Inc - Headquarters",,Northbrook,IL,60062-2095,42.14698,-87.84901,True,dataaxle
+886383041_HQ,886383041,University Mechanical & Engineering Contractors - Headquarters,,El Cajon,CA,92020-1812,32.80954,-116.977364,True,dataaxle
+570843094_HQ,570843094,HR Green Inc - Headquarters,,Cedar Rapids,IA,52404-8947,41.89397,-91.665203,True,dataaxle
+424202191_HQ,424202191,Kitchen Brains - Headquarters,,Stratford,CT,06615-7140,41.173312,-73.147893,True,dataaxle
+6698500_HQ,6698500,"Applied Industrial Technologies, Inc - Headquarters",,Cleveland,OH,44115-2519,41.50352,-81.66437,True,dataaxle
+459381695_HQ,459381695,MS Consultants Inc - Headquarters,,Columbus,OH,43229-1547,40.108088,-82.958514,True,dataaxle
+625674031_HQ,625674031,Sierra Space Corporation - Headquarters,,Louisville,CO,80027-3020,39.970004,-105.111667,True,dataaxle
+8761470_HQ,8761470,Saint-Gobain Performance Plastics Inc - Headquarters,,Solon,OH,44139-3528,41.384863,-81.4558,True,dataaxle
+102104049_HQ,102104049,"Mazzetti, Inc - Headquarters",,San Francisco,CA,94104-3491,37.79128,-122.40236,True,dataaxle
+551546435_HQ,551546435,"KBM, Inc - Headquarters",,Prospect,TN,38477-7552,35.032063,-86.886964,True,dataaxle
+19288844_HQ,19288844,Robco Inc - Headquarters,,Lasalle,QC,H8N2W7,45.448595,-73.627178,True,dataaxle
+35125756_HQ,35125756,Ainley Group - Headquarters,,Collingwood,ON,L9Y4J5,44.502266,-80.19771,True,dataaxle
+17632936_HQ,17632936,CIMA+ Group Inc - Headquarters,,Laval,QC,H7V3Z2,45.550846,-73.746193,True,dataaxle
+19054394_HQ,19054394,Pluritec - Headquarters,,Trois-Rivieres,QC,G9A0A9,46.352373,-72.538139,True,dataaxle
+63788236_HQ,63788236,ALTEN Canada - Headquarters,,Montreal,QC,H3B4L6,45.501859,-73.564151,True,dataaxle
+19918853_HQ,19918853,AcuTruss Industries (1996) Limited - Headquarters,,Vernon,BC,V1T6K7,50.255987,-119.298754,True,dataaxle
+62301577_HQ,62301577,Amico Infrastructures - Headquarters,,Oldcastle,ON,N0R1L0,42.232074,-82.966334,True,dataaxle
+820639278_HQ,820639278,"Criterium NC, PLLC - Headquarters",,Freeport,ME,04032-1539,43.856391,-70.101186,True,dataaxle
+775953364_HQ,775953364,D & K Engineering - Headquarters,,San Diego,CA,92127-2415,33.018056,-117.108055,True,dataaxle
+906745385_HQ,906745385,Summit Consulting Service Inc - Headquarters,,Tok,AK,99780,62.852979,-141.456904,True,dataaxle
+4382545_HQ,4382545,"Turner & Townsend Heery, LLC - Headquarters",,Atlanta,GA,30326-4333,33.851805,-84.367274,True,dataaxle
+524659851_HQ,524659851,"Environmental Solutions Worldwide, Inc - Headquarters",,Montgomeryville,PA,18936-9616,40.219734,-75.232964,True,dataaxle
+402617549_HQ,402617549,"Starcon International, Inc - Headquarters",,La Porte,TX,77571-6010,29.650585,-95.069068,True,dataaxle
+400740000_HQ,400740000,Exeltech Consulting Inc - Headquarters,,Lacey,WA,98516-1363,,,True,dataaxle
+711527790_HQ,711527790,Timesys Corporation - Headquarters,,Pittsburgh,PA,15219-5902,40.436311,-79.979288,True,dataaxle
+57573636_HQ,57573636,TUV SUD Canada Inc - Headquarters,,Newmarket,ON,L3Y8T8,44.081619,-79.42837,True,dataaxle
+56052087_HQ,56052087,Certispec Services Inc - Headquarters,,Burnaby,BC,V3N4A3,49.248982,-122.918366,True,dataaxle
+31607351_HQ,31607351,Canadian Nuclear Laboratories - Headquarters,,Chalk River,ON,K0J1J0,46.023916,-77.428702,True,dataaxle
+316326446_HQ,316326446,Agvise Laboratories Inc - Headquarters,,Northwood,ND,58267,47.744467,-97.564404,True,dataaxle
+677497059_HQ,677497059,SGS Life Science Service - Headquarters,,Germantown,MD,20876-7005,39.190968,-77.257253,True,dataaxle
+303321434_HQ,303321434,"ENV Services, Inc - Headquarters",,Hatfield,PA,19440-1764,40.298061,-75.298407,True,dataaxle
+419818323_HQ,419818323,"Smithers Quality Assessments, Inc - Headquarters",,Akron,OH,44308-1426,41.081673,-81.517925,True,dataaxle
+501155345_HQ,501155345,St Luke's Cataract & Laser Institute P.A. - Headquarters,,Tarpon Springs,FL,34689-6221,28.165771,-82.739512,True,dataaxle
+595841487_HQ,595841487,"Solvay Specialty Polymers USA, LLC - Headquarters",,Alpharetta,GA,30005-2203,34.102757,-84.22217,True,dataaxle
+437386941_HQ,437386941,Altasciences - Headquarters,,Laval,QC,H7V4B3,45.555869,-73.734853,True,dataaxle
+882952138_HQ,882952138,Matlab Inc - Headquarters,,Asheboro,NC,27205-9584,35.67823,-79.855341,True,dataaxle
+418692125_HQ,418692125,Optical Solutions Group - Headquarters,,Pasadena,CA,91101-4634,34.142501,-118.141942,True,dataaxle
+6361919_HQ,6361919,Forage Genetics International LLC - Headquarters,,Nampa,ID,83687-6775,43.594458,-116.542136,True,dataaxle
+413344007_HQ,413344007,Norton King's Daughters' Health-Hospital - Headquarters,,Madison,IN,47250-7328,38.792535,-85.364207,True,dataaxle
+48689095_HQ,48689095,AGAT Laboratories Ltd - Headquarters,,Calgary,AB,T2E7J2,51.078344,-114.02643,True,dataaxle
+400438511_HQ,400438511,"United-Guardian, Inc - Headquarters",,Hauppauge,NY,11788-3731,40.816887,-73.248163,True,dataaxle
+945026854_HQ,945026854,QPS Holdings LLC - Headquarters,,Newark,DE,19711-5456,39.678147,-75.731202,True,dataaxle
+489018739_HQ,489018739,Alforex Seeds - Headquarters,,La Crosse,WI,54603-1762,43.858934,-91.228549,True,dataaxle
+591163415_HQ,591163415,Q2 Solutions - Headquarters,,Morrisville,NC,27560-8394,35.871954,-78.84933,True,dataaxle
+991239070_HQ,991239070,"Colorado Engineering Experiment Station, Inc - Headquarters",,Nunn,CO,80648-9615,40.788965,-104.720684,True,dataaxle
+757209844_HQ,757209844,"General Atomics Systems Integration, LLC - Headquarters",,San Diego,CA,92121-1194,32.8942,-117.23764,True,dataaxle
+29959657_HQ,29959657,Pinchin Ltd - Headquarters,,Mississauga,ON,L5N6S2,43.60479,-79.771931,True,dataaxle
+996990750_HQ,996990750,Food Safety Net Services Ltd - Headquarters,,San Antonio,TX,78216-3105,29.546817,-98.497019,True,dataaxle
+402588164_HQ,402588164,MSA Professional Service Inc - Headquarters,,Baraboo,WI,53913-2791,43.460741,-89.765233,True,dataaxle
+578447211_HQ,578447211,"Environmental Testing, Inc - Headquarters",,Oklahoma City,OK,73118-7905,35.518509,-97.512667,True,dataaxle
+724665967_HQ,724665967,"LIFARS, LLC - Headquarters",,New York,NY,10001-7604,40.744587,-73.987608,True,dataaxle
+836710160_HQ,836710160,"GE Appliances, A Haier Company - Headquarters",,Louisville,KY,40225-0002,38.17757,-85.65157,True,dataaxle
+872736590_HQ,872736590,Gabriel Environmental Services - Headquarters,,Chicago,IL,60642-2419,41.907916,-87.659971,True,dataaxle
+401030796_HQ,401030796,"Ramboll USA, Inc - Headquarters",,Arlington,VA,22203-1649,38.882621,-77.112266,True,dataaxle
+51050367_HQ,51050367,Creaform Inc - Headquarters,,Levis,QC,G6W0L9,46.773444,-71.172507,True,dataaxle
+801851825_HQ,801851825,"Litigation Analytics, Inc - Headquarters",,Ridgefield,CT,06877-4932,41.272676,-73.497808,True,dataaxle
+437106640_HQ,437106640,Protect Encironmental - Headquarters,,Columbus,OH,43231-4914,40.079181,-82.928137,True,dataaxle
+42648055_HQ,42648055,Labstat International Inc - Headquarters,,Kitchener,ON,N2C1L3,43.407803,-80.448382,True,dataaxle
+408929409_HQ,408929409,"Balance Vibration Technologies, Inc - Headquarters",,Carrollton,TX,75006-6513,32.92137,-96.926725,True,dataaxle
+264662289_HQ,264662289,Analysts Inc - Headquarters,,Hawthorne,CA,90250-4428,33.920821,-118.333098,True,dataaxle
+962345922_HQ,962345922,Envista Forensics - Headquarters,,Deerfield,IL,60015-4943,42.155514,-87.843846,True,dataaxle
+557587748_HQ,557587748,Newpark Drilling Fluids LLC - Headquarters,,Katy,TX,77449-6834,29.79081,-95.753342,True,dataaxle
+15726847_HQ,15726847,Pylon Electronics - Headquarters,,Nepean,ON,K2E7L9,45.343506,-75.70381,True,dataaxle
+244164067_HQ,244164067,ARS International LLC - Headquarters,,Port Allen,LA,70767-3469,30.486195,-91.203075,True,dataaxle
+400665499_HQ,400665499,AmSpec Services LLC - Headquarters,,Cranbury,NJ,08512-3633,40.331691,-74.493405,True,dataaxle
+132096850_HQ,132096850,"Burnetti, P.A. - Headquarters",,Lakeland,FL,33801-4621,28.042503,-81.957512,True,dataaxle
+6227391_HQ,6227391,SGS Oil Gas & Chemicals - Headquarters,,Deer Park,TX,77536-2518,29.703724,-95.13645,True,dataaxle
+6733513_HQ,6733513,Apollo Valves - Headquarters,,Matthews,NC,28105-1706,35.118896,-80.710919,True,dataaxle
+439152158_HQ,439152158,S-E-A Limited - Headquarters,,Columbus,OH,43229-1157,40.109905,-82.990667,True,dataaxle
+469302343_HQ,469302343,Calpine Corporation - Headquarters,,Houston,TX,77002-2743,29.761674,-95.364298,True,dataaxle
+400658998_HQ,400658998,McPu Polymer Engineering - Headquarters,,Corona,CA,92879-2096,33.872893,-117.528133,True,dataaxle
+13138276_HQ,13138276,TEAM Industrial Services Inc - Headquarters,,Oakville,ON,L6L6R7,43.415994,-79.730434,True,dataaxle
+715491326_HQ,715491326,Integrated Compliance Solutions LLC - Headquarters,,Las Vegas,NV,89135-2959,36.150191,-115.333107,True,dataaxle
+60305414_HQ,60305414,Vireo Growth Inc - Headquarters,,Minneapolis,MN,55402-3309,44.973391,-93.2708,True,dataaxle
+740364516_HQ,740364516,"Gaming Laboratories International, LLC - Headquarters",,Lakewood,NJ,08701-5995,40.060794,-74.171843,True,dataaxle
+206457012_HQ,206457012,Solv It Inc - Headquarters,,Plainville,CT,06062-1178,41.690774,-72.861479,True,dataaxle
+446179749_HQ,446179749,"DDL, Inc - Headquarters",,Eden Prairie,MN,55344-3531,44.871638,-93.406095,True,dataaxle
+20552980_HQ,20552980,Connect Hearing - Headquarters,,Victoria,BC,V8W1V7,48.424651,-123.368858,True,dataaxle
+568799324_HQ,568799324,"Microbac Laboratories, Inc - Headquarters",,Cranberry Township,PA,16066-5338,40.687547,-80.086176,True,dataaxle
+900671652_HQ,900671652,ETTL Engineers & Consultants Inc - Headquarters,,Tyler,TX,75702-6346,32.35073,-95.278586,True,dataaxle
+469975734_HQ,469975734,Inspection Engineering LLC - Headquarters,,Westlake,OH,44145-1054,41.472718,-81.961743,True,dataaxle
+976290551_HQ,976290551,"Tru Care Labs, Inc - Headquarters",,Tallahassee,FL,32303-2745,30.495099,-84.326073,True,dataaxle
+1302561_HQ,1302561,Allina Health Laboratory-Allina Health Faribault Medical Center - Headquarters,,Faribault,MN,55021-6339,44.288649,-93.257847,True,dataaxle
+13095302_HQ,13095302,ASI Group Ltd - Headquarters,,Stoney Creek,ON,L8E5P1,43.22627,-79.704733,True,dataaxle
+633718945_HQ,633718945,TechCorr USA LLC - Headquarters,,Pasadena,TX,77503-2348,29.686236,-95.153452,True,dataaxle
+726314510_HQ,726314510,New Frontier Data - Headquarters,,,,,38.965437,-77.076244,True,dataaxle
+726392408_HQ,726392408,Industrial Physics Inc - Headquarters,,New Castle,DE,19720-2228,39.690517,-75.568382,True,dataaxle
+393027065_HQ,393027065,"Pure Air Control Service, Inc - Headquarters",,Clearwater,FL,33760-4026,27.890821,-82.703596,True,dataaxle
+175658509_HQ,175658509,DOWL LLC - Headquarters,,Anchorage,AK,99503-7177,61.175042,-149.889974,True,dataaxle
+826910267_HQ,826910267,"Applied Technical Services, LLC - Headquarters",,Marietta,GA,30062-2259,33.986611,-84.517358,True,dataaxle
+367103454_HQ,367103454,"Clearwater Systems, Inc - Headquarters",,Akron,OH,44320-4086,41.06436,-81.57214,True,dataaxle
+156018269_HQ,156018269,Celerion Inc - Headquarters,,Lincoln,NE,68502-2040,40.79428,-96.712093,True,dataaxle
+427179932_HQ,427179932,Allina Health Laboratory-River Falls Area Hospital - Headquarters,,River Falls,WI,54022-1571,44.86512,-92.603137,True,dataaxle
+404926439_HQ,404926439,"Intercontinental Export Import, Inc - Headquarters",,Columbia,MD,21045-2272,39.228415,-76.816186,True,dataaxle
+963141551_HQ,963141551,SGS Galson Laboratories - Headquarters,,East Syracuse,NY,13057-9629,43.07661,-76.0639,True,dataaxle
+575493127_HQ,575493127,"Space Sciences Services, LLC - Headquarters",,Dothan,AL,36301-5791,31.18256,-85.408602,True,dataaxle
+705769652_HQ,705769652,LTL Group - Headquarters,,Brookshire,TX,77423-9248,29.734632,-95.942048,True,dataaxle
+719648781_HQ,719648781,"Kimball Electronic Laboratory, Inc - Headquarters",,Pembroke Pines,FL,33028-2890,26.027432,-80.348819,True,dataaxle
+842550758_HQ,842550758,"Metallurgical Services, Inc - Headquarters",,Moraine,OH,45439-1533,39.717137,-84.226461,True,dataaxle
+407849841_HQ,407849841,SWAT Environmental - Headquarters,,Lansing,MI,48911-6310,42.659253,-84.598018,True,dataaxle
+9734070_HQ,9734070,Core Laboratories Inc - Headquarters,,Houston,TX,77040-4950,29.8624,-95.53727,True,dataaxle
+8372757_HQ,8372757,Trio-Tech International - Headquarters,,Van Nuys,CA,91406-3423,34.203349,-118.48514,True,dataaxle
+147539746_HQ,147539746,Braun Intertec Corporation - Headquarters,,Minneapolis,MN,55438-2424,44.802882,-93.367619,True,dataaxle
+244999991_HQ,244999991,EMSL Analytical Inc - Headquarters,,Cinnaminson,NJ,08077-2892,39.985902,-75.011301,True,dataaxle
+769167122_HQ,769167122,NuCera Solutions - Headquarters,,Houston,TX,77040-2937,29.867603,-95.551996,True,dataaxle
+416595398_HQ,416595398,HNL Lab Medicine - Headquarters,,Allentown,PA,18109-9110,40.637154,-75.452391,True,dataaxle
+618173140_HQ,618173140,"Versa Integrity Group, Inc - Headquarters",,Sulphur,LA,70665-8664,30.187643,-93.375649,True,dataaxle
+1525203_HQ,1525203,Abt Associates Inc - Headquarters,,Rockville,MD,20852-4907,39.047798,-77.127508,True,dataaxle
+107052201_HQ,107052201,"Asplundh Electrical Testing, LLC - Headquarters",,Foxboro,MA,02035-2873,42.035053,-71.239152,True,dataaxle
+678425_HQ,678425,Toledo Molding & Die Inc - Headquarters,,Toledo,OH,43612-2932,41.710119,-83.578926,True,dataaxle
+951360965_HQ,951360965,"SIGA Technologies, Inc - Headquarters",,New York,NY,10065-8014,40.765351,-73.969499,True,dataaxle
+6608020_HQ,6608020,Bristol-Myers Squibb Company - Headquarters,,Princeton,NJ,08543,40.317988,-74.645839,True,dataaxle
+415537810_HQ,415537810,United Cerebral Palsy Association - Headquarters,,Vienna,VA,22182-3820,38.914749,-77.235712,True,dataaxle
+677383499_HQ,677383499,Avedro Inc - Headquarters,,Waltham,MA,02451-1642,42.374989,-71.273895,True,dataaxle
+680106903_HQ,680106903,Crohn's & Colitis Foundation - Headquarters,,New York,NY,10017-3218,40.75306,-73.972558,True,dataaxle
+731491567_HQ,731491567,BlackThorn Therapeutics - Headquarters,,San Francisco,CA,94103-4919,37.773548,-122.403051,True,dataaxle
+517949350_HQ,517949350,Bayer Corporation - Headquarters,,Whippany,NJ,07981-1544,40.817607,-74.412411,True,dataaxle
+403009365_HQ,403009365,Metamark Genetics Inc - Headquarters,,Cambridge,MA,02142-1292,42.363548,-71.079172,True,dataaxle
+825815483_HQ,825815483,Human Services Department - Headquarters,,Cranston,RI,02920-3024,41.749032,-71.466643,True,dataaxle
+4352373_HQ,4352373,Abbott Laboratories - Headquarters,,North Chicago,IL,60064-3500,42.30232,-87.89075,True,dataaxle
+227933652_HQ,227933652,"Alimera Sciences, Inc - Headquarters",,Alpharetta,GA,30005-4041,34.111763,-84.222228,True,dataaxle
+248768616_HQ,248768616,"Trividia Health, Inc - Headquarters",,Fort Lauderdale,FL,33309-2672,26.193952,-80.175148,True,dataaxle
+464137512_HQ,464137512,"The Hain Celestial Group, Inc - Headquarters",,Hoboken,NJ,07030-5990,40.739181,-74.027787,True,dataaxle
+240625509_HQ,240625509,"AgaMatrix, Inc - Headquarters",,Salem,NH,03079-2935,42.773212,-71.239677,True,dataaxle
+35187962_HQ,35187962,Teva Canada Limited - Headquarters,,Scarborough,ON,M1B2K9,43.789193,-79.229642,True,dataaxle
+7609324_HQ,7609324,Furst-McNess Company - Headquarters,,Freeport,IL,61032-3328,42.301348,-89.62064,True,dataaxle
+757259088_HQ,757259088,Kindeva Drug Delivery LP - Headquarters,,Saint Paul,MN,55129-7577,44.946524,-92.88173,True,dataaxle
+707386269_HQ,707386269,Merck Animal Health - Headquarters,,Madison,NJ,07940-1026,40.75886,-74.43685,True,dataaxle
+964413702_HQ,964413702,ACADIA Pharmaceuticals Inc - Headquarters,,San Diego,CA,92130-2976,32.950743,-117.236897,True,dataaxle
+25453440_HQ,25453440,Bausch Health Companies Inc - Headquarters,,Laval,QC,H7L4A8,45.579808,-73.752528,True,dataaxle
+30334866_HQ,30334866,HLS Therapeutics Inc - Headquarters,,Etobicoke,ON,M9W6L2,43.690138,-79.586019,True,dataaxle
+8821092_HQ,8821092,Perrigo Company - Headquarters,,Allegan,MI,49010-9070,42.527944,-85.837477,True,dataaxle
+590388781_HQ,590388781,"Beiersdorf, Inc - Headquarters",,Stamford,CT,06901-3280,41.052308,-73.532962,True,dataaxle
+403607923_HQ,403607923,"Assembly Biosciences, Inc - Headquarters",,South San Francisco,CA,94080-1848,37.667163,-122.396979,True,dataaxle
+55775407_HQ,55775407,Pharmascience Inc - Headquarters,,Montreal,QC,H4P2T4,45.488343,-73.675059,True,dataaxle
+426839526_HQ,426839526,"Kremers Urban Pharmaceuticals, Inc - Headquarters",,Seymour,IN,47274-3342,38.926883,-85.908156,True,dataaxle
+129433207_HQ,129433207,Cheek & Scott Drugs Inc - Headquarters,,Live Oak,FL,32064-3396,30.28229,-82.98779,True,dataaxle
+637498759_HQ,637498759,"iBio, Inc - Headquarters",,San Diego,CA,92121-1019,32.914303,-117.234585,True,dataaxle
+7534241_HQ,7534241,GlaxoSmithKline LLC - Headquarters,,Philadelphia,PA,19104-5436,39.951805,-75.183513,True,dataaxle
+963954631_HQ,963954631,Ohm Laboratories Inc - Headquarters,,New Brunswick,NJ,08901-3616,40.474706,-74.483234,True,dataaxle
+502492705_HQ,502492705,"Primrose Bio, Inc - Headquarters",,San Diego,CA,92121-1508,32.898458,-117.223324,True,dataaxle
+9043753_HQ,9043753,"Avantor Performance Materials, LLC - Headquarters",,Radnor,PA,19087-4569,40.047937,-75.354443,True,dataaxle
+13822952_HQ,13822952,Advantage Solutions Inc - Headquarters,,Markham,ON,L3R4B8,43.834864,-79.32421,True,dataaxle
+856924576_HQ,856924576,National Alliance on Mental Illness - Headquarters,,Arlington,VA,22203-1867,38.880548,-77.11294,True,dataaxle
+27824259_HQ,27824259,Abbott Canada - Headquarters,,Saint-Laurent,QC,H4S1Z6,45.491825,-73.735138,True,dataaxle
+432594885_HQ,432594885,"Ethicon USA, LLC - Headquarters",,Somerville,NJ,08876,40.601185,-74.692285,True,dataaxle
+9500331_HQ,9500331,EverZinc - Headquarters,,Houston,TX,77011-2330,29.745723,-95.312058,True,dataaxle
+14333991_HQ,14333991,GSK Canada - Headquarters,,Mississauga,ON,L5R4H1,43.618232,-79.674093,True,dataaxle
+759675029_HQ,759675029,"Alzamend Neuro, Inc - Headquarters",,Atlanta,GA,30326-1210,33.853069,-84.362601,True,dataaxle
+967328535_HQ,967328535,"Integrated Biopharma, Inc - Headquarters",,Hillside,NJ,07205-2356,40.696762,-74.227278,True,dataaxle
+722988261_HQ,722988261,"ARS Pharmaceuticals, Inc - Headquarters",,San Diego,CA,92130-2092,32.928932,-117.238594,True,dataaxle
+758473552_HQ,758473552,"Lyell Immunopharma, Inc - Headquarters",,South San Francisco,CA,94080-6215,37.649776,-122.385973,True,dataaxle
+473678936_HQ,473678936,CTI BioPharma Corp - Headquarters,,Seattle,WA,98121-4096,47.617791,-122.356711,True,dataaxle
+724012396_HQ,724012396,"Spero Therapeutics, Inc - Headquarters",,Cambridge,MA,02139-3309,42.365896,-71.103983,True,dataaxle
+39324512_HQ,39324512,Liminal BioSciences Inc - Headquarters,,Laval,QC,H7V4B4,45.553087,-73.734823,True,dataaxle
+4384939_HQ,4384939,Arthritis Foundation - Headquarters,,Atlanta,GA,30309-3234,33.791823,-84.384999,True,dataaxle
+394152474_HQ,394152474,Shire - Headquarters,,Lexington,MA,02421-2101,42.426831,-71.252283,True,dataaxle
+432589638_HQ,432589638,Ansell Healthcare LLC - Headquarters,,Iselin,NJ,08830-2700,40.563348,-74.324726,True,dataaxle
+2630747_HQ,2630747,Pharmavite LLC - Headquarters,,West Hills,CA,91304-3232,34.224263,-118.62926,True,dataaxle
+600155717_HQ,600155717,"CooperSurgical, Inc - Headquarters",,Trumbull,CT,06611-1350,41.294806,-73.225089,True,dataaxle
+400131371_HQ,400131371,"ImmunoGen, Inc - Headquarters",,Waltham,MA,02451-1477,42.401866,-71.278271,True,dataaxle
+13087580_HQ,13087580,Apotex Inc - Headquarters,,North York,ON,M9L1T9,43.76418,-79.542,True,dataaxle
+425195126_HQ,425195126,Bioventus LLC - Headquarters,,Durham,NC,27703-7663,35.877069,-78.840204,True,dataaxle
+504318270_HQ,504318270,"Upsher-Smith Laboratories, LLC - Headquarters",,Maple Grove,MN,55369-6026,45.076048,-93.443781,True,dataaxle
+812277879_HQ,812277879,AIM ImmunoTech Inc - Headquarters,,Ocala,FL,34473-7949,29.028007,-82.16051,True,dataaxle
+706885730_HQ,706885730,Richmond Plastic Surgeons - Headquarters,,Midlothian,VA,23113-6836,37.508217,-77.674984,True,dataaxle
+27825421_HQ,27825421,Thermo Fisher Scientific - Headquarters,,Mississauga,ON,L5N7K9,43.605598,-79.750104,True,dataaxle
+200119295_HQ,200119295,Stryker Orthopaedics - Headquarters,,Mahwah,NJ,07430-2006,41.083302,-74.153717,True,dataaxle
+308280544_HQ,308280544,Swanson Health Products - Headquarters,,Fargo,ND,58104-3912,46.819177,-96.848987,True,dataaxle
+457745594_HQ,457745594,"IDEXX Laboratories, Inc - Headquarters",,Westbrook,ME,04092-2041,43.66241,-70.37691,True,dataaxle
+9412735_HQ,9412735,Nor-Lake Inc - Headquarters,,Hudson,WI,54016-7643,44.990115,-92.677952,True,dataaxle
+102671666_HQ,102671666,Environmental Sampling Supply - Headquarters,,San Leandro,CA,94578-3304,37.706835,-122.141908,True,dataaxle
+830694139_HQ,830694139,Lighthouse Worldwide Solutions Inc - Headquarters,,Fremont,CA,94538-7334,37.480043,-121.932968,True,dataaxle
+175566710_HQ,175566710,"Evident Scientific, Inc - Headquarters",,Waltham,MA,02453-3826,42.362414,-71.243444,True,dataaxle
+27824127_HQ,27824127,Fischer Scientific Company - Headquarters,,Ottawa,ON,K2E7L6,45.34235,-75.721139,True,dataaxle
+162608608_HQ,162608608,Hallmark Casework - Headquarters,,Houston,TX,77057-6657,29.727593,-95.487125,True,dataaxle
+510981178_HQ,510981178,"Illumina, Inc - Headquarters",,San Diego,CA,92122-4616,32.870354,-117.198283,True,dataaxle
+9317561_HQ,9317561,"Atlas Material Testing Technology, LLC - Headquarters",,Mount Prospect,IL,60056-6039,42.079696,-87.912469,True,dataaxle
+421649860_HQ,421649860,Harvard Apparatus Inc - Headquarters,,Holliston,MA,01746-1388,42.22873,-71.42576,True,dataaxle
+9609132_HQ,9609132,Mettler-Toledo International Inc - Headquarters,,Columbus,OH,43240-4055,40.14242,-82.968,True,dataaxle
+440192426_HQ,440192426,Nordson March - Headquarters,,Concord,CA,94520-1294,38.013818,-122.030803,True,dataaxle
+618123632_HQ,618123632,"Pacific Biosciences of California, Inc - Headquarters",,Menlo Park,CA,94025-1445,37.476502,-122.145315,True,dataaxle
+8762593_HQ,8762593,"Inotiv, Inc - Headquarters",,West Lafayette,IN,47906-1350,40.458808,-86.929728,True,dataaxle
+3937075_HQ,3937075,Boston Scientific Corporation - Headquarters,,Marlborough,MA,01752-1291,42.362171,-71.561152,True,dataaxle
+421180040_HQ,421180040,Quanterix Corporation - Headquarters,,Billerica,MA,01821-3929,42.524909,-71.252058,True,dataaxle
+102917176_HQ,102917176,Rainin Instrument LLC - Headquarters,,Oakland,CA,94621-3027,37.745649,-122.204819,True,dataaxle
+960133130_HQ,960133130,"Carl Zeiss, Inc - Headquarters",,White Plains,NY,10601-2335,41.034081,-73.76415,True,dataaxle
+454419334_HQ,454419334,"Precipio, Inc - Headquarters",,New Haven,CT,06511-1962,41.32327,-72.928544,True,dataaxle
+148067721_HQ,148067721,"Agiliti Health, Inc - Headquarters",,Eden Prairie,MN,55344-7219,44.861939,-93.418226,True,dataaxle
+300069259_HQ,300069259,"Abbott Rapid DX North America, LLC - Headquarters",,Orlando,FL,32810-6297,28.620007,-81.399338,True,dataaxle
+9609660_HQ,9609660,Nelson Miller Group - Headquarters,,City of Industry,CA,91748-1306,34.002047,-117.886807,True,dataaxle
+9717059_HQ,9717059,"JEOL USA, Inc - Headquarters",,Peabody,MA,01960-3862,42.52389,-70.99072,True,dataaxle
+8394330_HQ,8394330,"Brewer Science, Inc - Headquarters",,Rolla,MO,65401-7003,37.987122,-91.71943,True,dataaxle
+9462227_HQ,9462227,Labconco Corporation - Headquarters,,Kansas City,MO,64132-2696,38.96648,-94.55657,True,dataaxle
+7512114_HQ,7512114,"EIDP, Inc - Headquarters",,Wilmington,DE,19805-1269,39.753786,-75.607761,True,dataaxle
+8930166_HQ,8930166,"PCB Piezotronics, Inc - Headquarters",,Depew,NY,14043-2495,42.91333,-78.68308,True,dataaxle
+441404332_HQ,441404332,Waters Corporation - Headquarters,,Milford,MA,01757-3696,42.13288,-71.48278,True,dataaxle
+441434834_HQ,441434834,Thermo Fisher Scientific Inc - Headquarters,,Waltham,MA,02451-7551,42.392448,-71.26144,True,dataaxle
+315499483_HQ,315499483,"Dicalite Management Group, Inc - Headquarters",,Conshohocken,PA,19428-2906,40.067001,-75.306777,True,dataaxle
+736713851_HQ,736713851,"Carterra, Inc - Headquarters",,Salt Lake City,UT,84103-6126,40.787388,-111.900566,True,dataaxle
+9558552_HQ,9558552,"Bio-Rad Laboratories, Inc - Headquarters",,Hercules,CA,94547-1898,38.02361,-122.27936,True,dataaxle
+887570703_HQ,887570703,"Primus Sterilizer Company, LLC - Headquarters",,Orlando,FL,32810-2907,28.629725,-81.416083,True,dataaxle
+616289708_HQ,616289708,Ortho Clinical Diagnostics Holdings PLC - Headquarters,,Raritan,NJ,08869-1487,40.57428,-74.6491,True,dataaxle
+743124783_HQ,743124783,"Avantor, Inc - Headquarters",,Wayne,PA,19087-4569,40.047937,-75.354443,True,dataaxle
+250985_HQ,250985,Thomas Scientific LLC - Headquarters,,Logan Township,NJ,08085-1780,39.764188,-75.35545,True,dataaxle
+445399538_HQ,445399538,Micromeritics Instrument Corporation - Headquarters,,Norcross,GA,30093-2901,33.935804,-84.14781,True,dataaxle
+7512098_HQ,7512098,"Revvity, Inc - Headquarters",,Waltham,MA,02451-7559,42.392759,-71.259405,True,dataaxle
+889342978_HQ,889342978,Teledyne Le Croy Inc - Headquarters,,Spring Valley,NY,10977-6435,41.087718,-74.051047,True,dataaxle
+4710158_HQ,4710158,IDEX Health & Science LLC - Headquarters,,Rohnert Park,CA,94928-7906,38.357346,-122.723476,True,dataaxle
+1573393_HQ,1573393,"MOCON, Inc - Headquarters",,Minneapolis,MN,55428-4045,45.091241,-93.401289,True,dataaxle
+468626049_HQ,468626049,Schott North America Inc - Headquarters,,Port Chester,NY,10573-1061,41.049488,-73.688041,True,dataaxle
+250878816_HQ,250878816,Bruker Corporation - Headquarters,,Billerica,MA,01821-3915,42.52699,-71.266007,True,dataaxle
+8371841_HQ,8371841,Danaher Corporation - Headquarters,,Washington,DC,20037-1731,38.901944,-77.049277,True,dataaxle
+4284766_HQ,4284766,"Shimadzu Scientific Instruments, Inc - Headquarters",,Columbia,MD,21046-2502,39.17702,-76.8745,True,dataaxle
+7517238_HQ,7517238,Hach Company - Headquarters,,Loveland,CO,80538-8842,40.448039,-104.999261,True,dataaxle
+6796718_HQ,6796718,X-Rite Incorporated - Headquarters,,Grand Rapids,MI,49512-4009,42.881401,-85.558211,True,dataaxle
+565553567_HQ,565553567,Nova Biomedical - Headquarters,,Waltham,MA,02453-3465,42.37064,-71.2435,True,dataaxle
+8232308_HQ,8232308,"QED Environmental Systems, Inc - Headquarters",,Dexter,MI,48130-1592,42.32397,-83.882618,True,dataaxle
+447428434_HQ,447428434,TA Instruments Inc - Headquarters,,Historic New Castle,DE,19720-2795,39.68309,-75.54587,True,dataaxle
+164676447_HQ,164676447,Trajan Scientific Americas Inc - Headquarters,,Pflugerville,TX,78660-3230,30.439581,-97.663795,True,dataaxle
+7508286_HQ,7508286,"Coherent, Inc - Headquarters",,Santa Clara,CA,95054-1112,37.404736,-121.985242,True,dataaxle
+7520299_HQ,7520299,Newport Corporation - Headquarters,,Irvine,CA,92606-4814,33.700168,-117.842174,True,dataaxle
+375277696_HQ,375277696,ProteinSimple - Headquarters,,San Jose,CA,95134-2017,37.391295,-121.938095,True,dataaxle
+316389998_HQ,316389998,KLA Corporation - Headquarters,,Milpitas,CA,95035-7916,37.420729,-121.9266,True,dataaxle
+402518115_HQ,402518115,BD Biosciences - Headquarters,,San Jose,CA,95131-1812,37.397761,-121.887015,True,dataaxle
+3569860_HQ,3569860,"Beckman Coulter, Inc - Headquarters",,Brea,CA,92821-6232,33.915481,-117.861281,True,dataaxle
+479647968_HQ,479647968,Nikon Instruments Inc - Headquarters,,Melville,NY,11747-3064,40.78623,-73.4187,True,dataaxle

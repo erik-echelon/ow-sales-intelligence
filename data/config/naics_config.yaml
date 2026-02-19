@@ -1,0 +1,113 @@
+# NAICS Code Configuration for DataAxle Discovery (Epic 1)
+# Generated: 2025-12-28
+# Owner: Erik Allen
+# Status: Production
+
+version: "1.0"
+description: "Target NAICS codes for multi-location company discovery via DataAxle API"
+updated_at: "2025-12-28"
+
+# Target NAICS codes from ICP Definition Phase 1
+# These codes represent multi-location companies in healthcare, life sciences, and engineering
+target_codes:
+  - "621492"  # Kidney Dialysis Centers (DaVita, Fresenius, US Renal Care)
+  - "621111"  # Offices of Physicians (except Mental Health Specialists)
+  - "621511"  # Medical Laboratories
+  - "622110"  # General Medical and Surgical Hospitals
+  - "541330"  # Engineering Services
+  - "541380"  # Testing Laboratories
+  - "325412"  # Pharmaceutical Preparation Manufacturing
+  - "334516"  # Analytical Laboratory Instrument Manufacturing
+
+# Detailed descriptions for each NAICS code
+code_descriptions:
+  "621492":
+    title: "Kidney Dialysis Centers"
+    description: "Establishments primarily engaged in providing kidney dialysis services"
+    examples:
+      - "DaVita Inc (3,318 branches in POC dataset)"
+      - "Fresenius Medical Care (2,937 branches in POC dataset)"
+      - "US Renal Care"
+    icp_rationale: "High-value multi-location healthcare facilities with significant equipment needs"
+    expected_building_count_range: "50-5000"
+
+  "621111":
+    title: "Offices of Physicians (except Mental Health Specialists)"
+    description: "Establishments of health practitioners having the degree of M.D. or D.O., primarily engaged in the independent practice of general or specialized medicine"
+    examples:
+      - "Multi-location physician groups"
+      - "Healthcare networks"
+    icp_rationale: "Large physician networks with laboratory and diagnostic equipment needs"
+    expected_building_count_range: "10-500"
+
+  "621511":
+    title: "Medical Laboratories"
+    description: "Establishments primarily engaged in providing analytic or diagnostic services"
+    examples:
+      - "Quest Diagnostics"
+      - "LabCorp"
+    icp_rationale: "High equipment utilization, multi-location laboratory networks"
+    expected_building_count_range: "20-1000"
+
+  "622110":
+    title: "General Medical and Surgical Hospitals"
+    description: "Establishments primarily engaged in providing diagnostic and medical treatment services"
+    examples:
+      - "Hospital systems"
+      - "Healthcare networks"
+    icp_rationale: "Large capital equipment budgets, multi-facility systems"
+    expected_building_count_range: "5-200"
+
+  "541330":
+    title: "Engineering Services"
+    description: "Establishments primarily engaged in applying physical laws and principles of engineering"
+    examples:
+      - "Multi-location engineering firms"
+      - "Consulting networks"
+    icp_rationale: "Testing and analytical equipment needs across locations"
+    expected_building_count_range: "10-100"
+
+  "541380":
+    title: "Testing Laboratories"
+    description: "Establishments primarily engaged in performing physical, chemical, and other analytical testing services"
+    examples:
+      - "Environmental testing labs"
+      - "Material testing facilities"
+    icp_rationale: "Heavy analytical instrument users, multi-location operations"
+    expected_building_count_range: "10-200"
+
+  "325412":
+    title: "Pharmaceutical Preparation Manufacturing"
+    description: "Establishments primarily engaged in manufacturing pharmaceutical preparations"
+    examples:
+      - "Pharmaceutical manufacturers"
+      - "Contract manufacturing organizations"
+    icp_rationale: "High-value analytical equipment across manufacturing sites"
+    expected_building_count_range: "5-50"
+
+  "334516":
+    title: "Analytical Laboratory Instrument Manufacturing"
+    description: "Establishments primarily engaged in manufacturing laboratory analytical instruments"
+    examples:
+      - "Instrument manufacturers"
+      - "Life sciences equipment companies"
+    icp_rationale: "Direct target customers for OpenWorks, multi-location operations"
+    expected_building_count_range: "5-50"
+
+# Validation metadata
+validation:
+  total_codes: 8
+  all_codes_6_digits: true
+  no_duplicates: true
+  source: "ICP_Definition.md Phase 1 + POC validation"
+  poc_dataset_size: 6762  # Total records from NAICS 621492 in POC
+  poc_headquarters_count: 147  # HQ count from POC
+  validated_by: "Erik Allen"
+  validated_at: "2025-12-28"
+
+# Notes from POC exploration
+notes:
+  - "NAICS 621492 (Kidney Dialysis) proved to be excellent test case with large multi-location chains"
+  - "DaVita and Fresenius represent 93% of dialysis centers in POC dataset"
+  - "All codes should use same discovery approach (HQ-based) as validated in POC"
+  - "Expected ~100-200 multi-location companies across all 8 NAICS codes"
