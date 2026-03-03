@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pipeline Quick Reference - Sales Intelligence Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #1a73e8;
+            border-bottom: 3px solid #1a73e8;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .metadata {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .metadata p {
+            margin: 5px 0;
+        }
+
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .prerequisites {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        thead {
+            background: #1a73e8;
+            color: white;
+        }
+
+        th {
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .step-number {
+            background: #1a73e8;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .epic-badge {
+            background: #34495e;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .runtime {
+            color: #e67e22;
+            font-weight: 500;
+        }
+
+        .required-badge {
+            background: #28a745;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .optional-badge {
+            background: #6c757d;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+
+        pre code {
+            background: none;
+            color: #f8f8f2;
+            padding: 0;
+        }
+
+        .command-block {
+            position: relative;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+
+        .copy-button:hover {
+            background: #1557b0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        .stat-card .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .dependency-graph {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .dependency-graph pre {
+            background: #f9f9f9;
+            color: #333;
+            font-size: 0.85em;
+        }
+
+        .file-list {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85em;
+            line-height: 1.8;
+        }
+
+        .troubleshooting {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .troubleshooting h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .section-nav {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .section-nav h3 {
+            margin-top: 0;
+        }
+
+        .section-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section-nav li {
+            margin: 8px 0;
+        }
+
+        .section-nav a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .section-nav a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            .copy-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Data Pipeline Quick Reference</h1>
+
+        <div class="metadata">
+            <p><strong>Purpose:</strong> Step-by-step guide to regenerate all Streamlit app data from scratch</p>
+            <p><strong>Last Updated:</strong> 2026-03-03</p>
+            <p><strong>Author:</strong> Claude Code Analysis</p>
+        </div>
+
+        <div class="section-nav">
+            <h3>Quick Navigation</h3>
+            <ul>
+                <li><a href="#prerequisites">Prerequisites</a></li>
+                <li><a href="#pipeline-steps">Pipeline Execution Steps</a></li>
+                <li><a href="#runtime">Total Pipeline Runtime</a></li>
+                <li><a href="#required-files">Required Files</a></li>
+                <li><a href="#quick-start">Quick Start Commands</a></li>
+                <li><a href="#incremental">Incremental Updates</a></li>
+                <li><a href="#dependencies">Data Dependencies Graph</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ul>
+        </div>
+
+        <h2 id="prerequisites">Prerequisites</h2>
+
+        <div class="prerequisites">
+            <h3>1. Environment Variables</h3>
+            <div class="command-block">
+                <pre><code>export DATA_AXLE_API_KEY="your_key_here"
+export HUBSPOT_API_KEY="your_key_here"
+export ANTHROPIC_API_KEY="your_key_here"</code></pre>
+            </div>
+
+            <h3>2. Python Environment</h3>
+            <div class="command-block">
+                <pre><code>uv pip install -e .  # or: pip install -e .</code></pre>
+            </div>
+
+            <h3>3. Data Dependencies</h3>
+            <ul>
+                <li><code>data/ow_industry_info/fct_churn_predictions.csv</code> (from dbt/data warehouse)</li>
+                <li><code>data/ow_industry_info/fct_support_tickets.csv</code> (from dbt/data warehouse)</li>
+                <li><code>data/ow_industry_info/metrics_by_naics.csv</code> (from dbt/data warehouse)</li>
+                <li><code>data/config/exclusions.yaml</code> (industry exclusions)</li>
+                <li><code>data/config/channels.yaml</code> (channel definitions)</li>
+            </ul>
+        </div>
+
+        <h2 id="pipeline-steps">Pipeline Execution Steps</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Epic</th>
+                    <th>Script</th>
+                    <th>Runtime</th>
+                    <th>Command</th>
+                    <th>Output Files</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="step-number">0</span></td>
+                    <td><span class="epic-badge">HubSpot Pull</span></td>
+                    <td><code>hubspot_pull.py</code></td>
+                    <td><span class="runtime">~5 min</span></td>
+                    <td><code>python scripts/hubspot_pull.py --all</code></td>
+                    <td class="file-list">
+                        data/raw/hubspot_companies.csv<br>
+                        data/raw/hubspot_buildings.csv<br>
+                        data/raw/hubspot_contracts.csv<br>
+                        data/raw/hubspot_tickets.csv
+                    </td>
+                    <td>Pull current customer data from HubSpot CRM</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">1</span></td>
+                    <td><span class="epic-badge">Epic 1</span></td>
+                    <td><code>run_epic1_hq_discovery.py</code></td>
+                    <td><span class="runtime">~30 min</span></td>
+                    <td><code>python scripts/run_epic1_hq_discovery.py</code></td>
+                    <td class="file-list">
+                        data/processed/epic1_v4_&lt;timestamp&gt;/companies_hq_only.csv<br>
+                        data/processed/epic1_v4_&lt;timestamp&gt;/buildings_hq_only.csv
+                    </td>
+                    <td>Discover HQ companies from DataAxle API for target NAICS codes</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">2</span></td>
+                    <td><span class="epic-badge">Epic 2</span></td>
+                    <td><code>run_epic2_company_resolution.py</code></td>
+                    <td><span class="runtime">~10 min</span></td>
+                    <td><code>python scripts/run_epic2_company_resolution.py</code></td>
+                    <td class="file-list">
+                        data/processed/epic2_v5_&lt;timestamp&gt;/penetration_by_company.csv<br>
+                        data/processed/epic2_v5_&lt;timestamp&gt;/penetration_by_naics.csv<br>
+                        data/processed/entity_resolution_log.csv
+                    </td>
+                    <td>Match DataAxle prospects with HubSpot customers</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">3</span></td>
+                    <td><span class="epic-badge">Epic 4 Prep</span></td>
+                    <td><code>prepare_epic4_inputs.py</code></td>
+                    <td><span class="runtime">~1 min</span></td>
+                    <td><code>python scripts/prepare_epic4_inputs.py</code></td>
+                    <td class="file-list">
+                        data/processed/companies.csv ⭐<br>
+                        data/processed/buildings.csv ⭐<br>
+                        data/processed/penetration_by_company.csv
+                    </td>
+                    <td>Prepare standardized input files for scoring</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">4a</span></td>
+                    <td><span class="epic-badge">Epic 4</span></td>
+                    <td><code>analyze_support_tickets_semantic.py</code></td>
+                    <td><span class="runtime">~20 min</span></td>
+                    <td><code>python scripts/analyze_support_tickets_semantic.py</code></td>
+                    <td class="file-list">
+                        data/processed/customer_ticket_semantic_analysis.csv
+                    </td>
+                    <td>Semantic analysis of support tickets by customer</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">4b</span></td>
+                    <td><span class="epic-badge">Epic 4</span></td>
+                    <td><code>aggregate_naics_risk_metrics.py</code></td>
+                    <td><span class="runtime">~2 min</span></td>
+                    <td><code>python scripts/aggregate_naics_risk_metrics.py</code></td>
+                    <td class="file-list">
+                        data/processed/naics_risk_metrics.csv
+                    </td>
+                    <td>Aggregate churn + ticket health by NAICS</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">4c</span></td>
+                    <td><span class="epic-badge">Epic 4</span></td>
+                    <td><code>generate_naics_icp_scores.py</code></td>
+                    <td><span class="runtime">~35 min</span></td>
+                    <td><code>python scripts/generate_naics_icp_scores.py</code></td>
+                    <td class="file-list">
+                        data/scoring/naics_icp_fit_scores.csv ⭐
+                    </td>
+                    <td>Claude AI scoring of industry ICP fit (308 NAICS codes)</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">4d</span></td>
+                    <td><span class="epic-badge">Epic 4</span></td>
+                    <td><code>generate_company_icp_scores_with_research.py</code></td>
+                    <td><span class="runtime">~3-4 hrs</span></td>
+                    <td><code>python scripts/generate_company_icp_scores_with_research.py</code></td>
+                    <td class="file-list">
+                        data/scoring/company_icp_scores_with_research.csv ⭐
+                    </td>
+                    <td>Claude AI company scoring with web research (6K+ companies)</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">4e</span></td>
+                    <td><span class="epic-badge">Epic 4</span></td>
+                    <td><code>score_companies_final.py</code></td>
+                    <td><span class="runtime">~10 sec</span></td>
+                    <td><code>python scripts/score_companies_final.py</code></td>
+                    <td class="file-list">
+                        data/scoring/scored_companies_final.csv ⭐<br>
+                        data/scoring/naics_metrics.csv ⭐
+                    </td>
+                    <td>Final weighted scores combining NAICS + Company</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">5</span></td>
+                    <td><span class="epic-badge">Deploy</span></td>
+                    <td><code>migrate_to_streamlit_repo.sh</code></td>
+                    <td><span class="runtime">~1 min</span></td>
+                    <td><code>bash migrate_to_streamlit_repo.sh</code></td>
+                    <td class="file-list">
+                        Copies all app/ and data/ files to public repo
+                    </td>
+                    <td>Sync all updates to public Streamlit Cloud repo</td>
+                </tr>
+                <tr>
+                    <td><span class="step-number">6</span></td>
+                    <td><span class="epic-badge">Epic 5</span></td>
+                    <td>Launch Streamlit</td>
+                    <td><span class="runtime">Instant</span></td>
+                    <td><code>streamlit run app/streamlit_app.py</code></td>
+                    <td>N/A</td>
+                    <td>Launch UI - loads all generated data files</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>⭐ = Required by Streamlit app</strong></p>
+
+        <h2 id="runtime">Total Pipeline Runtime</h2>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Fast Path</h3>
+                <div class="stat-value">~1 hour</div>
+                <p>Steps 0-3 only (no LLM)</p>
+            </div>
+            <div class="stat-card">
+                <h3>Full Pipeline</h3>
+                <div class="stat-value">~5-6 hours</div>
+                <p>All steps including LLM scoring</p>
+            </div>
+            <div class="stat-card">
+                <h3>Bottleneck</h3>
+                <div class="stat-value">3-4 hours</div>
+                <p>Step 4d: Company ICP scoring with research</p>
+            </div>
+        </div>
+
+        <h2 id="required-files">Key Output Files Required by Streamlit</h2>
+
+        <p>The Streamlit app (<code>app/streamlit_app.py</code>) loads these files:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>File Path</th>
+                    <th>Generated By</th>
+                    <th>Required?</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>data/raw/hubspot_companies.csv</code></td>
+                    <td>Step 0</td>
+                    <td><span class="required-badge">Required</span></td>
+                    <td>Customer company data</td>
+                </tr>
+                <tr>
+                    <td><code>data/raw/hubspot_buildings.csv</code></td>
+                    <td>Step 0</td>
+                    <td><span class="required-badge">Required</span></td>
+                    <td>Customer building locations</td>
+                </tr>
+                <tr>
+                    <td><code>data/processed/companies.csv</code></td>
+                    <td>Step 3</td>
+                    <td><span class="required-badge">Required</span></td>
+                    <td>All companies (prospects + customers)</td>
+                </tr>
+                <tr>
+                    <td><code>data/processed/buildings.csv</code></td>
+                    <td>Step 3</td>
+                    <td><span class="required-badge">Required</span></td>
+                    <td>All building locations</td>
+                </tr>
+                <tr>
+                    <td><code>data/processed/golden_buildings.csv</code></td>
+                    <td>Epic 2 (optional)</td>
+                    <td><span class="optional-badge">Optional</span></td>
+                    <td>Enhanced buildings with HubSpot data</td>
+                </tr>
+                <tr>
+                    <td><code>data/processed/penetration_by_company.csv</code></td>
+                    <td>Step 2</td>
+                    <td><span class="optional-badge">Optional</span></td>
+                    <td>Customer penetration metrics</td>
+                </tr>
+                <tr>
+                    <td><code>data/processed/entity_resolution_log.csv</code></td>
+                    <td>Step 2</td>
+                    <td><span class="optional-badge">Optional</span></td>
+                    <td>Entity resolution diagnostics</td>
+                </tr>
+                <tr>
+                    <td><code>data/scoring/scored_companies_final.csv</code></td>
+                    <td>Step 4e</td>
+                    <td><span class="required-badge">Required</span></td>
+                    <td>Final scored companies (main data)</td>
+                </tr>
+                <tr>
+                    <td><code>data/scoring/naics_metrics.csv</code></td>
+                    <td>Step 4e</td>
+                    <td><span class="required-badge">Required</span></td>
+                    <td>NAICS attractiveness scores</td>
+                </tr>
+                <tr>
+                    <td><code>data/scoring/naics_icp_fit_scores.csv</code></td>
+                    <td>Step 4c</td>
+                    <td><span class="required-badge">Required</span></td>
+                    <td>NAICS ICP fit details</td>
+                </tr>
+                <tr>
+                    <td><code>data/scoring/company_icp_scores_with_research.csv</code></td>
+                    <td>Step 4d</td>
+                    <td><span class="required-badge">Required</span></td>
+                    <td>Company research details</td>
+                </tr>
+                <tr>
+                    <td><code>data/config/exclusions.yaml</code></td>
+                    <td>Manual</td>
+                    <td><span class="optional-badge">Optional</span></td>
+                    <td>Industry exclusions</td>
+                </tr>
+                <tr>
+                    <td><code>data/config/channels.yaml</code></td>
+                    <td>Manual</td>
+                    <td><span class="optional-badge">Optional</span></td>
+                    <td>Channel definitions</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="quick-start">Quick Start Commands (Copy-Paste)</h2>
+
+        <div class="alert">
+            <strong>⚠️ Note:</strong> Full pipeline takes 5-6 hours. Consider running overnight or in background.
+        </div>
+
+        <div class="command-block">
+            <pre><code># Full pipeline from scratch
+cd /Users/erikallen/repos/sales-intelligence-platform
+
+# Step 0: Pull HubSpot data
+python scripts/hubspot_pull.py --all
+
+# Step 1: Discover HQ companies from DataAxle
+python scripts/run_epic1_hq_discovery.py
+
+# Step 2: Match prospects with customers
+python scripts/run_epic2_company_resolution.py
+
+# Step 3: Prepare standardized inputs
+python scripts/prepare_epic4_inputs.py
+
+# Step 4a: Analyze support tickets
+python scripts/analyze_support_tickets_semantic.py
+
+# Step 4b: Aggregate NAICS risk metrics
+python scripts/aggregate_naics_risk_metrics.py
+
+# Step 4c: Score NAICS industries (~35 min)
+python scripts/generate_naics_icp_scores.py
+
+# Step 4d: Score companies with research (~3-4 hours)
+python scripts/generate_company_icp_scores_with_research.py
+
+# Step 4e: Calculate final scores (~10 sec)
+python scripts/score_companies_final.py
+
+# Step 5: Copy to public Streamlit repo (~1 min)
+bash migrate_to_streamlit_repo.sh
+
+# Step 6: Launch Streamlit app (local testing)
+streamlit run app/streamlit_app.py
+
+# OR: Deploy to Streamlit Cloud
+# cd ~/repos/ow-sales-intelligence
+# git add .
+# git commit -m "Update data: $(date +%Y-%m-%d)"
+# git push origin main</code></pre>
+        </div>
+
+        <h2 id="incremental">Incremental Updates</h2>
+
+        <h3>🔄 Refresh Customer Data Only (Run Weekly)</h3>
+        <p><strong>Runtime:</strong> <span class="runtime">~15 minutes + deployment</span></p>
+
+        <div class="command-block">
+            <pre><code># Re-pull HubSpot data
+python scripts/hubspot_pull.py --all
+
+# Re-run entity resolution
+python scripts/run_epic2_company_resolution.py
+
+# Regenerate standardized inputs
+python scripts/prepare_epic4_inputs.py
+
+# Recalculate final scores (uses cached NAICS/company scores)
+python scripts/score_companies_final.py
+
+# Copy to public repo and deploy
+bash migrate_to_streamlit_repo.sh
+cd ~/repos/ow-sales-intelligence
+git add . && git commit -m "Weekly data refresh: $(date +%Y-%m-%d)" && git push</code></pre>
+        </div>
+
+        <h3>🔄 Refresh Prospect Data Only (Run Monthly)</h3>
+        <p><strong>Runtime:</strong> <span class="runtime">~4 hours + deployment</span></p>
+
+        <div class="command-block">
+            <pre><code># Re-run Epic 1 (new prospects from DataAxle)
+python scripts/run_epic1_hq_discovery.py
+
+# Re-run Epic 2 (match new prospects)
+python scripts/run_epic2_company_resolution.py
+
+# Regenerate standardized inputs
+python scripts/prepare_epic4_inputs.py
+
+# Re-score new companies
+python scripts/generate_company_icp_scores_with_research.py
+
+# Recalculate final scores
+python scripts/score_companies_final.py
+
+# Copy to public repo and deploy
+bash migrate_to_streamlit_repo.sh
+cd ~/repos/ow-sales-intelligence
+git add . && git commit -m "Monthly prospect refresh: $(date +%Y-%m-%d)" && git push</code></pre>
+        </div>
+
+        <h3>🔄 Refresh Scoring Only (Run as Needed)</h3>
+        <p><strong>Runtime:</strong> <span class="runtime">~4 hours + deployment</span></p>
+
+        <div class="command-block">
+            <pre><code># Re-score NAICS industries (if prompt changed)
+python scripts/generate_naics_icp_scores.py
+
+# Re-score companies (if prompt changed)
+python scripts/generate_company_icp_scores_with_research.py
+
+# Recalculate final scores
+python scripts/score_companies_final.py
+
+# Copy to public repo and deploy
+bash migrate_to_streamlit_repo.sh
+cd ~/repos/ow-sales-intelligence
+git add . && git commit -m "Scoring updates: $(date +%Y-%m-%d)" && git push</code></pre>
+        </div>
+
+        <h2 id="dependencies">Data Dependencies Graph</h2>
+
+        <div class="dependency-graph">
+            <pre>┌─────────────────────────────────────────────────────────────┐
+│ Step 0: HubSpot Pull                                        │
+│ hubspot_pull.py                                             │
+│ → data/raw/hubspot_*.csv                                    │
+└───────────────────┬─────────────────────────────────────────┘
+                    │
+                    ▼
+┌─────────────────────────────────────────────────────────────┐
+│ Step 1: Epic 1 HQ Discovery                                 │
+│ run_epic1_hq_discovery.py                                   │
+│ → data/processed/epic1_v4_*/companies_hq_only.csv           │
+└───────────────────┬─────────────────────────────────────────┘
+                    │
+                    ▼
+┌─────────────────────────────────────────────────────────────┐
+│ Step 2: Epic 2 Entity Resolution                            │
+│ run_epic2_company_resolution.py                             │
+│ Inputs: Epic 1 companies + HubSpot data                     │
+│ → data/processed/epic2_v5_*/penetration_by_company.csv      │
+└───────────────────┬─────────────────────────────────────────┘
+                    │
+                    ▼
+┌─────────────────────────────────────────────────────────────┐
+│ Step 3: Prepare Epic 4 Inputs                               │
+│ prepare_epic4_inputs.py                                     │
+│ → data/processed/companies.csv ⭐                            │
+│ → data/processed/buildings.csv ⭐                            │
+└───────────────────┬─────────────────────────────────────────┘
+                    │
+        ┌───────────┴───────────┬─────────────────┐
+        │                       │                 │
+        ▼                       ▼                 ▼
+┌────────────────┐    ┌────────────────┐   ┌────────────────┐
+│ Step 4a:       │    │ Step 4b:       │   │ Step 4c:       │
+│ Ticket         │    │ NAICS Risk     │   │ NAICS ICP      │
+│ Analysis       │    │ Metrics        │   │ Scoring        │
+│ (~20 min)      │    │ (~2 min)       │   │ (~35 min)      │
+└────────────────┘    └────────┬───────┘   └────────┬───────┘
+                               │                    │
+                               └──────────┬─────────┘
+                                          ▼
+                               ┌────────────────────┐
+                               │ Step 4d:           │
+                               │ Company ICP        │
+                               │ Scoring + Research │
+                               │ (~3-4 hours)       │
+                               └──────────┬─────────┘
+                                          │
+                                          ▼
+                               ┌────────────────────┐
+                               │ Step 4e:           │
+                               │ Final Scores       │
+                               │ (~10 sec)          │
+                               │ → scored_companies │
+                               │   _final.csv ⭐     │
+                               └──────────┬─────────┘
+                                          │
+                                          ▼
+                               ┌────────────────────┐
+                               │ Step 5:            │
+                               │ Deploy to Public   │
+                               │ Repo (~1 min)      │
+                               │ migrate_to_        │
+                               │ streamlit_repo.sh  │
+                               └──────────┬─────────┘
+                                          │
+                                          ▼
+                               ┌────────────────────┐
+                               │ Step 6:            │
+                               │ Streamlit UI       │
+                               │ (loads all data)   │
+                               │ + Deploy to Cloud  │
+                               └────────────────────┘</pre>
+        </div>
+
+        <h2 id="troubleshooting">Troubleshooting</h2>
+
+        <div class="troubleshooting">
+            <h4>🚨 App won't start - missing files</h4>
+            <div class="command-block">
+                <pre><code># Check which files are missing
+ls data/raw/hubspot_*.csv
+ls data/processed/companies.csv
+ls data/scoring/scored_companies_final.csv
+
+# If missing, run the appropriate pipeline step above</code></pre>
+            </div>
+        </div>
+
+        <div class="troubleshooting">
+            <h4>🔄 Stale data in app</h4>
+            <div class="command-block">
+                <pre><code># Clear Streamlit cache (in browser)
+Press 'C' key
+
+# Or restart Streamlit
+pkill -f streamlit
+streamlit run app/streamlit_app.py</code></pre>
+            </div>
+        </div>
+
+        <div class="troubleshooting">
+            <h4>⚠️ API rate limits</h4>
+            <ul>
+                <li><strong>DataAxle:</strong> Default 200 calls/run (configurable with <code>--api-budget</code>)</li>
+                <li><strong>Anthropic Claude:</strong> No hard limit, but watch usage/costs</li>
+                <li><strong>HubSpot:</strong> Rate limited by HubSpot (handled automatically)</li>
+            </ul>
+        </div>
+
+        <div class="troubleshooting">
+            <h4>💰 Cost Estimates</h4>
+            <ul>
+                <li><strong>DataAxle API:</strong> ~$50-100 per full run (200 API calls)</li>
+                <li><strong>Claude API (NAICS scoring):</strong> ~$10-20 (308 industries)</li>
+                <li><strong>Claude API (Company scoring):</strong> ~$100-200 (6,000+ companies with research)</li>
+                <li><strong>Total per full run:</strong> ~$160-320</li>
+            </ul>
+        </div>
+
+        <hr style="margin: 40px 0;">
+
+        <div class="metadata">
+            <h3>Document Metadata</h3>
+            <p><strong>Created:</strong> 2026-03-03</p>
+            <p><strong>Author:</strong> Claude Code Analysis</p>
+            <p><strong>Purpose:</strong> Quick reference for data pipeline execution</p>
+            <p><strong>Related:</strong> <code>Repository_Cleanup_Analysis.md</code> (detailed analysis)</p>
+        </div>
+    </div>
+</body>
+</html>
