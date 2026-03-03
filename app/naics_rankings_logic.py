@@ -6,56 +6,158 @@ Aggregates company scoring data by NAICS code to show industry-level attractiven
 
 import pandas as pd
 import streamlit as st
+from pathlib import Path
+
+
+# Cache NAICS descriptions to avoid reloading on every call
+_naics_description_cache = None
+
+
+def _load_naics_descriptions():
+    """
+    Load NAICS descriptions from multiple sources and cache them.
+
+    Priority order:
+    1. Supplementary hardcoded descriptions (for codes missing from files)
+    2. naics_metrics.csv (has AI-generated descriptions for scored NAICS codes)
+    3. config/naics_codes.csv (has standard NAICS descriptions)
+    4. Fallback to generic category names
+    """
+    global _naics_description_cache
+
+    if _naics_description_cache is not None:
+        return _naics_description_cache
+
+    description_map = {}
+
+    # Add supplementary NAICS descriptions for codes not in our CSV files
+    supplementary = {
+        '1114': 'Greenhouse, Nursery, and Floriculture Production',
+        '1119': 'Other Crop Farming',
+        '1133': 'Logging',
+        '1142': 'Hunting and Trapping',
+        '1151': 'Support Activities for Crop Production',
+        '2212': 'Natural Gas Distribution',
+        '3111': 'Animal Food Manufacturing',
+        '3114': 'Fruit and Vegetable Preserving and Specialty Food Manufacturing',
+        '4231': 'Motor Vehicle and Motor Vehicle Parts and Supplies Merchant Wholesalers',
+        '4241': 'Paper and Paper Product Merchant Wholesalers',
+        '4244': 'Grocery and Related Product Merchant Wholesalers',
+        '4245': 'Farm Product Raw Material Merchant Wholesalers',
+        '4248': 'Beer, Wine, and Distilled Alcoholic Beverage Merchant Wholesalers',
+        '4412': 'Other Motor Vehicle Dealers',
+        '4441': 'Building Material and Supplies Dealers',
+        '4491': 'Other General Merchandise Stores',
+        '4492': 'Vending Machine Operators',
+        '4581': 'Fuel Dealers',
+        '4591': 'Farm and Garden Machinery and Equipment Merchant Wholesalers',
+        '4592': 'Book Stores and News Dealers',
+        '4594': 'Office Supplies, Stationery, and Gift Stores',
+        '4595': 'Used Merchandise Stores',
+        '4599': 'Other Miscellaneous Store Retailers',
+        '4842': 'Specialized Freight Trucking',
+        '4861': 'Pipeline Transportation of Crude Oil',
+        '5132': 'Cable and Other Subscription Programming',
+        '5322': 'Consumer Goods Rental',
+        '3256': 'Soap, Cleaning Compound, and Toilet Preparation Manufacturing',
+    }
+    description_map.update(supplementary)
+
+    # Load from config file first (lower priority)
+    config_path = Path("config/naics_codes.csv")
+    if config_path.exists():
+        try:
+            config_df = pd.read_csv(config_path)
+            for _, row in config_df.iterrows():
+                naics_code = str(int(row['naics_code']))
+                description_map[naics_code] = row['description']
+        except Exception:
+            pass  # Skip if file can't be loaded
+
+    # Load from naics_metrics.csv (higher priority - overwrites config and supplementary)
+    metrics_path = Path("data/scoring/naics_metrics.csv")
+    if metrics_path.exists():
+        try:
+            metrics_df = pd.read_csv(metrics_path)
+            for _, row in metrics_df.iterrows():
+                naics_code = str(int(row['naics_code']))
+                desc = row.get('naics_description', '')
+                # Only use if it's not a generic "NAICS XXXX" description
+                if pd.notna(desc) and not desc.startswith('NAICS ') and desc.strip():
+                    description_map[naics_code] = desc
+        except Exception:
+            pass  # Skip if file can't be loaded
+
+    _naics_description_cache = description_map
+    return description_map
 
 
 def get_naics_description(naics_code):
     """
     Get human-readable description for NAICS code.
 
-    For 4-digit codes, returns industry group names.
-    For 6-digit codes, returns specific industry names.
+    Loads descriptions from naics_metrics.csv and config/naics_codes.csv,
+    with fallback to generic category names based on 2-digit NAICS prefix.
     """
-    # Map 4-digit NAICS to industry group descriptions
-    naics_4digit_map = {
-        '6214': 'Outpatient Care Centers',
-        '6221': 'General Medical and Surgical Hospitals',
-        '5413': 'Architectural, Engineering, and Related Services',
-        '6211': 'Offices of Physicians and Dentists',
-        '6216': 'Home Health Care Services',
-        '6219': 'Other Ambulatory Health Care Services',
-        '6231': 'Nursing and Residential Care Facilities',
-        '2361': 'Residential Building Construction',
-        '2372': 'Land Subdivision',
-        '2382': 'Building Equipment Contractors',
-        '3254': 'Pharmaceutical and Medicine Manufacturing',
-        '3345': 'Navigational, Measuring, Electromedical, and Control Instruments Manufacturing',
-        '4234': 'Professional and Commercial Equipment and Supplies Merchant Wholesalers',
-        '3391': 'Medical Equipment and Supplies Manufacturing',
-    }
-
     naics_str = str(int(naics_code)) if pd.notna(naics_code) else ''
 
-    # Try exact match for 4-digit codes first
+    if not naics_str:
+        return 'Unknown'
+
+    # Try to get description from loaded files
+    description_map = _load_naics_descriptions()
+
+    # Try exact match for 4-digit code
     if len(naics_str) >= 4:
         naics_4digit = naics_str[:4]
-        if naics_4digit in naics_4digit_map:
-            return naics_4digit_map[naics_4digit]
+        if naics_4digit in description_map:
+            return description_map[naics_4digit]
 
-    # Otherwise, return category based on first 2 digits
-    if naics_str.startswith('62'):
-        return f'Healthcare Services ({naics_str})'
-    elif naics_str.startswith('54'):
-        return f'Professional Services ({naics_str})'
+    # Try exact match for full code
+    if naics_str in description_map:
+        return description_map[naics_str]
+
+    # Fallback to category based on first 2 digits
+    if naics_str.startswith('11'):
+        return f'Agriculture ({naics_str})'
+    elif naics_str.startswith('21'):
+        return f'Mining ({naics_str})'
+    elif naics_str.startswith('22'):
+        return f'Utilities ({naics_str})'
     elif naics_str.startswith('23'):
         return f'Construction ({naics_str})'
-    elif naics_str.startswith('32'):
+    elif naics_str.startswith('31') or naics_str.startswith('32') or naics_str.startswith('33'):
         return f'Manufacturing ({naics_str})'
     elif naics_str.startswith('42'):
         return f'Wholesale Trade ({naics_str})'
     elif naics_str.startswith('44') or naics_str.startswith('45'):
         return f'Retail Trade ({naics_str})'
-    elif naics_str.startswith('33'):
-        return f'Manufacturing ({naics_str})'
+    elif naics_str.startswith('48') or naics_str.startswith('49'):
+        return f'Transportation & Warehousing ({naics_str})'
+    elif naics_str.startswith('51'):
+        return f'Information ({naics_str})'
+    elif naics_str.startswith('52'):
+        return f'Finance & Insurance ({naics_str})'
+    elif naics_str.startswith('53'):
+        return f'Real Estate ({naics_str})'
+    elif naics_str.startswith('54'):
+        return f'Professional Services ({naics_str})'
+    elif naics_str.startswith('55'):
+        return f'Management of Companies ({naics_str})'
+    elif naics_str.startswith('56'):
+        return f'Administrative & Support Services ({naics_str})'
+    elif naics_str.startswith('61'):
+        return f'Educational Services ({naics_str})'
+    elif naics_str.startswith('62'):
+        return f'Healthcare Services ({naics_str})'
+    elif naics_str.startswith('71'):
+        return f'Arts & Entertainment ({naics_str})'
+    elif naics_str.startswith('72'):
+        return f'Accommodation & Food Services ({naics_str})'
+    elif naics_str.startswith('81'):
+        return f'Other Services ({naics_str})'
+    elif naics_str.startswith('92'):
+        return f'Public Administration ({naics_str})'
     else:
         return f'NAICS {naics_str}'
 
@@ -121,10 +223,13 @@ def aggregate_naics_rankings(scored_df):
     if 'naics_description' not in naics_df.columns or naics_df['naics_description'].isna().all():
         naics_df['naics_description'] = naics_df['naics_code'].apply(get_naics_description)
     else:
-        # Fill missing descriptions with generated ones
+        # Fill missing or generic descriptions with better ones from our lookup
         naics_df['naics_description'] = naics_df.apply(
-            lambda row: row['naics_description'] if pd.notna(row.get('naics_description'))
-            else get_naics_description(row['naics_code']),
+            lambda row: get_naics_description(row['naics_code'])
+            if pd.isna(row.get('naics_description')) or
+               str(row.get('naics_description')).startswith('NAICS ') or
+               not str(row.get('naics_description')).strip()
+            else row['naics_description'],
             axis=1
         )
 
@@ -152,6 +257,91 @@ def aggregate_naics_rankings(scored_df):
     return naics_df
 
 
+def get_search_synonyms():
+    """
+    Return a dictionary of search term synonyms for industry search.
+
+    When a user searches for a key term, we also search for all its synonyms.
+    This helps users find relevant industries more easily.
+    """
+    return {
+        # Healthcare
+        'hospital': ['hospital', 'outpatient', 'inpatient', 'medical center', 'clinic', 'healthcare facility'],
+        'medical': ['medical', 'health', 'healthcare', 'clinical', 'physician', 'doctor', 'dentist'],
+        'care': ['care', 'nursing', 'assisted living', 'residential care'],
+        'outpatient': ['outpatient', 'ambulatory', 'clinic', 'medical center'],
+
+        # Education
+        'school': ['school', 'education', 'elementary', 'secondary', 'college', 'university', 'academy'],
+        'education': ['education', 'school', 'learning', 'academic', 'training'],
+
+        # Construction & Real Estate
+        'construction': ['construction', 'building', 'contractor', 'builder'],
+        'building': ['building', 'construction', 'facility', 'structure'],
+        'real estate': ['real estate', 'property', 'leasing', 'rental'],
+        'property': ['property', 'real estate', 'building', 'facility'],
+
+        # Warehousing & Logistics
+        'warehouse': ['warehouse', 'warehousing', 'storage', 'distribution', 'logistics'],
+        'logistics': ['logistics', 'transportation', 'freight', 'shipping', 'distribution'],
+        'trucking': ['trucking', 'freight', 'transportation', 'delivery'],
+
+        # Manufacturing
+        'manufacturing': ['manufacturing', 'production', 'factory', 'plant', 'fabrication'],
+        'factory': ['factory', 'plant', 'manufacturing', 'production'],
+
+        # Retail & Food
+        'retail': ['retail', 'store', 'shop', 'merchandise'],
+        'restaurant': ['restaurant', 'food service', 'dining', 'cafe', 'eatery'],
+        'grocery': ['grocery', 'supermarket', 'food store'],
+
+        # Services
+        'office': ['office', 'professional services', 'administrative'],
+        'recreation': ['recreation', 'entertainment', 'amusement', 'leisure'],
+        'fitness': ['fitness', 'gym', 'health club', 'recreation'],
+
+        # Facilities
+        'facility': ['facility', 'building', 'property', 'location', 'site'],
+        'cleaning': ['cleaning', 'janitorial', 'sanitation', 'facilities management'],
+    }
+
+
+def expand_search_query(query):
+    """
+    Expand a search query to include synonyms.
+
+    Args:
+        query: User's search string
+
+    Returns:
+        List of search terms including original query and synonyms
+    """
+    query_lower = query.lower().strip()
+    synonyms_dict = get_search_synonyms()
+
+    # Start with the original query
+    search_terms = [query_lower]
+
+    # Check if the query matches any synonym key
+    if query_lower in synonyms_dict:
+        search_terms.extend(synonyms_dict[query_lower])
+
+    # Also check if query is part of a multi-word key (e.g., "real estate")
+    for key, values in synonyms_dict.items():
+        if query_lower in key or key in query_lower:
+            search_terms.extend(values)
+
+    # Remove duplicates while preserving order
+    seen = set()
+    unique_terms = []
+    for term in search_terms:
+        if term not in seen:
+            seen.add(term)
+            unique_terms.append(term)
+
+    return unique_terms
+
+
 def get_score_color(score):
     """
     Return color for score tier.
@@ -169,6 +359,86 @@ def get_score_color(score):
         return '#dc3545'  # Red
 
 
+def metric_with_tooltip(label, value, tooltip_text):
+    """
+    Display a metric with a hover tooltip using HTML/CSS.
+
+    Args:
+        label: The metric label (e.g., "Attractiveness")
+        value: The metric value (e.g., "93.8")
+        tooltip_text: The tooltip text to show on hover
+    """
+    # CSS for tooltip styling
+    tooltip_css = """
+    <style>
+    .tooltip-container {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+    .tooltip-label {
+        color: #808495;
+        font-size: 0.875rem;
+        font-weight: 400;
+        cursor: help;
+        border-bottom: 1px dashed #808495;
+    }
+    .tooltip-value {
+        color: #0E1117;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 0.25rem;
+    }
+    .tooltip-text {
+        visibility: hidden;
+        width: 300px;
+        background-color: #262730;
+        color: #FAFAFA;
+        text-align: left;
+        border-radius: 6px;
+        padding: 10px;
+        position: absolute;
+        z-index: 1000;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -150px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        font-size: 0.875rem;
+        line-height: 1.4;
+        border: 1px solid #404040;
+    }
+    .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #262730 transparent transparent transparent;
+    }
+    .tooltip-container:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+    </style>
+    """
+
+    # HTML structure
+    html = f"""
+    {tooltip_css}
+    <div class="tooltip-container">
+        <div class="tooltip-label">{label}</div>
+        <div class="tooltip-value">{value}</div>
+        <span class="tooltip-text">{tooltip_text}</span>
+    </div>
+    """
+
+    st.markdown(html, unsafe_allow_html=True)
+
+
 def display_naics_rankings(scored_df):
     """
     Display NAICS rankings table with sortable columns and click-through.
@@ -182,6 +452,44 @@ def display_naics_rankings(scored_df):
     (revenue concentration, building count, revenue per building), market size, and customer health metrics
     (churn and support tickets).
     """)
+
+    # Add data dictionary at the top
+    with st.expander("📖 Score Component Dictionary - Understanding Industry Metrics", expanded=False):
+        st.markdown("""
+        Each industry is evaluated across multiple dimensions to calculate an overall **Attractiveness Score**. Below is a complete explanation of all metrics displayed in the industry rankings.
+
+        | Component | Description | Range | Weight | Example |
+        |-----------|-------------|-------|--------|---------|
+        | **Attractiveness Score** | Overall industry attractiveness combining all factors below | 0-100 | 100% | **93.8** = Elite tier (top priority), **75.3** = Good opportunity |
+        | **ICP Fit Score** | Claude AI assessment of how well this industry aligns with OpenWorks' ideal customer profile | 0-100 | 25% | **92** = Perfect fit (schools, multi-location facilities), **68** = Moderate fit (some internal FM teams) |
+        | **Market Size Score** | Nationwide market size - how many locations exist in this industry | 0-100 | 15% | **100.0** = 100,000+ locations (huge market), **71.1** = 3,600 locations (smaller market) |
+        | **Market Size Count** | Actual count of locations nationwide for this NAICS code | 1+ | N/A | **230,965** locations (Elementary Schools), **79,218** locations (Hospitals) |
+        | **OW Revenue Concentration** | Percentage of OpenWorks' total revenue from this industry | 0-100 | 15% | **100** = 5%+ of total revenue (major vertical), **37** = <1% of revenue (minor presence) |
+        | **OW Building Count** | Number of buildings OpenWorks currently serves in this industry | 0-100 | 20% | **100** = 164 buildings (strong footprint), **63** = 11 buildings (emerging presence) |
+        | **Revenue per Building** | OpenWorks' average monthly revenue per building in this industry | 0-100 | 5% | **91.8** = $5,550/building (high value), **28.6** = $1,187/building (lower value) |
+        | **Churn Health Score** | Customer retention health - lower churn = higher score | 0-100 | 15% | **89.8** = Strong retention, **95.2** = Excellent retention |
+        | **Ticket Health Score** | Support ticket quality/volume - fewer/better tickets = higher score | 0-100 | 5% | **55.0** = Moderate support needs, **35.0** = Higher support needs |
+        | **Profitability Score** | Industry profit margin from OpenWorks operations (reference only, not used in attractiveness) | 0-100 | 0% | **0.4** = Low/negative margins, **0.44** = Healthy margins |
+        | **Companies** | Number of companies in our database for this industry | 0+ | N/A | **29** companies (Elementary Schools), **5** companies (Hospitals) |
+
+        ### Attractiveness Score Formula:
+        **Attractiveness = ICP Fit (25%) + Market Size (15%) + OW Revenue Concentration (15%) + OW Building Count (20%) + Revenue per Building (5%) + Churn Health (15%) + Ticket Health (5%)**
+
+        ### Score Interpretation:
+        - **90-100**: 🟢 Elite tier - Exceptional opportunity, highest priority
+        - **80-89**: 🟢 Strong opportunity - High priority for expansion
+        - **70-79**: 🟡 Good opportunity - Medium priority
+        - **60-69**: 🟡 Fair opportunity - Consider with caution
+        - **<60**: 🔴 Lower priority - Proceed carefully
+
+        ### Key Insights:
+        - **ICP Fit**: AI evaluates facility type, multi-location potential, cleaning as non-core function, lack of internal FM teams, and similarity to existing successful customers
+        - **OpenWorks Metrics**: Industries with proven success (high revenue, many buildings, good margins) score higher - this reflects real operational experience
+        - **Customer Health**: Churn and ticket health reflect how well OpenWorks serves customers in each industry
+        - **Market Size**: Larger markets offer more growth potential, but proven success matters more than raw size
+
+        💡 **Pro Tip**: Click on any industry below to see its detailed ICP Fit justification and component breakdown.
+        """)
 
     # Aggregate data
     naics_df = aggregate_naics_rankings(scored_df)
@@ -198,6 +506,48 @@ def display_naics_rankings(scored_df):
         st.metric("Total Companies", f"{total_companies:,}")
 
     st.markdown("---")
+
+    # Add search box
+    search_query = st.text_input(
+        "🔍 Search Industries",
+        placeholder="Search by NAICS code (e.g., '62' or '6214') or description (e.g., 'hospital', 'construction')...",
+        help="Filter industries by NAICS code or description text (case-insensitive)"
+    )
+
+    # Apply search filter
+    if search_query:
+        search_lower = search_query.lower().strip()
+
+        # If search query is all digits, search by NAICS code prefix only
+        # Otherwise, search in description and reasoning text with synonym expansion
+        if search_query.isdigit():
+            # For numeric queries, match NAICS codes that START with the query
+            naics_df = naics_df[
+                naics_df['naics_code'].astype(str).str.startswith(search_query, na=False)
+            ]
+        else:
+            # For text queries, expand with synonyms and search in description and reasoning
+            search_terms = expand_search_query(search_query)
+
+            # Build a filter that matches any of the search terms
+            filter_mask = pd.Series([False] * len(naics_df), index=naics_df.index)
+            for term in search_terms:
+                filter_mask |= (
+                    naics_df['naics_description'].astype(str).str.contains(term, case=False, na=False) |
+                    naics_df['reasoning'].astype(str).str.contains(term, case=False, na=False)
+                )
+
+            naics_df = naics_df[filter_mask]
+
+        if len(naics_df) == 0:
+            st.warning(f"No industries found matching '{search_query}'. Try a different search term.")
+            st.stop()
+        else:
+            # Show if synonyms were used
+            if not search_query.isdigit() and len(search_terms) > 1:
+                st.info(f"Found {len(naics_df)} industry(ies) matching '{search_query}' (including synonyms: {', '.join(search_terms[1:4])}{'...' if len(search_terms) > 4 else ''})")
+            else:
+                st.info(f"Found {len(naics_df)} industry(ies) matching '{search_query}'")
 
     # Add sorting controls
     sort_col1, sort_col2 = st.columns([3, 1])
@@ -244,36 +594,70 @@ def display_naics_rankings(scored_df):
             f"Score: {row['attractiveness_score']:.1f}",
             expanded=False
         ):
-            # Score metrics in columns
+            # Score metrics in columns with tooltips
             col1, col2, col3, col4 = st.columns(4)
 
             with col1:
-                st.metric("Attractiveness", f"{row['attractiveness_score']:.1f}")
+                metric_with_tooltip(
+                    "Attractiveness",
+                    f"{row['attractiveness_score']:.1f}",
+                    "⭐ Overall industry attractiveness (0-100). Combines ICP Fit (25%), Market Size (15%), OW Revenue Concentration (15%), OW Building Count (20%), Revenue/Building (5%), Churn Health (15%), Ticket Health (5%). Higher = more attractive industry for OpenWorks."
+                )
                 if pd.notna(row.get('icp_fit_score')):
-                    st.metric("ICP Fit", f"{row['icp_fit_score']:.1f}")
+                    metric_with_tooltip(
+                        "ICP Fit",
+                        f"{row['icp_fit_score']:.1f}",
+                        "🤖 Claude AI assessment (0-100) of how well this industry aligns with OpenWorks' ideal customer profile. Evaluates facility needs, multi-location potential, cleaning as non-core function, lack of internal FM teams, and similarity to successful customers. Worth 25% of Attractiveness Score."
+                    )
 
             with col2:
                 if pd.notna(row.get('profitability_score')):
-                    st.metric("Profitability", f"{row['profitability_score']:.1f}")
+                    metric_with_tooltip(
+                        "Profitability",
+                        f"{row['profitability_score']:.1f}",
+                        "💰 Industry profit margin score (0-100) from OpenWorks operations. Based on 0-40% margin mapped to 0-100 score. Reference metric only - NOT included in Attractiveness Score calculation."
+                    )
                 if pd.notna(row.get('market_size_score')):
-                    st.metric("Market Size", f"{row['market_size_score']:.1f}")
+                    metric_with_tooltip(
+                        "Market Size",
+                        f"{row['market_size_score']:.1f}",
+                        "📊 Nationwide market size score (0-100) based on DataAxle location counts. Log-scaled: 1 location=0, 100,000+ locations=100. Larger markets = more growth potential. Worth 15% of Attractiveness Score."
+                    )
 
             with col3:
                 if pd.notna(row.get('churn_health_score')):
-                    st.metric("Churn Health", f"{row['churn_health_score']:.1f}")
+                    metric_with_tooltip(
+                        "Churn Health",
+                        f"{row['churn_health_score']:.1f}",
+                        "🔄 Customer retention health (0-100) based on historical churn predictions. Higher score = lower churn risk = better customer retention in this industry. Worth 15% of Attractiveness Score."
+                    )
                 if pd.notna(row.get('ticket_health_score')):
-                    st.metric("Ticket Health", f"{row['ticket_health_score']:.1f}")
+                    metric_with_tooltip(
+                        "Ticket Health",
+                        f"{row['ticket_health_score']:.1f}",
+                        "🎫 Support ticket quality/volume score (0-100) from semantic analysis. Higher score = fewer support issues and better service quality in this industry. Worth 5% of Attractiveness Score."
+                    )
 
             with col4:
-                st.metric("Companies", f"{row.get('company_count', 0):.0f}")
+                metric_with_tooltip(
+                    "Companies",
+                    f"{row.get('company_count', 0):.0f}",
+                    "🏢 Number of companies in our database for this industry. Shows how many prospects are available in this NAICS code. Not used in scoring calculation."
+                )
                 if pd.notna(row.get('market_size_count')):
-                    st.metric("Market Size", f"{row['market_size_count']:,.0f}")
+                    metric_with_tooltip(
+                        "Market Size Count",
+                        f"{row.get('market_size_count', 0):,.0f}",
+                        "🌍 Actual count of locations nationwide for this NAICS code from DataAxle. Total addressable market size. Reference metric - not directly used in scoring (Market Size Score is the log-scaled version used in calculations)."
+                    )
 
             # ICP Fit Reasoning
             if pd.notna(row.get('reasoning')) and row.get('reasoning'):
                 st.markdown("---")
                 st.markdown("**🎯 ICP Fit Justification:**")
-                st.markdown(f"_{row['reasoning']}_")
+                # Escape dollar signs to prevent LaTeX rendering in markdown
+                reasoning_text = str(row['reasoning']).replace('$', r'\$')
+                st.markdown(f"_{reasoning_text}_")
             else:
                 st.info("ICP justification not available for this industry.")
 
@@ -291,87 +675,5 @@ def display_naics_rankings(scored_df):
                     st.switch_page("pages/1_ranked_companies.py")
             else:
                 st.info("No companies in this industry in the current dataset.")
-
-    # Add data dictionary
-    st.markdown("---")
-    st.markdown("### 📖 Score Component Dictionary")
-
-    st.markdown("""
-    Understanding what drives industry attractiveness:
-
-    | Component | Description | Range | Weight | Details |
-    |-----------|-------------|-------|--------|---------|
-    | **Attractiveness Score** | Overall industry attractiveness combining all factors below | 0-100 | 100% | Higher = more attractive industry |
-    | **ICP Fit Score** | Claude AI assessment of industry alignment with OpenWorks' ideal customer profile | 0-100 | 25% | Evaluates facility needs, multi-location potential, regulatory requirements, similarity to existing customers, and historical OpenWorks performance data. |
-    | **Market Size Score** | Nationwide market size in this industry | 0-100 | 15% | Log-scaled: 1 location = 0, 100,000+ locations = 100. Based on DataAxle nationwide counts. |
-    | **Market Size Count** | Actual count of locations nationwide for this NAICS code | 1+ | — | Reference metric showing total addressable market (not used in scoring calculation). |
-    | **OW Revenue Concentration** | OpenWorks' revenue concentration in this industry | 0-100 | 15% | Percentage of total OpenWorks revenue from this NAICS. Log-scaled: 5%+ revenue = ~100, 1-5% = 60-90, <1% = 20-60. No presence = 0. |
-    | **OW Building Count** | OpenWorks operational scale in this industry | 0-100 | 20% | Number of buildings OpenWorks currently serves in this NAICS. Log-scaled: 1 building = 20, 100+ buildings = 90-100. No presence = 0. |
-    | **Revenue per Building** | OpenWorks revenue quality in this industry | 0-100 | 5% | Average monthly revenue per building for this NAICS, compared to median across all NAICS. Above median = 50-100, below median = 0-50, no presence = 50 (neutral). |
-    | **Churn Health Score** | Customer retention health in this industry | 0-100 | 15% | Based on historical churn predictions. Higher retention = higher attractiveness. |
-    | **Ticket Health Score** | Support ticket quality/volume health in this industry | 0-100 | 5% | Based on semantic analysis of support tickets. Fewer/better tickets = higher attractiveness. |
-    | **Profitability Score** | Industry profit margin (reference only) | 0-100 | 0% | Calculated from OpenWorks data (0-40% margin → 0-100 score) but not included in attractiveness score. |
-
-    **Formula**: Attractiveness = ICP Fit (25%) + Market Size (15%) + OW Revenue Concentration (15%) + OW Building Count (20%) + Revenue per Building (5%) + Churn Health (15%) + Ticket Health (5%)
-
-    **ICP Fit Justification**: Each industry has a detailed AI-generated justification explaining why it does or doesn't fit OpenWorks' Ideal Customer Profile. The AI analysis is informed by actual OpenWorks historical performance data including revenue, building counts, customer success patterns, and operational metrics. Click on any industry above to see the full reasoning.
-
-    **OpenWorks Operational Metrics**: Industries where OpenWorks has existing presence and strong operational metrics (high revenue concentration, many buildings, good revenue per building) receive higher attractiveness scores. This reflects proven success and scalability in those verticals.
-
-    **Note**: Missing scores (shown as "—") indicate no data available for that component. The attractiveness score is normalized based on available components only. Industries with no OpenWorks presence receive 0 scores for OW-specific metrics (Revenue Concentration, Building Count) but neutral scores (50) for Revenue per Building.
-    """)
-
-    # Add click-through instructions
-    st.info(
-        "💡 **Tip**: Click the '🔍 View Companies' button in any industry to navigate "
-        "to the **Ranked Companies** page with that NAICS pre-filtered."
-    )
-
-    # Show top 10 in expander with ICP reasoning
-    with st.expander("📊 Top 10 Most Attractive Industries", expanded=True):
-        top_10 = naics_df.head(10)
-
-        for rank, (idx, row) in enumerate(top_10.iterrows(), start=1):
-            color = get_score_color(row['attractiveness_score'])
-
-            # Build component scores string
-            components = []
-            if pd.notna(row.get('icp_fit_score')):
-                components.append(f"ICP Fit: {row['icp_fit_score']:.1f}")
-            if pd.notna(row.get('profitability_score')):
-                components.append(f"Profitability: {row['profitability_score']:.1f}")
-            if pd.notna(row.get('market_size_score')):
-                components.append(f"Market Size: {row['market_size_score']:.1f} ({row.get('market_size_count', 0):.0f} companies)")
-            if pd.notna(row.get('churn_health_score')):
-                components.append(f"Churn Health: {row['churn_health_score']:.1f}")
-            if pd.notna(row.get('ticket_health_score')):
-                components.append(f"Ticket Health: {row['ticket_health_score']:.1f}")
-
-            components_str = " | ".join(components) if components else "No component data"
-
-            st.markdown(f"""
-            **#{rank}. {row['naics_description']}** (NAICS: {row['naics_code']})
-            - Score: <span style='background-color: {color}; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold'>{row['attractiveness_score']:.1f}</span>
-            - Companies: {row.get('company_count', 0):.0f}
-            - {components_str}
-            """, unsafe_allow_html=True)
-
-            # Add ICP reasoning for top industries
-            if pd.notna(row.get('reasoning')) and row.get('reasoning'):
-                st.markdown(f"**Why This Industry Fits**: _{row['reasoning']}_")
-
-            # Quick navigation button for top 10
-            company_count = int(row.get('company_count', 0))
-            if company_count > 0:
-                if st.button(
-                    f"View Companies →",
-                    key=f"view_top10_{row['naics_code']}",
-                    type="secondary"
-                ):
-                    # Set session state to pre-filter on the target page
-                    st.session_state['naics_filter_from_rankings'] = str(row['naics_code'])
-                    st.switch_page("pages/1_ranked_companies.py")
-
-            st.markdown("---")
 
     return naics_df

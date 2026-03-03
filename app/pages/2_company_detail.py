@@ -28,6 +28,7 @@ from app.company_detail_logic import (
     get_scored_company_by_id,
     get_selected_company_id,
     has_churn_data,
+    metric_with_tooltip,
 )
 from app.components.research_viewer import render_research_document
 from app.components.score_display import (
@@ -141,16 +142,40 @@ with tab1:
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.metric("Company ID", info['Company ID'])
-        st.metric("Name", info['Name'])
+        metric_with_tooltip(
+            "Company ID",
+            info['Company ID'],
+            "🆔 Unique identifier for this company in the DataAxle database. Use this ID to reference the company across all system reports and data exports."
+        )
+        metric_with_tooltip(
+            "Name",
+            info['Name'],
+            "🏢 Official company name from DataAxle. This is the legal or primary business name used for identification."
+        )
 
     with col2:
-        st.metric("NAICS Code", info['NAICS'])
-        st.metric("City", hq_info['city'])
+        metric_with_tooltip(
+            "NAICS Code",
+            info['NAICS'],
+            "🏭 North American Industry Classification System code. This 8-digit code identifies the company's primary business activity. First 4 digits = industry group used for scoring. Visit NAICS Rankings page to explore industries."
+        )
+        metric_with_tooltip(
+            "City",
+            hq_info['city'],
+            "📍 City location of company headquarters from DataAxle. This is the primary business address on file."
+        )
 
     with col3:
-        st.metric("State", hq_info['state'])
-        st.metric("Coordinates", hq_info['coordinates'])
+        metric_with_tooltip(
+            "State",
+            hq_info['state'],
+            "🗺️ State location of company headquarters. Use this for geographic filtering and territory assignment."
+        )
+        metric_with_tooltip(
+            "Coordinates",
+            hq_info['coordinates'],
+            "🌐 Geographic coordinates (latitude, longitude) of headquarters location. Used for mapping, proximity analysis, and territory planning."
+        )
 
     st.markdown("---")
 
@@ -160,13 +185,25 @@ with tab1:
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.metric("Building Count Estimate", hq_info['building_count_estimate'])
+        metric_with_tooltip(
+            "Building Count Estimate",
+            hq_info['building_count_estimate'],
+            "🏗️ Estimated number of locations/buildings for this company from DataAxle. Multi-location companies (10+) score much higher in Company Score (20% weight). This is an estimate and may differ from actual building count discovered through research."
+        )
 
     with col2:
-        st.metric("Employee Count", hq_info['employee_size'])
+        metric_with_tooltip(
+            "Employee Count",
+            hq_info['employee_size'],
+            "👥 Total employee count from DataAxle. Larger companies = bigger facilities and higher Company Score (10% weight). Used as a proxy for company size and facility complexity. Example: 3,200 employees typically means large multi-building operations."
+        )
 
     with col3:
-        st.metric("Sales Volume", hq_info['sales_volume'])
+        metric_with_tooltip(
+            "Sales Volume",
+            hq_info['sales_volume'],
+            "💰 Annual revenue/sales volume from DataAxle. Higher revenue = higher Company Score (15% weight). Shows company's financial scale and ability to pay for facility services. Format: millions of dollars (e.g., $250M)."
+        )
 
     # Calculate and display penetration
     st.markdown("---")
@@ -177,14 +214,26 @@ with tab1:
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.metric("Total Buildings", len(buildings))
+        metric_with_tooltip(
+            "Total Buildings",
+            str(len(buildings)),
+            "🏢 Total number of buildings/locations discovered for this company through research and entity resolution. This is the actual count from our building database, which may be more accurate than the DataAxle estimate above."
+        )
 
     with col2:
         served_count = buildings['is_served'].sum()
-        st.metric("Served Buildings", served_count)
+        metric_with_tooltip(
+            "Served Buildings",
+            str(int(served_count)),
+            "✅ Number of buildings currently served by OpenWorks (matched to HubSpot building records). These are active service locations where OpenWorks has existing contracts and relationships."
+        )
 
     with col3:
-        st.metric("Penetration Rate", f"{penetration_rate:.1f}%")
+        metric_with_tooltip(
+            "Penetration Rate",
+            f"{penetration_rate:.1f}%",
+            "📊 Percentage of total buildings currently served by OpenWorks. Formula: (Served Buildings / Total Buildings) × 100. Higher penetration = less expansion opportunity. Lower penetration = more whitespace to capture within existing customer."
+        )
 
     # Contacts section (from DataAxle data)
     st.markdown("---")
@@ -204,7 +253,11 @@ with tab1:
         col1, col2 = st.columns(2)
 
         with col1:
-            st.metric("Total Contacts", int(contacts_count))
+            metric_with_tooltip(
+                "Total Contacts",
+                str(int(contacts_count)),
+                "📞 Number of contacts available in enriched database from DataAxle. Having contacts makes outreach easier and is worth 5% of Company Score. 75+ contacts = good coverage, 0 contacts = need to research decision makers."
+            )
 
         # Parse and display primary contact if available
         if pd.notna(primary_contact_str):
@@ -218,7 +271,11 @@ with tab1:
                     full_name = f"{first_name} {last_name}".strip()
 
                     if full_name:
-                        st.metric("Primary Contact", full_name)
+                        metric_with_tooltip(
+                            "Primary Contact",
+                            full_name,
+                            "👤 Primary decision maker or key contact from DataAxle contact database. This is typically a facilities manager, operations director, or C-level executive. Use as starting point for outreach."
+                        )
 
                 # Display additional contact details
                 st.markdown("**Primary Contact Details:**")
@@ -277,28 +334,28 @@ with tab2:
     st.markdown(f"**Scoring Path:** {breakdown['scoring_path']}")
     st.markdown("---")
 
-    # Display three key scores in columns
+    # Display three key scores in columns with tooltips
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.metric(
+        metric_with_tooltip(
             "NAICS Attractiveness Score",
             f"{breakdown['naics_score']:.1f}",
-            help="Industry-level attractiveness score based on market size, profitability, churn health, and ticket health"
+            "🎯 Industry-level attractiveness (0-100). Weighted 40% in Final Score for Prospects. Based on: ICP Fit (25%), Market Size (15%), OW Revenue Concentration (15%), OW Building Count (20%), Revenue/Building (5%), Churn Health (15%), Ticket Health (5%). Same for all companies in this NAICS."
         )
 
     with col2:
-        st.metric(
+        metric_with_tooltip(
             "Company Opportunity Score",
             f"{breakdown['company_score']:.1f}",
-            help="Company-level score based on fit, expansion potential, contact quality, and buying intent"
+            "🏢 Company-specific opportunity (0-100). Weighted 60% in Final Score for Prospects. For Prospects: ICP Fit (50%), Buildings (20%), Revenue (15%), Employees (10%), Contacts (5%). For Customers: Expansion (40%), Churn (30%), Profitability (20%), Tickets (10%)."
         )
 
     with col3:
-        st.metric(
+        metric_with_tooltip(
             "Final Score",
             f"{breakdown['final_score']:.1f}",
-            help="Combined score (NAICS attractiveness weighted 40%, company opportunity 60%)"
+            "⭐ Overall opportunity score (0-100). For Prospects: (NAICS Score × 40%) + (Company Score × 60%). For Customers: Company Score only. 90-100=Elite, 80-89=Strong, 70-79=Good, 60-69=Fair, <60=Lower priority."
         )
 
     st.markdown("---")
@@ -307,34 +364,198 @@ with tab2:
     col1, col2 = st.columns(2)
 
     with col1:
-        st.metric("Segment Rank", f"#{breakdown['segment_rank']}")
+        metric_with_tooltip(
+            "Segment Rank",
+            f"#{breakdown['segment_rank']}",
+            "🏆 Rank within this company's NAICS segment (8-digit code). Rankings are per-segment to enable fair comparisons between companies in the same industry. #1 = highest Final Score in segment."
+        )
 
     with col2:
-        st.metric("NAICS Code", breakdown['naics_code'])
+        metric_with_tooltip(
+            "NAICS Code",
+            breakdown['naics_code'],
+            "🏭 8-digit NAICS code for this company's primary business activity. First 4 digits determine the NAICS Attractiveness Score shared by all companies in that industry group."
+        )
+
+    st.markdown("---")
+
+    # Component Scores Section
+    st.subheader("Component Scores")
+
+    scoring_path = breakdown['scoring_path']
+
+    if scoring_path == "Prospect":
+        st.markdown("**Company Opportunity Components** (for Prospects)")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            icp_score = scored.get('icp_fit_score')
+            if pd.notna(icp_score):
+                metric_with_tooltip(
+                    "ICP Fit",
+                    f"{int(icp_score)}",
+                    "🤖 Company ICP Fit Score (0-100). Worth 50% of Company Score! Claude AI evaluates multi-location potential, facility type, operational fit, and similarity to successful customers. 70+=Strong fit, 40-69=Moderate, <40=Poor fit."
+                )
+
+        with col2:
+            buildings_score = scored.get('buildings_score')
+            if pd.notna(buildings_score):
+                metric_with_tooltip(
+                    "Buildings",
+                    f"{buildings_score:.1f}",
+                    "🏗️ Building count score (0-100). Worth 20% of Company Score. Log-scaled: 1 building=low score, 10+=high score, 100+=maximum. Multi-location companies are key targets for OpenWorks."
+                )
+
+        with col3:
+            revenue_score = scored.get('revenue_score')
+            if pd.notna(revenue_score):
+                metric_with_tooltip(
+                    "Revenue",
+                    f"{revenue_score:.1f}",
+                    "💰 Revenue score (0-100). Worth 15% of Company Score. Log-scaled based on annual revenue. Higher revenue = bigger facilities and more ability to pay for services. $100M+ = high scores."
+                )
+
+        with col4:
+            growth_score = scored.get('growth_score')
+            if pd.notna(growth_score):
+                metric_with_tooltip(
+                    "Employees",
+                    f"{growth_score:.1f}",
+                    "👥 Employee count score (0-100). Worth 10% of Company Score. Log-scaled proxy for company size. Larger companies = bigger facilities = higher scores. 1,000+ employees = high scores."
+                )
+
+        # Second row
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            contact_score = scored.get('contact_score')
+            if pd.notna(contact_score):
+                metric_with_tooltip(
+                    "Contacts",
+                    f"{contact_score:.1f}",
+                    "📞 Contact availability score (0-100). Worth 5% of Company Score. Having contacts = 75 points, no contacts = 25 points. Makes outreach easier and improves conversion odds."
+                )
+
+    else:  # Customer Expansion
+        st.markdown("**Company Opportunity Components** (for Customer Expansion)")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            expansion_score = scored.get('expansion_score')
+            if pd.notna(expansion_score):
+                metric_with_tooltip(
+                    "Expansion",
+                    f"{expansion_score:.1f}",
+                    "📈 Expansion opportunity score (0-100). Worth 40% of Company Score for customers. Based on unpenetrated buildings × revenue potential. Low penetration = high expansion score."
+                )
+
+        with col2:
+            churn_score = scored.get('churn_score')
+            if pd.notna(churn_score):
+                metric_with_tooltip(
+                    "Churn Health",
+                    f"{churn_score:.1f}",
+                    "🔄 Customer retention health (0-100). Worth 30% of Company Score for customers. Based on churn risk predictions. Higher score = lower churn risk = healthier account."
+                )
+
+        with col3:
+            profitability_score = scored.get('profitability_score')
+            if pd.notna(profitability_score):
+                metric_with_tooltip(
+                    "Profitability",
+                    f"{profitability_score:.1f}",
+                    "💵 Account profitability score (0-100). Worth 20% of Company Score for customers. Based on margin data. Higher margins = more profitable account = better expansion target."
+                )
+
+        with col4:
+            tickets_score = scored.get('tickets_score')
+            if pd.notna(tickets_score):
+                metric_with_tooltip(
+                    "Tickets",
+                    f"{tickets_score:.1f}",
+                    "🎫 Support ticket health (0-100). Worth 10% of Company Score for customers. Based on ticket volume and severity. Fewer/better tickets = higher score = healthier account."
+                )
 
     st.markdown("---")
 
     # Display scoring reason (explains what factors were used)
-    st.subheader("Scoring Details")
-    st.info(f"**Scoring Rationale:** {breakdown['scoring_reason']}")
+    st.subheader("Scoring Rationale")
+    st.info(f"{breakdown['scoring_reason']}")
 
     # Add explanation of scoring paths
-    with st.expander("ℹ️ About Scoring Paths"):
+    with st.expander("ℹ️ About Scoring Methodology"):
         st.markdown("""
-        **Customer Expansion** (5 factors):
-        - Expansion Potential (30%): Based on penetration rate
-        - Churn Health (25%): Based on churn risk model
-        - Profitability (20%): Placeholder for future margin data
-        - Ticket Health (15%): Based on support ticket severity
-        - Revenue (10%): Based on current building count
+        Our dual-path scoring system evaluates companies using different methodologies based on their relationship status:
 
-        **Prospect** (4 factors):
-        - Facility Portfolio (40%): Based on building count and size
-        - Contact Quality (30%): Based on HubSpot/DataAxle contacts
-        - Buying Intent (20%): Placeholder for future intent signals
-        - NAICS Quality (10%): Based on industry vertical value
+        ### **Two Scoring Paths**
 
-        **Note:** Missing data receives a neutral score of 50 to ensure low scores reflect actual poor performance, not missing data.
+        ---
+
+        #### **Path 1: Prospect Acquisition** (New Customers - Most Companies)
+        For prospective new customers, we combine industry attractiveness with company-specific opportunity:
+
+        **Final Score = (NAICS Attractiveness × 40%) + (Company Opportunity × 60%)**
+
+        ##### **NAICS Attractiveness Score** (0-100, weighted 40%):
+        Industry-level score based on how attractive each NAICS industry is for OpenWorks. Calculated once per NAICS code.
+
+        | Component | Weight | Description | Example |
+        |-----------|--------|-------------|---------|
+        | **ICP Fit** | 25% | Claude AI assessment of industry-ICP alignment | Schools (92) = Perfect fit, Hospitals (68) = Moderate fit |
+        | **Market Size** | 15% | Nationwide market size (log-scaled) | 230K locations = 100, 3.6K locations = 71 |
+        | **OW Revenue Concentration** | 15% | % of OpenWorks revenue from this industry | 13% revenue = 100, <1% revenue = 37 |
+        | **OW Building Count** | 20% | Buildings OpenWorks serves in this industry | 164 buildings = 100, 11 buildings = 63 |
+        | **Revenue per Building** | 5% | Avg monthly revenue/building vs median | \\$5,550/building = 92, \\$1,187/building = 29 |
+        | **Churn Health** | 15% | Customer retention in industry | Low churn = 90+, high churn = <60 |
+        | **Ticket Health** | 5% | Support ticket quality/volume | Few tickets = 55+, many tickets = 35 |
+
+        **Formula**: NAICS Score = (ICP Fit × 25%) + (Market Size × 15%) + (OW Rev Conc × 15%) + (OW Buildings × 20%) + (Rev/Building × 5%) + (Churn × 15%) + (Tickets × 5%)
+
+        ##### **Company Opportunity Score** (0-100, weighted 60%):
+        Company-specific score evaluating the opportunity at this particular company.
+
+        | Component | Weight | Description | Example |
+        |-----------|--------|-------------|---------|
+        | **ICP Fit** | 50% | Claude AI assessment of company-ICP alignment | 63 = Decent fit, 30 = Poor fit |
+        | **Buildings** | 20% | Number of locations (log-scaled) | 11 locations = 50, 100+ locations = 100 |
+        | **Revenue** | 15% | Annual revenue (log-scaled) | \\$250M = 100, \\$24M = 83 |
+        | **Employees** | 10% | Employee count as growth proxy (log-scaled) | 3,200 employees = 100, 75 employees = 100 |
+        | **Contacts** | 5% | Contact availability | Has contacts = 75, No contacts = 25 |
+
+        **Formula**: Company Score = (ICP Fit × 50%) + (Buildings × 20%) + (Revenue × 15%) + (Employees × 10%) + (Contacts × 5%)
+
+        **Note**: Missing data receives neutral score of 50, so low scores reflect actual small companies, not missing data.
+
+        ---
+
+        #### **Path 2: Customer Expansion** (Existing Customers)
+        For current OpenWorks customers, we focus on expansion potential within the existing account:
+
+        **Company Opportunity Score** components (Customer path doesn't use NAICS scores):
+
+        | Component | Weight | Description |
+        |-----------|--------|-------------|
+        | **Expansion Opportunity** | 40% | Unpenetrated buildings × revenue potential |
+        | **Churn Risk** | 30% | Customer retention likelihood (inverse of risk) |
+        | **Profitability** | 20% | Current account profitability |
+        | **Support Tickets** | 10% | Support quality (fewer = better) |
+
+        ---
+
+        ### **Final Score Interpretation**
+        - **90-100**: 🟢 Elite tier - Exceptional opportunity, highest priority
+        - **80-89**: 🟢 Strong opportunity - High priority for expansion
+        - **70-79**: 🟡 Good opportunity - Medium priority
+        - **60-69**: 🟡 Fair opportunity - Consider with caution
+        - **<60**: 🔴 Lower priority - Proceed carefully
+
+        ### **Key Insights**
+        - **ICP Fit is dominant**: At company level (50% of Company Score) and industry level (25% of NAICS Score)
+        - **Multi-location companies score higher**: Buildings are 20% of Company Score
+        - **Proven success matters**: Industries where OpenWorks already succeeds (high revenue concentration, many buildings) score higher
+        - **Rankings are per-segment**: Companies ranked within their NAICS industry for fair comparison
         """)
 
 # =============================================================================

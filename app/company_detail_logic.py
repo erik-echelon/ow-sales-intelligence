@@ -13,6 +13,86 @@ import pandas as pd
 import streamlit as st
 
 
+def metric_with_tooltip(label, value, tooltip_text):
+    """
+    Display a metric with a hover tooltip using HTML/CSS.
+
+    Args:
+        label: The metric label (e.g., "Company ID")
+        value: The metric value (e.g., "830450680")
+        tooltip_text: The tooltip text to show on hover
+    """
+    # CSS for tooltip styling
+    tooltip_css = """
+    <style>
+    .tooltip-container {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+    .tooltip-label {
+        color: #808495;
+        font-size: 0.875rem;
+        font-weight: 400;
+        cursor: help;
+        border-bottom: 1px dashed #808495;
+    }
+    .tooltip-value {
+        color: #0E1117;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 0.25rem;
+    }
+    .tooltip-text {
+        visibility: hidden;
+        width: 300px;
+        background-color: #262730;
+        color: #FAFAFA;
+        text-align: left;
+        border-radius: 6px;
+        padding: 10px;
+        position: absolute;
+        z-index: 1000;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -150px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        font-size: 0.875rem;
+        line-height: 1.4;
+        border: 1px solid #404040;
+    }
+    .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #262730 transparent transparent transparent;
+    }
+    .tooltip-container:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+    </style>
+    """
+
+    # HTML structure
+    html = f"""
+    {tooltip_css}
+    <div class="tooltip-container">
+        <div class="tooltip-label">{label}</div>
+        <div class="tooltip-value">{value}</div>
+        <span class="tooltip-text">{tooltip_text}</span>
+    </div>
+    """
+
+    st.markdown(html, unsafe_allow_html=True)
+
+
 def get_selected_company_id() -> Optional[str]:
     """
     Get selected company ID from session state.
