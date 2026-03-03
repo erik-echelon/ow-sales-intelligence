@@ -54,17 +54,30 @@ logger = logging.getLogger(__name__)
 st.title("🏢 Company Detail")
 
 # =============================================================================
-# GET SELECTED COMPANY
+# GET SELECTED COMPANY/COMPANIES
 # =============================================================================
 
-company_id = get_selected_company_id()
+# Check if multiple companies are selected
+selected_company_ids = st.session_state.get('selected_company_ids', [])
+selected_company_names = st.session_state.get('selected_company_names', [])
 
-if not company_id:
-    st.warning(get_no_company_selected_message())
-    st.stop()
+# Fall back to single company selection for backward compatibility
+if not selected_company_ids:
+    company_id = get_selected_company_id()
+    if not company_id:
+        st.warning(get_no_company_selected_message())
+        st.stop()
+    selected_company_ids = [company_id]
+    selected_company_names = [None]  # Will be filled in later
+
+# Multi-company view mode
+multi_company_mode = len(selected_company_ids) > 1
+
+if multi_company_mode:
+    st.info(f"**Viewing {len(selected_company_ids)} selected companies** - Use the tabs below to switch between companies")
 
 # =============================================================================
-# LOAD DATA
+# LOAD DATA (ONCE FOR ALL COMPANIES)
 # =============================================================================
 
 try:
@@ -77,6 +90,29 @@ try:
 except Exception as e:
     st.error(f"Failed to load data: {e}")
     st.stop()
+
+# =============================================================================
+# HANDLE MULTI-COMPANY MODE
+# =============================================================================
+
+if multi_company_mode:
+    st.markdown("---")
+    st.markdown("### 📋 Select a Company to View")
+    st.markdown("Click a company name below to view full details")
+
+    # Create radio buttons for company selection
+    selected_index = st.radio(
+        "Select company:",
+        range(len(selected_company_ids)),
+        format_func=lambda i: f"{selected_company_names[i]} (ID: {selected_company_ids[i]})",
+        key="multi_company_selector"
+    )
+
+    # Use the selected company
+    company_id = selected_company_ids[selected_index]
+else:
+    # Single company mode
+    company_id = selected_company_ids[0]
 
 # =============================================================================
 # GET COMPANY DATA

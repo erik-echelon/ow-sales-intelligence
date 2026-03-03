@@ -4,16 +4,21 @@ Page 1: Ranked Companies
 Displays all scored companies using the dual-path scoring methodology.
 """
 
+import io
 import logging
+from datetime import datetime
+
 import pandas as pd
 import streamlit as st
 
 from app.data_loader import (
     get_data_dir,
     load_companies,
+    load_company_research_data,
     load_penetration_by_company,
     load_scored_companies,
 )
+from app.export_logic import merge_export_data, create_export_excel
 from app.ranked_companies_logic import (
     get_empty_state_message,
     get_filtered_count_message,
@@ -480,9 +485,11 @@ else:
 # Select columns for display (prospect components only)
 display_columns = [
     'company_id', 'Rank', 'Company', 'Path', 'NAICS', 'Final Score',
-    'NAICS Score', 'Company Score', 'Employees', 'Revenue ($M)', 'Location', 'Customer', 'In HubSpot',
+    'Company Score', 'Location', 'In HubSpot',
     # Prospect components (shown for all companies) - Raw data instead of normalized scores
-    'ICP Fit', 'Buildings', 'Growth', 'Contacts'
+    'ICP Fit', 'Buildings', 'Growth', 'Contacts',
+    # Additional detail columns (moved to right)
+    'NAICS Score', 'Employees', 'Revenue ($M)'
 ]
 
 # Only include columns that exist in the dataframe
@@ -496,7 +503,7 @@ result_df = display_df[display_columns].copy()
 
 st.markdown("---")
 st.markdown("### 📋 Company Rankings")
-st.markdown("Click on any row to select a company, then navigate to the Company Detail page to view full information.")
+st.markdown("**Select companies** using checkboxes, then export to Excel. Or click a single row to view Company Detail page.")
 
 # Display companies table with row selection enabled
 event = st.dataframe(
@@ -505,7 +512,7 @@ event = st.dataframe(
     height=600,
     hide_index=True,
     on_select="rerun",
-    selection_mode="single-row",
+    selection_mode=["multi-row"],
     key="ranked_companies_table",
     column_config={
         "company_id": None,  # Hide company_id column
@@ -601,17 +608,168 @@ event = st.dataframe(
 )
 
 # Handle row selection
+selected_company_ids = []
 if event.selection.rows:
-    selected_row_index = event.selection.rows[0]
-    selected_company_id = result_df.iloc[selected_row_index]['company_id']
-    selected_company_name = result_df.iloc[selected_row_index]['Company']
+    selected_indices = event.selection.rows
+    selected_company_ids = result_df.iloc[selected_indices]['company_id'].tolist()
 
-    # Set selected company in session state
-    set_selected_company(selected_company_id)
+    # Store all selected companies in session state
+    st.session_state['selected_company_ids'] = selected_company_ids
 
-    # Show confirmation message
-    st.success(f"✅ Selected: **{selected_company_name}**")
-    st.info("👉 Navigate to the **Company Detail** page using the sidebar to view full information.")
+    # Also store company names for display
+    selected_company_names = result_df.iloc[selected_indices]['Company'].tolist()
+    st.session_state['selected_company_names'] = selected_company_names
+
+    # If only one company selected, also set in session state for Company Detail navigation
+    if len(selected_company_ids) == 1:
+        selected_company_id = selected_company_ids[0]
+        selected_company_name = selected_company_names[0]
+
+        # Set selected company in session state (for backward compatibility)
+        set_selected_company(selected_company_id)
+
+        # Show confirmation message
+        st.success(f"✅ Selected: **{selected_company_name}**")
+        st.info("👉 Navigate to the **Company Detail** page using the sidebar to view full information.")
+    else:
+        # Multiple companies selected
+        st.info(f"**{len(selected_company_ids)} companies selected** - Ready to export to Excel or view details")
+        st.info("👉 Navigate to the **Company Detail** page to view all selected companies")
+
+# =============================================================================
+# EXPORT CONTROLS (AFTER TABLE)
+# =============================================================================
+
+st.markdown("---")
+st.markdown("### 📥 Export Companies")
+
+col1, col2, col3 = st.columns([4, 3, 3])
+
+with col1:
+    st.markdown("Export selected companies or all companies in the current filtered view.")
+
+with col2:
+    # Placeholder for selected companies export button
+    export_placeholder = st.empty()
+
+with col3:
+    # Export all filtered companies button
+    export_all_placeholder = st.empty()
+
+# Show download button if companies are selected
+if len(selected_company_ids) > 0:
+    with export_placeholder:
+        # Generate export data on demand
+        try:
+            # Load research data
+            research_df = load_company_research_data()
+
+            # Create HubSpot flags dict (already computed earlier)
+            company_domain_map = dict(zip(
+                scored_df['company_id'].astype(str),
+                scored_df.get('in_hubspot', [False] * len(scored_df))
+            ))
+
+            # Merge data for selected companies
+            merged_df = merge_export_data(
+                scored_df,
+                research_df,
+                companies_df,
+                [str(cid) for cid in selected_company_ids],
+                company_domain_map
+            )
+
+            # Create filter info for metadata sheet
+            filter_info = {
+                'customer_status': selected_path,
+                'naics_code': selected_naics,
+                'hubspot_status': selected_hubspot,
+                'state': selected_state,
+                'score_min': min_score,
+                'score_max': max_score
+            }
+
+            # Create Excel file in memory
+            output = io.BytesIO()
+            create_export_excel(merged_df, filter_info, output)
+            output.seek(0)
+
+            # Generate filename
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            filename = f"openworks_companies_export_{timestamp}.xlsx"
+
+            # Single download button
+            st.download_button(
+                label=f"📥 Download {len(selected_company_ids)} {'Company' if len(selected_company_ids) == 1 else 'Companies'} Excel Export",
+                data=output.getvalue(),
+                file_name=filename,
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                type="primary",
+                key="download_excel_direct"
+            )
+
+        except Exception as e:
+            st.error(f"Export preparation failed: {e}")
+            logger.error(f"Excel export error: {e}", exc_info=True)
+            import traceback
+            st.code(traceback.format_exc())
+
+# Show "Export All" button for all filtered companies
+with export_all_placeholder:
+    # Get all company IDs from filtered results
+    all_filtered_company_ids = result_df['company_id'].tolist()
+
+    try:
+        # Load research data
+        research_df = load_company_research_data()
+
+        # Create HubSpot flags dict (already computed earlier)
+        company_domain_map = dict(zip(
+            scored_df['company_id'].astype(str),
+            scored_df.get('in_hubspot', [False] * len(scored_df))
+        ))
+
+        # Merge data for all filtered companies
+        merged_df = merge_export_data(
+            scored_df,
+            research_df,
+            companies_df,
+            [str(cid) for cid in all_filtered_company_ids],
+            company_domain_map
+        )
+
+        # Create filter info for metadata sheet
+        filter_info = {
+            'customer_status': selected_path,
+            'naics_code': selected_naics,
+            'hubspot_status': selected_hubspot,
+            'state': selected_state,
+            'score_min': min_score,
+            'score_max': max_score
+        }
+
+        # Create Excel file in memory
+        output = io.BytesIO()
+        create_export_excel(merged_df, filter_info, output)
+        output.seek(0)
+
+        # Generate filename
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f"openworks_all_companies_export_{timestamp}.xlsx"
+
+        # Export all button
+        st.download_button(
+            label=f"📥 Export All {len(all_filtered_company_ids)} Companies",
+            data=output.getvalue(),
+            file_name=filename,
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            key="download_all_excel",
+            help=f"Export all {len(all_filtered_company_ids)} companies in the current filtered view"
+        )
+
+    except Exception as e:
+        st.error(f"Export all preparation failed: {e}")
+        logger.error(f"Excel export all error: {e}", exc_info=True)
 
 # =============================================================================
 # FOOTER INFO

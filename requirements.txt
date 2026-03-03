@@ -6,6 +6,7 @@ notebook
 numpy
 rapidfuzz
 usaddress
+openpyxl
 
 google-generativeai
 requests
