@@ -6,7 +6,16 @@ Displays all scored companies using the dual-path scoring methodology.
 
 import io
 import logging
+import sys
 from datetime import datetime
+from pathlib import Path
+
+# Add parent directory to path to allow 'app' module imports in Streamlit Cloud
+_page_dir = Path(__file__).resolve().parent
+_app_dir = _page_dir.parent
+_project_root = _app_dir.parent
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
 
 import pandas as pd
 import streamlit as st

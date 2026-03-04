@@ -7,6 +7,16 @@ the most attractive verticals before drilling down to specific companies.
 Epic 5 - New Page 1 per PRD v4.1
 """
 
+import sys
+from pathlib import Path
+
+# Add parent directory to path to allow 'app' module imports in Streamlit Cloud
+_page_dir = Path(__file__).resolve().parent
+_app_dir = _page_dir.parent
+_project_root = _app_dir.parent
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
 import streamlit as st
 
 from app.data_loader import load_scored_companies
